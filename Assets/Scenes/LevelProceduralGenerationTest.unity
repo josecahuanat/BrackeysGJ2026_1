@@ -769,7 +769,6 @@ GameObject:
   - component: {fileID: 1218934358}
   - component: {fileID: 1218934360}
   - component: {fileID: 1218934359}
-  - component: {fileID: 1218934361}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -807,21 +806,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FirstPersonController
   walkSpeed: 3.5
   sprintSpeed: 6
-  crouchSpeed: 2
-  gravity: -20
-  jumpHeight: 1.5
   mouseSensitivity: 2
   maxLookAngle: 80
   enableHeadBob: 1
   bobFrequency: 2
   bobHorizontalAmplitude: 0.05
   bobVerticalAmplitude: 0.05
-  useStamina: 0
-  maxStamina: 100
-  staminaDrainRate: 10
-  staminaRegenRate: 5
+  controller: {fileID: 1218934360}
   cameraTransform: {fileID: 513724699}
-  flashlight: {fileID: 225821998}
 --- !u!143 &1218934360
 CharacterController:
   m_ObjectHideFlags: 0
@@ -846,29 +838,6 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &1218934361
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1218934357}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1239672261
 GameObject:

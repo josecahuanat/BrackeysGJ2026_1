@@ -3,39 +3,30 @@ using UnityEngine;
 public class FirstPersonController : MonoBehaviour
 {
     [Header("Movement Settings")]
-    [SerializeField] private float walkSpeed = 3.5f;
-    [SerializeField] private float sprintSpeed = 6f;
-    [SerializeField] private float crouchSpeed = 2f;
-    [SerializeField] private float gravity = -20f;
-    [SerializeField] private float jumpHeight = 1.5f;
+    [SerializeField] float walkSpeed = 3.5f;
+    [SerializeField] float sprintSpeed = 6f;
     
     [Header("Mouse Look Settings")]
-    [SerializeField] private float mouseSensitivity = 2f;
-    [SerializeField] private float maxLookAngle = 80f;
+    [SerializeField] float mouseSensitivity = 2f;
+    [SerializeField] float maxLookAngle = 80f;
     
     [Header("Head Bob Settings")]
-    [SerializeField] private bool enableHeadBob = true;
-    [SerializeField] private float bobFrequency = 2f;
-    [SerializeField] private float bobHorizontalAmplitude = 0.05f;
-    [SerializeField] private float bobVerticalAmplitude = 0.05f;
+    [SerializeField] bool enableHeadBob = true;
+    [SerializeField] float bobFrequency = 2f;
+    [SerializeField] float bobHorizontalAmplitude = 0.05f;
+    [SerializeField] float bobVerticalAmplitude = 0.05f;
     
     [Header("References")]
-    [SerializeField] private Transform cameraTransform;
-    [SerializeField] private Light flashlight; // Optional: assign a flashlight
-    
-    // Private variables
-    private CharacterController controller;
-    private Vector3 velocity;
-    private float currentStamina;
-    private float rotationX = 0f;
-    private Vector3 cameraStartPosition;
-    private float bobTimer = 0f;
-    private bool isFlashlightOn = true;
+    [SerializeField] CharacterController controller;
+    [SerializeField] Transform cameraTransform;
+
+    Vector3 velocity;
+    float rotationX = 0f;
+    Vector3 cameraStartPosition;
+    float bobTimer = 0f;
     
     void Start()
-    {
-        controller = GetComponent<CharacterController>();
-        
+    {        
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         
@@ -47,7 +38,6 @@ public class FirstPersonController : MonoBehaviour
         HandleMovement();
         HandleMouseLook();
         
-        // Press ESC to unlock cursor (for testing)
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Cursor.lockState = CursorLockMode.None;
@@ -57,7 +47,6 @@ public class FirstPersonController : MonoBehaviour
     
     void HandleMovement()
     {
-        // Check if player is grounded
         bool isGrounded = controller.isGrounded;
         
         if (isGrounded && velocity.y < 0)
@@ -73,12 +62,6 @@ public class FirstPersonController : MonoBehaviour
         float currentSpeed = Input.GetKey(KeyCode.LeftShift)? sprintSpeed : walkSpeed;
         
         controller.Move(move * currentSpeed * Time.deltaTime);
-        
-        if (Input.GetButtonDown("Jump") && isGrounded)
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-        
-        // Apply gravity
-        velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
         
         // Head bob effect
@@ -110,9 +93,7 @@ public class FirstPersonController : MonoBehaviour
     }
     
     void HandleMouseLook()
-    {
-        if (cameraTransform == null) return;
-        
+    {        
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
         
