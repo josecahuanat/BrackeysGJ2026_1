@@ -2,7 +2,6 @@ using UnityEngine;
 using System.Collections.Generic;
 public class ProximityInteractable : MonoBehaviour
 {
-    
     private List<IInteractable> nearbyInteractables = new List<IInteractable>();
     void OnTriggerEnter(Collider other)
     {

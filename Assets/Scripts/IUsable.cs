@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
-public interface ITriggerable
+public interface IUsable
 {
     string ItemName { get; }
     bool CanBeUsedOn(GameObject target);
