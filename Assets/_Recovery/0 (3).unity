@@ -636,7 +636,7 @@ GameObject:
   - component: {fileID: 66763064}
   - component: {fileID: 66763063}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: wall6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -748,7 +748,7 @@ GameObject:
   - component: {fileID: 69134773}
   - component: {fileID: 69134772}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: wall8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1197,8 +1197,9 @@ GameObject:
   - component: {fileID: 123756189}
   - component: {fileID: 123756188}
   - component: {fileID: 123756187}
+  - component: {fileID: 123756190}
   m_Layer: 0
-  m_Name: Cube (6)
+  m_Name: tomb22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1297,6 +1298,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 123756185}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &123756190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123756185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  spawnPoint: {fileID: 0}
 --- !u!1 &127801353
 GameObject:
   m_ObjectHideFlags: 0
@@ -1422,7 +1436,7 @@ GameObject:
   - component: {fileID: 159777875}
   - component: {fileID: 159777874}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: wall3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1983,8 +1997,9 @@ GameObject:
   - component: {fileID: 248465098}
   - component: {fileID: 248465097}
   - component: {fileID: 248465096}
+  - component: {fileID: 248465099}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: tomb6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2083,6 +2098,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 248465094}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &248465099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248465094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  spawnPoint: {fileID: 0}
 --- !u!1 &250346784
 GameObject:
   m_ObjectHideFlags: 0
@@ -2208,9 +2236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tomb
-  litColor: {r: 1, g: 1, b: 0, a: 1}
-  unlitColor: {r: 0.01, g: 0.01, b: 0.01, a: 1}
-  emissionIntensity: 2
+  spawnPoint: {fileID: 0}
 --- !u!1 &250835859
 GameObject:
   m_ObjectHideFlags: 0
@@ -2224,7 +2250,7 @@ GameObject:
   - component: {fileID: 250835862}
   - component: {fileID: 250835861}
   m_Layer: 0
-  m_Name: Cylinder (7)
+  m_Name: tree6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2338,7 +2364,7 @@ GameObject:
   - component: {fileID: 254557217}
   - component: {fileID: 254557216}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: wall8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2450,7 +2476,7 @@ GameObject:
   - component: {fileID: 274349733}
   - component: {fileID: 274349732}
   m_Layer: 0
-  m_Name: Cube (23)
+  m_Name: tomb5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2674,7 +2700,7 @@ GameObject:
   - component: {fileID: 307635118}
   - component: {fileID: 307635117}
   m_Layer: 0
-  m_Name: Cube (15)
+  m_Name: tomb3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3000,7 +3026,7 @@ GameObject:
   - component: {fileID: 327139129}
   - component: {fileID: 327139128}
   m_Layer: 0
-  m_Name: Cube (12)
+  m_Name: tomb14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3111,8 +3137,9 @@ GameObject:
   - component: {fileID: 328333586}
   - component: {fileID: 328333585}
   - component: {fileID: 328333584}
+  - component: {fileID: 328333587}
   m_Layer: 0
-  m_Name: Cube (12)
+  m_Name: tomb16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3211,6 +3238,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 328333582}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &328333587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328333582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  spawnPoint: {fileID: 0}
 --- !u!1 &336003857
 GameObject:
   m_ObjectHideFlags: 0
@@ -3448,9 +3488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  litColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  unlitColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  emissionIntensity: 2
+  spawnPoint: {fileID: 0}
 --- !u!1 &357793807
 GameObject:
   m_ObjectHideFlags: 0
@@ -3464,7 +3502,7 @@ GameObject:
   - component: {fileID: 357793810}
   - component: {fileID: 357793809}
   m_Layer: 0
-  m_Name: Cylinder (8)
+  m_Name: tree13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3690,7 +3728,7 @@ GameObject:
   - component: {fileID: 386927756}
   - component: {fileID: 386927755}
   m_Layer: 0
-  m_Name: Cube (17)
+  m_Name: tomb15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3789,6 +3827,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 386927753}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &389528656
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 389528657}
+  m_Layer: 0
+  m_Name: PlayerSpawnPoint2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &389528657
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389528656}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 85, y: 0.00001, z: -108.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &390393583
 GameObject:
   m_ObjectHideFlags: 0
@@ -3915,7 +3984,7 @@ GameObject:
   - component: {fileID: 401403379}
   - component: {fileID: 401403378}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: tomb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4404,7 +4473,6 @@ Transform:
   - {fileID: 865782100}
   - {fileID: 1216550915}
   - {fileID: 1802184128}
-  - {fileID: 832568810}
   - {fileID: 1886483052}
   - {fileID: 307635116}
   - {fileID: 745461782}
@@ -4432,37 +4500,6 @@ Transform:
   - {fileID: 1423362064}
   m_Father: {fileID: 1906621038}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &467064141
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 467064142}
-  m_Layer: 0
-  m_Name: PlayerSpawnPoint2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &467064142
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 467064141}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 114.1, y: 0.00001, z: -79.4}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &477239166
 GameObject:
   m_ObjectHideFlags: 0
@@ -4476,7 +4513,7 @@ GameObject:
   - component: {fileID: 477239169}
   - component: {fileID: 477239168}
   m_Layer: 0
-  m_Name: Cube (4)
+  m_Name: wall5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4667,7 +4704,7 @@ GameObject:
   - component: {fileID: 496731304}
   - component: {fileID: 496731303}
   m_Layer: 0
-  m_Name: Cube (23)
+  m_Name: tomb5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4892,7 +4929,7 @@ GameObject:
   - component: {fileID: 514685133}
   - component: {fileID: 514685132}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: tomb16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5003,8 +5040,9 @@ GameObject:
   - component: {fileID: 518096312}
   - component: {fileID: 518096311}
   - component: {fileID: 518096310}
+  - component: {fileID: 518096313}
   m_Layer: 0
-  m_Name: Cube (17)
+  m_Name: tomb17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5103,6 +5141,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 518096308}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &518096313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518096308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  spawnPoint: {fileID: 0}
 --- !u!1 &521025176
 GameObject:
   m_ObjectHideFlags: 0
@@ -5116,7 +5167,7 @@ GameObject:
   - component: {fileID: 521025179}
   - component: {fileID: 521025178}
   m_Layer: 0
-  m_Name: Cylinder (8)
+  m_Name: tree5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5230,7 +5281,7 @@ GameObject:
   - component: {fileID: 524835701}
   - component: {fileID: 524835700}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: tree1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5344,7 +5395,7 @@ GameObject:
   - component: {fileID: 532929629}
   - component: {fileID: 532929628}
   m_Layer: 0
-  m_Name: Cylinder (6)
+  m_Name: tree7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5457,8 +5508,9 @@ GameObject:
   - component: {fileID: 544326658}
   - component: {fileID: 544326657}
   - component: {fileID: 544326656}
+  - component: {fileID: 544326659}
   m_Layer: 0
-  m_Name: Cube (6)
+  m_Name: tomb24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5557,6 +5609,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 544326654}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &544326659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544326654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  spawnPoint: {fileID: 0}
 --- !u!1 &547219337
 GameObject:
   m_ObjectHideFlags: 0
@@ -5707,7 +5772,7 @@ GameObject:
   - component: {fileID: 551973953}
   - component: {fileID: 551973952}
   m_Layer: 0
-  m_Name: Cube (21)
+  m_Name: tomb9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5819,7 +5884,7 @@ GameObject:
   - component: {fileID: 575135966}
   - component: {fileID: 575135965}
   m_Layer: 0
-  m_Name: Cylinder (8)
+  m_Name: tree13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6047,7 +6112,7 @@ GameObject:
   - component: {fileID: 579972710}
   - component: {fileID: 579972709}
   m_Layer: 0
-  m_Name: Cylinder (9)
+  m_Name: tree14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6161,7 +6226,7 @@ GameObject:
   - component: {fileID: 584966914}
   - component: {fileID: 584966913}
   m_Layer: 0
-  m_Name: Cylinder (2)
+  m_Name: tree10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6389,7 +6454,7 @@ GameObject:
   - component: {fileID: 597717786}
   - component: {fileID: 597717785}
   m_Layer: 0
-  m_Name: Cube (22)
+  m_Name: tomb10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6501,7 +6566,7 @@ GameObject:
   - component: {fileID: 612969376}
   - component: {fileID: 612969375}
   m_Layer: 0
-  m_Name: Cube (20)
+  m_Name: tomb8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6613,7 +6678,7 @@ GameObject:
   - component: {fileID: 626643950}
   - component: {fileID: 626643949}
   m_Layer: 0
-  m_Name: Cube (19)
+  m_Name: tomb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6951,7 +7016,7 @@ GameObject:
   - component: {fileID: 660397163}
   - component: {fileID: 660397162}
   m_Layer: 0
-  m_Name: Cylinder (8)
+  m_Name: tree5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7052,37 +7117,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 660397160}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &668163878
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 668163879}
-  m_Layer: 0
-  m_Name: PlayerSpawnPoint4
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &668163879
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 668163878}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 372.3, y: 0.00001, z: -341.2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &694001758
 GameObject:
   m_ObjectHideFlags: 0
@@ -7207,8 +7241,9 @@ GameObject:
   - component: {fileID: 745461785}
   - component: {fileID: 745461784}
   - component: {fileID: 745461783}
+  - component: {fileID: 745461786}
   m_Layer: 0
-  m_Name: Cube (16)
+  m_Name: tomb4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7307,37 +7342,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 745461781}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &753184504
-GameObject:
+--- !u!114 &745461786
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 753184505}
-  m_Layer: 0
-  m_Name: PlayerSpawnPoint3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &753184505
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 753184504}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 231.9, y: 0.00001, z: -256.8}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 745461781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  spawnPoint: {fileID: 0}
 --- !u!1 &755382014
 GameObject:
   m_ObjectHideFlags: 0
@@ -7351,7 +7368,7 @@ GameObject:
   - component: {fileID: 755382017}
   - component: {fileID: 755382016}
   m_Layer: 0
-  m_Name: Cube (8)
+  m_Name: tomb23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7462,8 +7479,9 @@ GameObject:
   - component: {fileID: 755637127}
   - component: {fileID: 755637126}
   - component: {fileID: 755637125}
+  - component: {fileID: 755637128}
   m_Layer: 0
-  m_Name: Cube (10)
+  m_Name: tomb9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7562,6 +7580,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 755637123}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &755637128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755637123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  spawnPoint: {fileID: 0}
 --- !u!1 &764723454
 GameObject:
   m_ObjectHideFlags: 0
@@ -7575,7 +7606,7 @@ GameObject:
   - component: {fileID: 764723457}
   - component: {fileID: 764723456}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: wall4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7674,6 +7705,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 764723454}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &784025451
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 784025452}
+  m_Layer: 0
+  m_Name: PlayerSpawnPoint4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &784025452
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784025451}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 320.2, y: 0.00001, z: -369.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &785887424
 GameObject:
   m_ObjectHideFlags: 0
@@ -7687,7 +7749,7 @@ GameObject:
   - component: {fileID: 785887427}
   - component: {fileID: 785887426}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: tomb7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7799,7 +7861,7 @@ GameObject:
   - component: {fileID: 792662153}
   - component: {fileID: 792662152}
   m_Layer: 0
-  m_Name: Cylinder (1)
+  m_Name: tree2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7913,7 +7975,7 @@ GameObject:
   - component: {fileID: 800431646}
   - component: {fileID: 800431645}
   m_Layer: 0
-  m_Name: Cube (14)
+  m_Name: tomb13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8139,37 +8201,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!1 &832568809
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 832568810}
-  m_Layer: 0
-  m_Name: rep2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &832568810
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 832568809}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 133.7, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 462196167}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &844827543
 GameObject:
   m_ObjectHideFlags: 0
@@ -8183,7 +8214,7 @@ GameObject:
   - component: {fileID: 844827546}
   - component: {fileID: 844827545}
   m_Layer: 0
-  m_Name: Cylinder (10)
+  m_Name: tree4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8548,7 +8579,7 @@ GameObject:
   - component: {fileID: 865782102}
   - component: {fileID: 865782101}
   m_Layer: 0
-  m_Name: Cylinder (2)
+  m_Name: tree10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9387,7 +9418,7 @@ GameObject:
   - component: {fileID: 978722642}
   - component: {fileID: 978722641}
   m_Layer: 0
-  m_Name: Cylinder (1)
+  m_Name: tree12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9500,8 +9531,9 @@ GameObject:
   - component: {fileID: 989896911}
   - component: {fileID: 989896910}
   - component: {fileID: 989896909}
+  - component: {fileID: 989896912}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: tomb7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9600,6 +9632,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 989896907}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &989896912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989896907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  spawnPoint: {fileID: 0}
 --- !u!1 &1003996819
 GameObject:
   m_ObjectHideFlags: 0
@@ -9613,7 +9658,7 @@ GameObject:
   - component: {fileID: 1003996822}
   - component: {fileID: 1003996821}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: wall2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10064,8 +10109,9 @@ GameObject:
   - component: {fileID: 1069651513}
   - component: {fileID: 1069651512}
   - component: {fileID: 1069651511}
+  - component: {fileID: 1069651514}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: tomb18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10164,6 +10210,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1069651509}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1069651514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069651509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  spawnPoint: {fileID: 0}
 --- !u!1 &1080539022
 GameObject:
   m_ObjectHideFlags: 0
@@ -10289,7 +10348,7 @@ GameObject:
   - component: {fileID: 1105941720}
   - component: {fileID: 1105941719}
   m_Layer: 0
-  m_Name: Cube (19)
+  m_Name: tomb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10401,7 +10460,7 @@ GameObject:
   - component: {fileID: 1108706150}
   - component: {fileID: 1108706149}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: wall1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10737,7 +10796,7 @@ GameObject:
   - component: {fileID: 1140112139}
   - component: {fileID: 1140112138}
   m_Layer: 0
-  m_Name: Cylinder (6)
+  m_Name: tree7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10867,10 +10926,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f06f9a2d220e44d4e80c56da012bf5ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FogPuzzleManager
-  spawn1: {fileID: 1415018766}
-  spawn2: {fileID: 467064142}
-  spawn3: {fileID: 753184505}
-  spawn4: {fileID: 668163879}
+  playerSpawnPoint2: {fileID: 389528657}
   player: {fileID: 2120315083}
 --- !u!4 &1159358625
 Transform:
@@ -11013,7 +11069,7 @@ GameObject:
   - component: {fileID: 1210554300}
   - component: {fileID: 1210554299}
   m_Layer: 0
-  m_Name: Cube (21)
+  m_Name: tomb11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11239,7 +11295,7 @@ GameObject:
   - component: {fileID: 1216550917}
   - component: {fileID: 1216550916}
   m_Layer: 0
-  m_Name: Cylinder (3)
+  m_Name: tree11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11352,8 +11408,9 @@ GameObject:
   - component: {fileID: 1222839713}
   - component: {fileID: 1222839712}
   - component: {fileID: 1222839711}
+  - component: {fileID: 1222839714}
   m_Layer: 0
-  m_Name: Cube (11)
+  m_Name: tomb13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11452,6 +11509,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1222839709}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1222839714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222839709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  spawnPoint: {fileID: 0}
 --- !u!1 &1231867329
 GameObject:
   m_ObjectHideFlags: 0
@@ -11617,7 +11687,6 @@ Transform:
   - {fileID: 584966912}
   - {fileID: 1378747944}
   - {fileID: 978722640}
-  - {fileID: 1452539141}
   - {fileID: 401403377}
   - {fileID: 1667329581}
   - {fileID: 1889767753}
@@ -11656,7 +11725,7 @@ GameObject:
   - component: {fileID: 1260317978}
   - component: {fileID: 1260317977}
   m_Layer: 0
-  m_Name: Cube (18)
+  m_Name: tomb17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11881,8 +11950,9 @@ GameObject:
   - component: {fileID: 1305011099}
   - component: {fileID: 1305011098}
   - component: {fileID: 1305011097}
+  - component: {fileID: 1305011100}
   m_Layer: 0
-  m_Name: Cube (11)
+  m_Name: tomb11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11981,6 +12051,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1305011095}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1305011100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305011095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  spawnPoint: {fileID: 0}
 --- !u!1 &1312141301
 GameObject:
   m_ObjectHideFlags: 0
@@ -12108,7 +12191,7 @@ GameObject:
   - component: {fileID: 1330679485}
   - component: {fileID: 1330679484}
   m_Layer: 0
-  m_Name: Cylinder (4)
+  m_Name: tree8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12221,8 +12304,9 @@ GameObject:
   - component: {fileID: 1332640964}
   - component: {fileID: 1332640963}
   - component: {fileID: 1332640962}
+  - component: {fileID: 1332640965}
   m_Layer: 0
-  m_Name: Cube (9)
+  m_Name: tomb8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12321,6 +12405,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1332640960}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1332640965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332640960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  spawnPoint: {fileID: 0}
 --- !u!1 &1341261281
 GameObject:
   m_ObjectHideFlags: 0
@@ -12333,8 +12430,9 @@ GameObject:
   - component: {fileID: 1341261285}
   - component: {fileID: 1341261284}
   - component: {fileID: 1341261283}
+  - component: {fileID: 1341261286}
   m_Layer: 0
-  m_Name: Cube (7)
+  m_Name: tomb22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12433,6 +12531,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1341261281}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1341261286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341261281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  spawnPoint: {fileID: 0}
 --- !u!1 &1378747943
 GameObject:
   m_ObjectHideFlags: 0
@@ -12446,7 +12557,7 @@ GameObject:
   - component: {fileID: 1378747946}
   - component: {fileID: 1378747945}
   m_Layer: 0
-  m_Name: Cylinder (3)
+  m_Name: tree11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12560,7 +12671,7 @@ GameObject:
   - component: {fileID: 1387161087}
   - component: {fileID: 1387161086}
   m_Layer: 0
-  m_Name: Cube (5)
+  m_Name: tomb21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12672,7 +12783,7 @@ GameObject:
   - component: {fileID: 1400009370}
   - component: {fileID: 1400009369}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: wall7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12860,7 +12971,7 @@ GameObject:
   - component: {fileID: 1410452018}
   - component: {fileID: 1410452017}
   m_Layer: 0
-  m_Name: Cylinder (9)
+  m_Name: tree3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12973,8 +13084,9 @@ GameObject:
   - component: {fileID: 1411830794}
   - component: {fileID: 1411830793}
   - component: {fileID: 1411830792}
+  - component: {fileID: 1411830795}
   m_Layer: 0
-  m_Name: Cube (22)
+  m_Name: tomb12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13073,37 +13185,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1411830790}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1415018765
-GameObject:
+--- !u!114 &1411830795
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1415018766}
-  m_Layer: 0
-  m_Name: PlayerSpawnPoint1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1415018766
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1415018765}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -25.5, y: 0.00001, z: 19.50543}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 1411830790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  spawnPoint: {fileID: 0}
 --- !u!1 &1417014043
 GameObject:
   m_ObjectHideFlags: 0
@@ -13117,7 +13211,7 @@ GameObject:
   - component: {fileID: 1417014046}
   - component: {fileID: 1417014045}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: wall7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13229,7 +13323,7 @@ GameObject:
   - component: {fileID: 1423362066}
   - component: {fileID: 1423362065}
   m_Layer: 0
-  m_Name: Cylinder (9)
+  m_Name: tree14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13556,7 +13650,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1447946023}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1452539140
+--- !u!1 &1459628687
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13564,28 +13658,28 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1452539141}
+  - component: {fileID: 1459628688}
   m_Layer: 0
-  m_Name: rep2
+  m_Name: PlayerSpawnPoint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1452539141
+--- !u!4 &1459628688
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1452539140}
+  m_GameObject: {fileID: 1459628687}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 133.7, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.28, y: 0.00001, z: 0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1233991920}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1462786756
 GameObject:
@@ -13600,7 +13694,7 @@ GameObject:
   - component: {fileID: 1462786759}
   - component: {fileID: 1462786758}
   m_Layer: 0
-  m_Name: Cube (7)
+  m_Name: tomb20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14051,8 +14145,9 @@ GameObject:
   - component: {fileID: 1514008399}
   - component: {fileID: 1514008398}
   - component: {fileID: 1514008397}
+  - component: {fileID: 1514008400}
   m_Layer: 0
-  m_Name: Cube (13)
+  m_Name: tomb14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14151,6 +14246,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1514008395}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1514008400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514008395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  spawnPoint: {fileID: 0}
 --- !u!1 &1521207311
 GameObject:
   m_ObjectHideFlags: 0
@@ -14164,7 +14272,7 @@ GameObject:
   - component: {fileID: 1521207314}
   - component: {fileID: 1521207313}
   m_Layer: 0
-  m_Name: Cube (13)
+  m_Name: tomb12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14276,7 +14384,7 @@ GameObject:
   - component: {fileID: 1534849562}
   - component: {fileID: 1534849561}
   m_Layer: 0
-  m_Name: Cube (4)
+  m_Name: tomb18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14388,7 +14496,7 @@ GameObject:
   - component: {fileID: 1580524022}
   - component: {fileID: 1580524021}
   m_Layer: 0
-  m_Name: Cube (4)
+  m_Name: wall5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14499,8 +14607,9 @@ GameObject:
   - component: {fileID: 1584065497}
   - component: {fileID: 1584065496}
   - component: {fileID: 1584065495}
+  - component: {fileID: 1584065498}
   m_Layer: 0
-  m_Name: Cube (5)
+  m_Name: tomb19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14599,6 +14708,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1584065493}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1584065498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584065493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  spawnPoint: {fileID: 0}
 --- !u!1 &1614510694
 GameObject:
   m_ObjectHideFlags: 0
@@ -14724,7 +14846,7 @@ GameObject:
   - component: {fileID: 1615026900}
   - component: {fileID: 1615026899}
   m_Layer: 0
-  m_Name: Cube (18)
+  m_Name: tomb19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14948,7 +15070,7 @@ GameObject:
   - component: {fileID: 1640597035}
   - component: {fileID: 1640597034}
   m_Layer: 0
-  m_Name: Cylinder (4)
+  m_Name: tree8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15061,8 +15183,9 @@ GameObject:
   - component: {fileID: 1667329584}
   - component: {fileID: 1667329583}
   - component: {fileID: 1667329582}
+  - component: {fileID: 1667329585}
   m_Layer: 0
-  m_Name: Cube (15)
+  m_Name: tomb3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15161,6 +15284,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1667329580}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1667329585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667329580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  spawnPoint: {fileID: 0}
 --- !u!1 &1677815294
 GameObject:
   m_ObjectHideFlags: 0
@@ -15174,7 +15310,7 @@ GameObject:
   - component: {fileID: 1677815297}
   - component: {fileID: 1677815296}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: tree1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15288,7 +15424,7 @@ GameObject:
   - component: {fileID: 1680340151}
   - component: {fileID: 1680340150}
   m_Layer: 0
-  m_Name: Cylinder (1)
+  m_Name: tree2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15516,7 +15652,7 @@ GameObject:
   - component: {fileID: 1707755508}
   - component: {fileID: 1707755507}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: wall2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16078,7 +16214,7 @@ GameObject:
   - component: {fileID: 1762616788}
   - component: {fileID: 1762616787}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: wall1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16303,8 +16439,9 @@ GameObject:
   - component: {fileID: 1778302083}
   - component: {fileID: 1778302082}
   - component: {fileID: 1778302081}
+  - component: {fileID: 1778302084}
   m_Layer: 0
-  m_Name: Cube (14)
+  m_Name: tomb15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16403,6 +16540,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1778302079}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1778302084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778302079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  spawnPoint: {fileID: 0}
 --- !u!1 &1784260892
 GameObject:
   m_ObjectHideFlags: 0
@@ -16528,7 +16678,7 @@ GameObject:
   - component: {fileID: 1802184130}
   - component: {fileID: 1802184129}
   m_Layer: 0
-  m_Name: Cylinder (1)
+  m_Name: tree12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16756,7 +16906,7 @@ GameObject:
   - component: {fileID: 1810841728}
   - component: {fileID: 1810841727}
   m_Layer: 0
-  m_Name: Cylinder (5)
+  m_Name: tree9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16870,7 +17020,7 @@ GameObject:
   - component: {fileID: 1815257962}
   - component: {fileID: 1815257961}
   m_Layer: 0
-  m_Name: Cylinder (10)
+  m_Name: tree4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17096,7 +17246,7 @@ GameObject:
   - component: {fileID: 1829929914}
   - component: {fileID: 1829929913}
   m_Layer: 0
-  m_Name: Cylinder (9)
+  m_Name: tree3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17210,7 +17360,7 @@ GameObject:
   - component: {fileID: 1832057108}
   - component: {fileID: 1832057107}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: wall3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17433,8 +17583,9 @@ GameObject:
   - component: {fileID: 1844573856}
   - component: {fileID: 1844573855}
   - component: {fileID: 1844573854}
+  - component: {fileID: 1844573857}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: tomb6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17533,6 +17684,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1844573852}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1844573857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844573852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  spawnPoint: {fileID: 0}
 --- !u!1 &1886483051
 GameObject:
   m_ObjectHideFlags: 0
@@ -17546,7 +17710,7 @@ GameObject:
   - component: {fileID: 1886483054}
   - component: {fileID: 1886483053}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: tomb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17711,8 +17875,9 @@ GameObject:
   - component: {fileID: 1889767756}
   - component: {fileID: 1889767755}
   - component: {fileID: 1889767754}
+  - component: {fileID: 1889767757}
   m_Layer: 0
-  m_Name: Cube (16)
+  m_Name: tomb4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17811,6 +17976,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889767752}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1889767757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889767752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  spawnPoint: {fileID: 0}
 --- !u!1 &1906621037
 GameObject:
   m_ObjectHideFlags: 0
@@ -17859,7 +18037,7 @@ GameObject:
   - component: {fileID: 1926235173}
   - component: {fileID: 1926235172}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: wall4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18085,7 +18263,7 @@ GameObject:
   - component: {fileID: 1945365094}
   - component: {fileID: 1945365093}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: wall6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18184,6 +18362,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1945365091}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1945851315
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1945851316}
+  m_Layer: 0
+  m_Name: PlayerSpawnPoint3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1945851316
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945851315}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 246.9, y: 0.00001, z: -212.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1950988752
 GameObject:
   m_ObjectHideFlags: 0
@@ -18761,7 +18970,7 @@ GameObject:
   - component: {fileID: 2029850897}
   - component: {fileID: 2029850896}
   m_Layer: 0
-  m_Name: Cube (8)
+  m_Name: tomb21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19139,7 +19348,7 @@ GameObject:
   - component: {fileID: 2062966435}
   - component: {fileID: 2062966434}
   m_Layer: 0
-  m_Name: Cylinder (7)
+  m_Name: tree6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19252,8 +19461,9 @@ GameObject:
   - component: {fileID: 2087592552}
   - component: {fileID: 2087592551}
   - component: {fileID: 2087592550}
+  - component: {fileID: 2087592553}
   m_Layer: 0
-  m_Name: Cube (4)
+  m_Name: tomb20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19352,6 +19562,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2087592548}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2087592553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087592548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  spawnPoint: {fileID: 0}
 --- !u!1 &2099513980
 GameObject:
   m_ObjectHideFlags: 0
@@ -19365,7 +19588,7 @@ GameObject:
   - component: {fileID: 2099513983}
   - component: {fileID: 2099513982}
   m_Layer: 0
-  m_Name: Cylinder (5)
+  m_Name: tree9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19478,8 +19701,9 @@ GameObject:
   - component: {fileID: 2111143493}
   - component: {fileID: 2111143492}
   - component: {fileID: 2111143491}
+  - component: {fileID: 2111143494}
   m_Layer: 0
-  m_Name: Cube (20)
+  m_Name: tomb10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19578,6 +19802,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2111143489}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2111143494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111143489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  spawnPoint: {fileID: 0}
 --- !u!1 &2120315083
 GameObject:
   m_ObjectHideFlags: 0
@@ -19698,7 +19935,7 @@ SceneRoots:
   - {fileID: 484582152}
   - {fileID: 326278045}
   - {fileID: 1159358625}
-  - {fileID: 1415018766}
-  - {fileID: 467064142}
-  - {fileID: 753184505}
-  - {fileID: 668163879}
+  - {fileID: 1459628688}
+  - {fileID: 389528657}
+  - {fileID: 1945851316}
+  - {fileID: 784025452}
