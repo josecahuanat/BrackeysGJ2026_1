@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections.Generic;
 public class PlayerInteraction: MonoBehaviour
 {
  [Header("Interaction")]
@@ -11,14 +12,17 @@ public class PlayerInteraction: MonoBehaviour
     [Header("UI")]
     [SerializeField] private GameObject interactPromptUI;
     [SerializeField] private TextMeshProUGUI promptText;
-    
+   
     [Header("Debug")]
     [SerializeField] private bool showDebugRay = true;
-    
+     // Objetos cercanos detectados por trigger/collider
+    private List<IInteractable> nearbyInteractables = new List<IInteractable>();
     private IInteractable currentInteractable;
     private GameObject currentInteractableObject; // NUEVO: guardamos el GameObject
     private Inventory inventory;
     private Camera mainCamera;
+    private enum DetectionSource { None, Raycast, Proximity }
+    private DetectionSource currentSource = DetectionSource.None;
 
     void Start()
     {
@@ -56,50 +60,85 @@ public class PlayerInteraction: MonoBehaviour
             inventory.DropItem();
         }
     }
-
     void CheckForInteractable()
     {
-        Ray ray = mainCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
-        
-        // Debug visual
-        if (showDebugRay)
-        {
-            Debug.DrawRay(ray.origin, ray.direction * interactRange, Color.yellow);
-        }
-        
+        // ── Prioridad 1: Raycast (el jugador está mirando el objeto) ──
+        Ray ray = mainCamera.ScreenPointToRay(new Vector3(Screen.width / 2f, Screen.height / 2f));
+        if (showDebugRay) Debug.DrawRay(ray.origin, ray.direction * interactRange, Color.yellow);
+
         if (Physics.Raycast(ray, out RaycastHit hit, interactRange, interactableLayer))
         {
-            IInteractable interactable = hit.collider.GetComponent<IInteractable>();
-            
-            if (interactable != null && interactable.CanInteract)
+            IInteractable byRay = hit.collider.GetComponent<IInteractable>();
+            if (byRay != null && byRay.CanInteract)
             {
-                SetCurrentInteractable(interactable, hit.collider.gameObject);
+                SetCurrent(byRay, hit.collider.gameObject, DetectionSource.Raycast);
                 return;
             }
         }
-        
-        SetCurrentInteractable(null, null);
-    }
 
-    void SetCurrentInteractable(IInteractable interactable, GameObject obj)
+        // ── Prioridad 2: Proximidad (el jugador está cerca del objeto) ──
+        // Limpia los que ya no existen
+        nearbyInteractables.RemoveAll(x => x == null || (x is MonoBehaviour mb && mb == null));
+
+        if (nearbyInteractables.Count > 0)
+        {
+            // Toma el más cercano de los que están en rango
+            IInteractable closest    = null;
+            GameObject    closestObj = null;
+            float         closestDist = float.MaxValue;
+
+            foreach (var nearby in nearbyInteractables)
+            {
+                if (!nearby.CanInteract) continue;
+                MonoBehaviour mb = nearby as MonoBehaviour;
+                if (mb == null) continue;
+
+                float dist = Vector3.Distance(transform.position, mb.transform.position);
+                if (dist < closestDist)
+                {
+                    closestDist = dist;
+                    closest     = nearby;
+                    closestObj  = mb.gameObject;
+                }
+            }
+
+            if (closest != null)
+            {
+                SetCurrent(closest, closestObj, DetectionSource.Proximity);
+                return;
+            }
+        }
+
+        // ── Nada detectado ────────────────────────────────
+        SetCurrent(null, null, DetectionSource.None);
+    }
+  void SetCurrent(IInteractable interactable, GameObject obj, DetectionSource source)
     {
-        currentInteractable = interactable;
+        currentInteractable       = interactable;
         currentInteractableObject = obj;
-        
+        currentSource             = source;
+
         if (interactable != null)
         {
-            if (interactPromptUI != null)
-            {
-                interactPromptUI.SetActive(true);
+            interactPromptUI?.SetActive(true);
+            if (promptText != null)
                 promptText.text = interactable.InteractPrompt;
-            }
         }
         else
         {
-            if (interactPromptUI != null)
-            {
-                interactPromptUI.SetActive(false);
-            }
+            interactPromptUI?.SetActive(false);
         }
+    }
+
+    // ── Llamado por ProximityDetector (componente en el Player) ──
+    public void OnNearbyEnter(IInteractable interactable)
+    {
+        if (!nearbyInteractables.Contains(interactable))
+            nearbyInteractables.Add(interactable);
+    }
+
+    public void OnNearbyExit(IInteractable interactable)
+    {
+        nearbyInteractables.Remove(interactable);
     }
 }

@@ -11,6 +11,10 @@ public class Inventory : MonoBehaviour
     [Header("Hand Transform")]
     [SerializeField] private Transform handTransform;
     private GameObject currentItemInstance;
+    [Header("Drop Settings")]
+    [SerializeField] private float dropDistance = 1.5f;  // Distancia frente al jugador
+    [SerializeField] private float dropForce = 2f;       // Fuerza para lanzar el item
+    [SerializeField] private bool dropWithPhysics = true; // Si lanzar o solo colocar
     
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI itemNameText;
@@ -28,7 +32,7 @@ public class Inventory : MonoBehaviour
         // VALIDACIÓN
         if (handTransform == null)
         {
-            Debug.LogError("Hand Transform no asignado en SingleItemInventory!");
+            Debug.LogError("Hand Transform no asignado en Inventory!");
         }
     }
 
@@ -74,18 +78,58 @@ public class Inventory : MonoBehaviour
         return true;
     }
 
-    public void DropItem()
+     public void DropItem()
     {
-        if (!HasItem) return;
+        if (!HasItem)
+        {
+            Debug.Log("No tienes ningún item para soltar");
+            return;
+        }
         
         string droppedItem = currentItemID;
         
-        // Destruir visual
+        // ═══════════════════════════════════════════════════════
+        // CREAR EL OBJETO EN EL MUNDO (frente al jugador)
+        // ═══════════════════════════════════════════════════════
+        
+        if (currentItemPrefab != null)
+        {
+            // Calcular posición de drop (frente al jugador)
+            Vector3 dropPosition = transform.position + transform.forward * dropDistance;
+            dropPosition.y = transform.position.y; // Misma altura que el jugador
+            
+            // Instanciar el objeto en el mundo
+            GameObject droppedObject = Instantiate(currentItemPrefab, dropPosition, Quaternion.identity);
+            
+            // Asegurar que tenga todos sus componentes activos
+            foreach (var col in droppedObject.GetComponentsInChildren<Collider>())
+            {
+                col.enabled = true;
+            }
+            
+            // Reactivar scripts de interacción
+            foreach (var interactable in droppedObject.GetComponentsInChildren<MonoBehaviour>())
+            {
+                if (interactable is IInteractable || interactable is IPickable)
+                {
+                    interactable.enabled = true;
+                }
+            }
+            
+            Debug.Log($"Item '{droppedItem}' soltado en el mundo en posición: {dropPosition}");
+        }
+        
+        // ═══════════════════════════════════════════════════════
+        // LIMPIAR INVENTARIO
+        // ═══════════════════════════════════════════════════════
+        
+        // Destruir el visual de la mano
         if (currentItemInstance != null)
         {
             Destroy(currentItemInstance);
         }
         
+        // Resetear variables
         currentItemID = null;
         currentItemPrefab = null;
         currentItemInstance = null;
