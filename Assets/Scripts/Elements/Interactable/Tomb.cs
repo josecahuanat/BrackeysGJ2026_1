@@ -44,7 +44,6 @@ public class Tomb : MonoBehaviour, IInteractable
         emissionIntensity = 2f;
         
         UpdateVisual();
-        Debug.Log($"Tomb {gameObject.name} inicializada - Apagada");
     }
     
     public void Interact(GameObject player)
@@ -72,13 +71,11 @@ public class Tomb : MonoBehaviour, IInteractable
         {
             mat.EnableKeyword("_EMISSION");
             mat.SetColor("_EmissionColor", litColor * emissionIntensity);
-            Debug.Log($"Tomb {gameObject.name} ENCENDIDA - Color: {litColor}");
         }
         else
         {
             mat.DisableKeyword("_EMISSION");
             mat.SetColor("_EmissionColor", Color.black);
-            Debug.Log($"Tomb {gameObject.name} APAGADA - Color: {unlitColor}");
         }
         
         meshRenderer.material = mat;

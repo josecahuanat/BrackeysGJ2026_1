@@ -15,7 +15,7 @@ public class FogPuzzleManager : MonoBehaviour
     private Tomb[] rep3Tombs;
     private Tomb[] rep4Tombs;
     
-    private int currentLevel = 1; // Nivel actual (1-4)
+    private int currentLevel = 1; // Repetición actual (1-4)
     
     void Start()
     {
@@ -35,6 +35,9 @@ public class FogPuzzleManager : MonoBehaviour
         SubscribeToTombs(rep2Tombs);
         SubscribeToTombs(rep3Tombs);
         SubscribeToTombs(rep4Tombs);
+        
+        // Mostrar info de la repetición inicial
+        ShowRepetitionInfo();
     }
     
     private void FindTombsInMap()
@@ -56,8 +59,6 @@ public class FogPuzzleManager : MonoBehaviour
         rep2Tombs = rep2 != null ? rep2.GetComponentsInChildren<Tomb>() : new Tomb[0];
         rep3Tombs = rep3 != null ? rep3.GetComponentsInChildren<Tomb>() : new Tomb[0];
         rep4Tombs = rep4 != null ? rep4.GetComponentsInChildren<Tomb>() : new Tomb[0];
-        
-        Debug.Log($"Tumbas encontradas - Rep1: {rep1Tombs.Length}, Rep2: {rep2Tombs.Length}, Rep3: {rep3Tombs.Length}, Rep4: {rep4Tombs.Length}");
     }
     
     private void InitializeTombs()
@@ -66,7 +67,6 @@ public class FogPuzzleManager : MonoBehaviour
         InitializeTombArray(rep2Tombs);
         InitializeTombArray(rep3Tombs);
         InitializeTombArray(rep4Tombs);
-        Debug.Log("Todas las tumbas han sido inicializadas (apagadas)");
     }
     
     private void InitializeTombArray(Tomb[] tombs)
@@ -97,9 +97,6 @@ public class FogPuzzleManager : MonoBehaviour
     
     private void HandleTombInteraction()
     {
-        Debug.Log("has encendido la vela");
-        
-        // Verificar si todas las tumbas del nivel actual están encendidas
         CheckLevelComplete();
     }
     
@@ -109,7 +106,6 @@ public class FogPuzzleManager : MonoBehaviour
         
         if (currentLevelTombs == null || currentLevelTombs.Length == 0)
         {
-            Debug.LogWarning($"No hay tumbas en el nivel {currentLevel}");
             return;
         }
         
@@ -123,9 +119,7 @@ public class FogPuzzleManager : MonoBehaviour
             }
         }
         
-        Debug.Log($"Nivel {currentLevel}: {litCount}/{currentLevelTombs.Length} velas encendidas");
-        
-        // Si todas están encendidas, avanzar al siguiente nivel
+        // Si todas están encendidas, avanzar a la siguiente repetición
         if (litCount == currentLevelTombs.Length)
         {
             CompleteLevel();
@@ -146,9 +140,9 @@ public class FogPuzzleManager : MonoBehaviour
     
     private void CompleteLevel()
     {
-        Debug.Log($"<color=green>¡Nivel {currentLevel} completado!</color>");
+        Debug.Log($"<color=green>¡Repetición {currentLevel} completada!</color>");
         
-        // Si completó el nivel 4, terminar el puzzle
+        // Si completó la repetición 4, terminar el puzzle
         if (currentLevel == 4)
         {
             Debug.Log("<color=cyan>¡¡¡PUZZLE COMPLETADO!!!</color>");
@@ -163,10 +157,7 @@ public class FogPuzzleManager : MonoBehaviour
         if (nextSpawn != null)
         {
             TeleportPlayer(nextSpawn);
-        }
-        else
-        {
-            Debug.LogError($"¡Spawn{currentLevel} no está asignado en el Inspector!");
+            ShowRepetitionInfo();
         }
     }
     
@@ -178,6 +169,15 @@ public class FogPuzzleManager : MonoBehaviour
             case 3: return spawn3;
             case 4: return spawn4;
             default: return null;
+        }
+    }
+    
+    private void ShowRepetitionInfo()
+    {
+        Tomb[] currentTombs = GetCurrentLevelTombs();
+        if (currentTombs != null)
+        {
+            Debug.Log($"<color=yellow>Repetición {currentLevel} - Enciende {currentTombs.Length} velas</color>");
         }
     }
     
@@ -199,7 +199,5 @@ public class FogPuzzleManager : MonoBehaviour
             player.transform.position = spawnPoint.position;
             player.transform.rotation = spawnPoint.rotation;
         }
-        
-        Debug.Log($"Jugador teletransportado a {spawnPoint.name}");
     }
 }
