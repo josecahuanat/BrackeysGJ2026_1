@@ -15,16 +15,18 @@ MonoBehaviour:
   typeName: 2
   difficulties:
   - items:
-    - name: 4
-      quantity: 2
-      spawnPositions: 6
     - name: 1
       quantity: 2
       spawnPositions: 4
   - items:
     - name: 1
-      quantity: 1
-      spawnPositions: 5
-    - name: 2
-      quantity: 1
-      spawnPositions: 5
+      quantity: 2
+      spawnPositions: 4
+  - items:
+    - name: 1
+      quantity: 3
+      spawnPositions: 6
+  - items:
+    - name: 1
+      quantity: 3
+      spawnPositions: 6
