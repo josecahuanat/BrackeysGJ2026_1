@@ -4,13 +4,13 @@ using UnityEngine.Events;
 using TMPro;
 public class Inventory : MonoBehaviour
 {
-   [Header("Inventory")]
+    [Header("Inventory")]
     private string currentItemID = null;
-    private GameObject currentItemPrefab = null;
-    
+    private GameObject currentItemObject = null;  // ← CAMBIO: ahora guarda el objeto real
+    private Rigidbody currentItemRigidbody = null;
+
     [Header("Hand Transform")]
     [SerializeField] private Transform handTransform;
-    private GameObject currentItemInstance;
     [Header("Drop Settings")]
     [SerializeField] private float dropDistance = 1.5f;  // Distancia frente al jugador
     [SerializeField] private float dropForce = 2f;       // Fuerza para lanzar el item
@@ -35,109 +35,122 @@ public class Inventory : MonoBehaviour
             Debug.LogError("Hand Transform no asignado en Inventory!");
         }
     }
-
-    public bool PickupItem(string itemID, GameObject itemPrefab)
+    public bool PickupItem(string itemID, GameObject itemObject)  // ← CAMBIO: recibe GameObject, no prefab
     {
         if (HasItem)
         {
             Debug.Log("Ya tienes un objeto. Suelta el actual primero (Q).");
             return false;
         }
-        
+
         currentItemID = itemID;
-        currentItemPrefab = itemPrefab;
-        
-        // Instanciar visual en la mano
-        if (itemPrefab != null && handTransform != null)
+        currentItemObject = itemObject;  // ← Guardar el objeto original
+
+        // Desactivar física
+        currentItemRigidbody = itemObject.GetComponent<Rigidbody>();
+        if (currentItemRigidbody != null)
         {
-            currentItemInstance = Instantiate(itemPrefab, handTransform);
-            currentItemInstance.transform.localPosition = Vector3.zero;
-            currentItemInstance.transform.localRotation = Quaternion.identity;
-            currentItemInstance.transform.localScale = Vector3.one;
-            
-            // Desactivar colliders y scripts del objeto en la mano
-            foreach (var col in currentItemInstance.GetComponentsInChildren<Collider>())
+            currentItemRigidbody.isKinematic = true;
+        }
+
+        // Desactivar colliders
+        foreach (var col in itemObject.GetComponentsInChildren<Collider>())
+        {
+            col.enabled = false;
+        }
+
+        // Desactivar scripts de interacción
+        foreach (var interactable in itemObject.GetComponentsInChildren<MonoBehaviour>())
+        {
+            if (interactable is IInteractable || interactable is IPickable)
             {
-                col.enabled = false;
-            }
-            
-            // Desactivar scripts de interacción
-            foreach (var interactable in currentItemInstance.GetComponentsInChildren<MonoBehaviour>())
-            {
-                if (interactable is IInteractable || interactable is IPickable)
-                {
-                    interactable.enabled = false;
-                }
+                interactable.enabled = false;
             }
         }
-        
+
+        // Mover a la mano
+        if (handTransform != null)
+        {
+            itemObject.transform.SetParent(handTransform);
+            itemObject.transform.localPosition = Vector3.zero;
+            itemObject.transform.localRotation = Quaternion.identity;
+            itemObject.transform.localScale = Vector3.one;
+        }
+
         UpdateUI();
         OnItemPickedUp?.Invoke(itemID);
-        
         Debug.Log($"Recogido: {itemID}");
         return true;
     }
 
-     public void DropItem()
+    // ══════════ MODIFICAR DropItem() ══════════
+    public void DropItem()
     {
-        if (!HasItem)
+        if (!HasItem || currentItemObject == null)
         {
-            Debug.Log("No tienes ningún item para soltar");
+            if (!HasItem)
+                Debug.Log("No tienes ningún item para soltar");
+            else
+                Debug.LogWarning("Referencia de item perdida (probablemente ya fue usado)");
             return;
         }
-        
+
         string droppedItem = currentItemID;
-        
-        // ═══════════════════════════════════════════════════════
-        // CREAR EL OBJETO EN EL MUNDO (frente al jugador)
-        // ═══════════════════════════════════════════════════════
-        
-        if (currentItemPrefab != null)
+
+        if (currentItemObject != null)
         {
-            // Calcular posición de drop (frente al jugador)
+            // Calcular posición frente al jugador
             Vector3 dropPosition = transform.position + transform.forward * dropDistance;
-            dropPosition.y = transform.position.y; // Misma altura que el jugador
-            
-            // Instanciar el objeto en el mundo
-            GameObject droppedObject = Instantiate(currentItemPrefab, dropPosition, Quaternion.identity);
-            
-            // Asegurar que tenga todos sus componentes activos
-            foreach (var col in droppedObject.GetComponentsInChildren<Collider>())
+            dropPosition.y = transform.position.y;
+
+            // Desparentar del hand
+            currentItemObject.transform.SetParent(null);
+            currentItemObject.transform.position = dropPosition;
+            currentItemObject.transform.rotation = Quaternion.identity;
+
+            // Reactivar colliders
+            foreach (var col in currentItemObject.GetComponentsInChildren<Collider>())
             {
                 col.enabled = true;
             }
-            
-            // Reactivar scripts de interacción
-            foreach (var interactable in droppedObject.GetComponentsInChildren<MonoBehaviour>())
+
+            // Reactivar scripts
+            foreach (var interactable in currentItemObject.GetComponentsInChildren<MonoBehaviour>())
             {
                 if (interactable is IInteractable || interactable is IPickable)
                 {
                     interactable.enabled = true;
                 }
             }
-            
-            Debug.Log($"Item '{droppedItem}' soltado en el mundo en posición: {dropPosition}");
+
+            // Reactivar física
+            if (currentItemRigidbody != null)
+            {
+                currentItemRigidbody.isKinematic = false;
+
+                if (dropWithPhysics)
+                {
+                    Vector3 dropDirection = transform.forward + Vector3.up * 0.3f;
+                    currentItemRigidbody.AddForce(dropDirection * dropForce, ForceMode.Impulse);
+                }
+            }
+
+            Debug.Log($"Item '{droppedItem}' soltado en posición: {dropPosition}");
         }
-        
-        // ═══════════════════════════════════════════════════════
-        // LIMPIAR INVENTARIO
-        // ═══════════════════════════════════════════════════════
-        
-        // Destruir el visual de la mano
-        if (currentItemInstance != null)
-        {
-            Destroy(currentItemInstance);
-        }
-        
-        // Resetear variables
+
+        // Limpiar referencias
         currentItemID = null;
-        currentItemPrefab = null;
-        currentItemInstance = null;
-        
+        currentItemObject = null;
+        currentItemRigidbody = null;
+
         UpdateUI();
         OnItemDropped?.Invoke(droppedItem);
-        
-        Debug.Log($"Soltado: {droppedItem}");
+    }
+
+    // ══════════ NUEVO MÉTODO: GetCurrentItem() ══════════
+    public GameObject GetCurrentItemObject()
+    {
+        return currentItemObject;
     }
 
     public bool UseItem(GameObject target)
@@ -149,13 +162,19 @@ public class Inventory : MonoBehaviour
         {
             usable.Use(target, gameObject);
             OnItemUsed?.Invoke(currentItemID, target);
-            DropItem();
             return true;
         }
         
         return false;
     }
-
+    public void ClearInventory()
+    {
+        // (usado cuando el objeto se coloca en un socket)
+        currentItemID = null;
+        currentItemObject = null;
+        currentItemRigidbody = null;
+        UpdateUI();
+    }
     void UpdateUI()
     {
         if (itemNameText != null)

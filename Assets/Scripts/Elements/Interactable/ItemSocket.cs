@@ -32,7 +32,6 @@ public class ItemSocket : MonoBehaviour, IInteractable, IUsable
 
         if (!tieneItem)
         {
-            // Intentar colocar usando IUsable
             if (inv.HasItem && inv.CurrentItemID == itemRequerido)
             {
                 Use(gameObject, player);
@@ -44,9 +43,25 @@ public class ItemSocket : MonoBehaviour, IInteractable, IUsable
         }
         else if (!consumirItem)
         {
-            tieneItem = false;
-            if (itemInstance) Destroy(itemInstance);
-            OnItemRetirado?.Invoke();
+            // ═══ CORRECCIÓN: Retirar el item del socket ═══
+            if (itemInstance != null && inv != null && !inv.HasItem)  // ← Verificar que el inventario esté vacío
+            {
+                // Primero: recoger el item (esto lo mueve a la mano)
+                bool recogido = inv.PickupItem(itemRequerido, itemInstance);
+
+                if (recogido)
+                {
+                    // Solo después limpiamos el socket
+                    tieneItem = false;
+                    itemInstance = null;
+                    OnItemRetirado?.Invoke();
+                    Debug.Log($"Item {itemRequerido} retirado del socket");
+                }
+            }
+            else if (inv.HasItem)
+            {
+                Debug.Log("Ya tienes un item. Suelta el actual primero (Q).");
+            }
         }
 
         onInteracted?.Invoke(player);
@@ -66,17 +81,29 @@ public class ItemSocket : MonoBehaviour, IInteractable, IUsable
 
         tieneItem = true;
 
-        // Mostrar visual del item en el altar
-        if (puntoDeDisplay != null)
+        // Obtener el objeto real del inventario
+        GameObject itemObject = inv.GetCurrentItemObject();
+
+        if (itemObject != null && puntoDeDisplay != null)
         {
-            // Clonar el prefab visual en el altar (sin destruir el inventario todavía)
-            itemInstance = new GameObject($"{itemRequerido}_Display");
-            itemInstance.transform.SetPositionAndRotation(puntoDeDisplay.position, puntoDeDisplay.rotation);
-            itemInstance.transform.SetParent(puntoDeDisplay);
+            // Mover el objeto al socket (desparentar del hand primero)
+            itemObject.transform.SetParent(puntoDeDisplay);
+            itemObject.transform.localPosition = Vector3.zero;
+            itemObject.transform.localRotation = Quaternion.identity;
+            itemObject.transform.localScale = Vector3.one;
+
+            // Desactivar colliders (el objeto ya está "colocado")
+            foreach (var col in itemObject.GetComponentsInChildren<Collider>())
+            {
+                col.enabled = false;
+            }
+
+            // Guardar referencia
+            itemInstance = itemObject;
         }
 
-        if (consumirItem) inv.DropItem();
-
+        // Limpiar inventario sin soltar el objeto físicamente
+        inv.ClearInventory();
         onItemUsed?.Invoke(target, player);
         OnItemColocado?.Invoke();
     }

@@ -31,7 +31,7 @@ public class PlayerInteraction: MonoBehaviour
         
         if (inventory == null)
         {
-            Debug.LogError("PlayerInteraction necesita SingleItemInventory en el mismo GameObject!");
+            Debug.LogError("PlayerInteraction necesita Inventory");
         }
         
         if (interactPromptUI != null)
