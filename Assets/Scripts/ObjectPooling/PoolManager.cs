@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 public class PoolManager : MonoBehaviour
 {
@@ -27,5 +28,15 @@ public class PoolManager : MonoBehaviour
     public GameObject Spawn(PoolName poolName, Transform parent, Vector3 position, Quaternion rotation) 
         => poolDictionary[poolName].Get(parent, position, rotation);
 
-    public void Despawn(PoolName poolName, GameObject obj) => poolDictionary[poolName].Return(obj);
+    public void Despawn(PoolName poolName, GameObject obj)
+    {
+        try
+        {
+            poolDictionary[poolName].Return(obj);
+        }
+        catch(Exception e)
+        {
+            Debug.LogWarning(e.Message);
+        }
+    }
 }

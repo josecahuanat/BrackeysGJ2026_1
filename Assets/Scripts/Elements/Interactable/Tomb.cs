@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using UnityEngine.Events;
 
 public class Tomb : MonoBehaviour, IInteractable
 {
@@ -20,7 +21,9 @@ public class Tomb : MonoBehaviour, IInteractable
     public bool CanInteract => !isLit;
     
     public bool IsLit => isLit;
-    
+
+    public UnityEvent<GameObject> OnInteracted => throw new NotImplementedException();
+
     void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();
