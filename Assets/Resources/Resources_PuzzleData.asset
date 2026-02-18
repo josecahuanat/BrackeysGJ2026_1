@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dd56708bbf79cd459ea4d30e8e9a45d, type: 3}
+  m_Name: Resources_PuzzleData
+  m_EditorClassIdentifier: Assembly-CSharp::PuzzleData
+  typeName: 1
+  difficulties:
+  - items:
+    - name: 0
+      quantity: 10
+      spawnPositions: 20
+    - name: 1
+      quantity: 2
+      spawnPositions: 4
+  - items:
+    - name: 0
+      quantity: 5
+      spawnPositions: 20
+    - name: 1
+      quantity: 2
+      spawnPositions: 4
