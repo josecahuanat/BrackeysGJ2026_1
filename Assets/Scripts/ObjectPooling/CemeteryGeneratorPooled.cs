@@ -3,60 +3,15 @@ using System.Collections.Generic;
 
 public class CemeteryGeneratorPooled : MonoBehaviour
 {
-    const float NicheChance = 0.4f, 
-        NicheBlockChance = 0.1f,
-        TombChance = 0.2f,
-        MausoleumChance = 0.1f;
-
-
     [Header("Generation Settings")]
     [SerializeField] Transform player;
+    [SerializeField] Transform groundsParent;
     [SerializeField] float chunkSize = 50f;
-    [SerializeField] int renderDistance = 3;
+    [SerializeField] int renderDistance;
     
-    [Header("Spacing")]
-    [SerializeField] float pathWidth = 10f;
-    [SerializeField] float structureSpacing = 15f;
-    
-    Dictionary<Vector2Int, ChunkData> activeChunks = new Dictionary<Vector2Int, ChunkData>();
+    Dictionary<Vector2Int, Ground> activeGroundChunks = new Dictionary<Vector2Int, Ground>();
     Vector2Int currentChunkCoord;
     int seed;
-    
-    class ChunkData
-    {
-        public List<GameObject> grounds = new List<GameObject>(),
-            niches = new List<GameObject>(),
-            nicheBlocks = new List<GameObject>(),
-            tombs = new List<GameObject>(),
-            mausoleums = new List<GameObject>();
-
-        public void Add(PoolName poolName, GameObject newObj)
-        {
-            switch(poolName)
-            {
-                case PoolName.Niches: niches.Add(newObj); break;
-                case PoolName.NicheBlocks: nicheBlocks.Add(newObj); break;
-                case PoolName.Tombs: tombs.Add(newObj); break;
-                case PoolName.Mausoleums: mausoleums.Add(newObj); break;
-                case PoolName.Grounds: grounds.Add(newObj); break;
-            }
-        }
-
-        public void Despawn()
-        {
-            DespawnWithPoolName(grounds, PoolName.Grounds);
-            DespawnWithPoolName(niches, PoolName.Niches);
-            DespawnWithPoolName(nicheBlocks, PoolName.NicheBlocks);
-            DespawnWithPoolName(tombs, PoolName.Tombs);
-            DespawnWithPoolName(mausoleums, PoolName.Mausoleums);
-        }
-
-        void DespawnWithPoolName(List<GameObject> objs, PoolName poolName)
-        {
-            foreach (GameObject obj in objs)
-                PoolManager.Instance.Despawn(poolName, obj);
-        }
-    }
     
     void Start()
     {
@@ -69,7 +24,7 @@ public class CemeteryGeneratorPooled : MonoBehaviour
             for (int z = -renderDistance; z <= renderDistance; z++)
             {
                 Vector2Int coord = currentChunkCoord + new Vector2Int(x, z);
-                GenerateChunk(coord);
+                GenerateGroundChunk(coord);
             }
         }
 
@@ -101,14 +56,14 @@ public class CemeteryGeneratorPooled : MonoBehaviour
             for (int z = -renderDistance; z <= renderDistance; z++)
             {
                 Vector2Int coord = currentChunkCoord + new Vector2Int(x, z);
-                if (!activeChunks.ContainsKey(coord))
-                    GenerateChunk(coord);
+                if (!activeGroundChunks.ContainsKey(coord))
+                    GenerateGroundChunk(coord);
             }
         }
         
         // Despawn far chunks (using pooling!)
         List<Vector2Int> chunksToRemove = new List<Vector2Int>();
-        foreach (var chunk in activeChunks)
+        foreach (var chunk in activeGroundChunks)
         {
             if (Mathf.Abs(chunk.Key.x - currentChunkCoord.x) > renderDistance ||
                 Mathf.Abs(chunk.Key.y - currentChunkCoord.y) > renderDistance)
@@ -119,72 +74,31 @@ public class CemeteryGeneratorPooled : MonoBehaviour
             DespawnChunk(coord);
     }
     
-    void GenerateChunk(Vector2Int coord)
+    void GenerateGroundChunk(Vector2Int coord)
     {
+        // Debug.Log(coord);
         Random.InitState(seed + coord.x * 1000 + coord.y);
-        
-        ChunkData chunkData = new ChunkData();
-        activeChunks[coord] = chunkData;
         
         Vector3 chunkOrigin = new Vector3(coord.x * chunkSize, 0, coord.y * chunkSize);
         
+        Vector3 groundPosition = chunkOrigin + new Vector3(chunkSize / 2f, -0.05f, chunkSize / 2f);
         GameObject ground = PoolManager.Instance.Spawn(
-            PoolName.Grounds,
-            chunkOrigin + new Vector3(chunkSize / 2, -0.1f, chunkSize / 2),
-            Quaternion.identity
-        );
-
-        ground.transform.localScale = new Vector3(chunkSize / 10, 1, chunkSize / 10);
-        chunkData.grounds.Add(ground);
+            PoolName.Grounds, groundsParent, groundPosition, Quaternion.identity);
         
-        int gridSize = Mathf.FloorToInt(chunkSize / structureSpacing);
-        for (int x = 0; x < gridSize; x++)
-        {
-            for (int z = 0; z < gridSize; z++)
-            {
-                Vector3 localPosition = new Vector3(
-                    x * structureSpacing + Random.Range(-2f, 2f),
-                    0f,
-                    z * structureSpacing + Random.Range(-2f, 2f)
-                );
-                
-                Vector3 worldPosition = chunkOrigin + localPosition;
-                
-                // Skip path center
-                if (Mathf.Abs(localPosition.x - chunkSize / 2f) < pathWidth / 2f && 
-                    Mathf.Abs(localPosition.z - chunkSize / 2f) < pathWidth / 2f)
-                    continue;
-                
-                PoolName poolName = PoolName.None;
-                float roll = Random.value;
-                if (roll < NicheChance)
-                    poolName = PoolName.Niches;
-                else if (roll < NicheChance + NicheBlockChance)
-                    poolName = PoolName.NicheBlocks;
-                else if (roll < NicheChance + NicheBlockChance + TombChance)
-                    poolName = PoolName.Tombs;
-                else if (roll < NicheChance + NicheBlockChance + TombChance + MausoleumChance)
-                    poolName = PoolName.Mausoleums;
-
-                if (poolName != PoolName.None)
-                {
-                    GameObject structure = PoolManager.Instance.Spawn(poolName, worldPosition, Quaternion.identity);
-                    structure.transform.rotation = Quaternion.Euler(0, Random.Range(0, 4) * 90f, 0);
-                    chunkData.Add(poolName, structure);
-                }
-            }
-        }
+        //ground.transform.localScale = new Vector3(chunkSize / 10, 1, chunkSize / 10);
+        activeGroundChunks[coord] = ground.GetComponent<Ground>();
+        activeGroundChunks[coord].Initialize();
     }
     
     void DespawnChunk(Vector2Int coord)
     {
-        activeChunks[coord].Despawn();
-        activeChunks.Remove(coord);
+        activeGroundChunks[coord].Despawn();
+        activeGroundChunks.Remove(coord);
     }
 
     void OnDestroy()
     {
-        foreach (var coord in new List<Vector2Int>(activeChunks.Keys))
+        foreach (var coord in new List<Vector2Int>(activeGroundChunks.Keys))
             DespawnChunk(coord);
     }
 }

@@ -119,63 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &147664409
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 183854828643498293, guid: 026b069d3793b5548861294a69a4b6f7, type: 3}
-      propertyPath: m_Name
-      value: Niche Block
-      objectReference: {fileID: 0}
-    - target: {fileID: 4427667045339417728, guid: 026b069d3793b5548861294a69a4b6f7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.63
-      objectReference: {fileID: 0}
-    - target: {fileID: 4427667045339417728, guid: 026b069d3793b5548861294a69a4b6f7, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4427667045339417728, guid: 026b069d3793b5548861294a69a4b6f7, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 10.72
-      objectReference: {fileID: 0}
-    - target: {fileID: 4427667045339417728, guid: 026b069d3793b5548861294a69a4b6f7, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4427667045339417728, guid: 026b069d3793b5548861294a69a4b6f7, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4427667045339417728, guid: 026b069d3793b5548861294a69a4b6f7, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4427667045339417728, guid: 026b069d3793b5548861294a69a4b6f7, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4427667045339417728, guid: 026b069d3793b5548861294a69a4b6f7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4427667045339417728, guid: 026b069d3793b5548861294a69a4b6f7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4427667045339417728, guid: 026b069d3793b5548861294a69a4b6f7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 026b069d3793b5548861294a69a4b6f7, type: 3}
 --- !u!1 &302843368
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,6 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b740033092955e94fb9a96cb0406fd24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectPool
+  showDebugs: 0
   poolName: 1
   prefab: {fileID: 183854828643498293, guid: 026b069d3793b5548861294a69a4b6f7, type: 3}
   initialSize: 8
@@ -267,9 +211,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b740033092955e94fb9a96cb0406fd24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectPool
+  showDebugs: 0
   poolName: 0
   prefab: {fileID: 3222781588743984708, guid: d3565ba92ca346646ac589bc13fde862, type: 3}
-  initialSize: 96
+  initialSize: 48
 --- !u!1 &430046319
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,122 +259,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b740033092955e94fb9a96cb0406fd24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectPool
+  showDebugs: 0
   poolName: 3
   prefab: {fileID: 4318971406546548452, guid: 74011e1c71afc3844a9d89ce0171b924, type: 3}
   initialSize: 4
---- !u!1 &474247884
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 474247888}
-  - component: {fileID: 474247887}
-  - component: {fileID: 474247886}
-  - component: {fileID: 474247885}
-  m_Layer: 0
-  m_Name: Plane
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!64 &474247885
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 474247884}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &474247886
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 474247884}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_MaskInteraction: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &474247887
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 474247884}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &474247888
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 474247884}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 1, z: 10}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &485135516
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,6 +362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b740033092955e94fb9a96cb0406fd24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectPool
+  showDebugs: 0
   poolName: 2
   prefab: {fileID: 2133253432380220716, guid: d74bbd7eda2172b4f914dae70720a9ea, type: 3}
   initialSize: 24
@@ -543,7 +377,7 @@ GameObject:
   - component: {fileID: 822023959}
   - component: {fileID: 822023961}
   m_Layer: 0
-  m_Name: Level
+  m_Name: Level Generation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -571,16 +405,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 822023958}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4bbbfb99c62f714fa580454542f150d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CemeteryGeneratorPooled
   player: {fileID: 1218934358}
-  chunkSize: 50
-  renderDistance: 3
-  pathWidth: 10
-  structureSpacing: 15
+  groundsParent: {fileID: 822023959}
+  chunkSize: 100
+  renderDistance: 1
 --- !u!4 &1218934358 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3722392466640984468, guid: 186a56fed693ca54fb0a66474c351972, type: 3}
@@ -757,6 +590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b740033092955e94fb9a96cb0406fd24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectPool
+  showDebugs: 0
   poolName: 4
   prefab: {fileID: 4942565111564431819, guid: 518c013dc02685d449add73991f40b29, type: 3}
   initialSize: 4
@@ -825,5 +659,3 @@ SceneRoots:
   - {fileID: 8519053057252453853}
   - {fileID: 822023959}
   - {fileID: 485135518}
-  - {fileID: 474247888}
-  - {fileID: 147664409}
