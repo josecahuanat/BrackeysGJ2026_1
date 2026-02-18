@@ -24,10 +24,10 @@ public class PuzzleItem
 
 public enum PuzzleItemName
 {
-    Button = 0, Plate = 1,
+    Button = 0, Plate = 1,Door=2, ItemSocket=3, Key=4, Tomb=5
 }
 
 public enum PuzzleName
 {
-    None = 0, OrderedPlacedItems = 1,
+    None = 0, OrderedPlacedItems = 1, PlaceItemsDisorder = 2, PressPlates = 3, LightCandle=4
 }

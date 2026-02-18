@@ -8,7 +8,9 @@ public class CemeteryGeneratorPooled : MonoBehaviour
     [SerializeField] Transform groundsParent;
     [SerializeField] float chunkSize = 50f;
     [SerializeField] int renderDistance;
-    
+    [Header("Puzzle Zones")]
+    [SerializeField] private PuzzleZoneConfig[] availablePuzzleConfigs;
+    [SerializeField] [Range(0f,1f)] private float puzzleChunkProbability = 0.3f;
     Dictionary<Vector2Int, Ground> activeGroundChunks = new Dictionary<Vector2Int, Ground>();
     Vector2Int currentChunkCoord;
     int seed;
@@ -73,7 +75,7 @@ public class CemeteryGeneratorPooled : MonoBehaviour
         foreach (var coord in chunksToRemove)
             DespawnChunk(coord);
     }
-    
+   
     void GenerateGroundChunk(Vector2Int coord)
     {
         // Debug.Log(coord);
@@ -89,7 +91,6 @@ public class CemeteryGeneratorPooled : MonoBehaviour
         activeGroundChunks[coord] = ground.GetComponent<Ground>();
         activeGroundChunks[coord].Initialize();
     }
-    
     void DespawnChunk(Vector2Int coord)
     {
         activeGroundChunks[coord].Despawn();

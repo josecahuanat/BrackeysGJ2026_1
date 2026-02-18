@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3dd56708bbf79cd459ea4d30e8e9a45d, type: 3}
-  m_Name: Resources_PuzzleData
+  m_Name: Puzzle_PressPlates
   m_EditorClassIdentifier: Assembly-CSharp::PuzzleData
-  typeName: 1
+  typeName: 3
   difficulties:
   - items:
-    - name: 0
-      quantity: 10
-      spawnPositions: 20
     - name: 1
-      quantity: 2
-      spawnPositions: 4
+      quantity: 3
+      spawnPositions: 9
+    - name: 2
+      quantity: 1
+      spawnPositions: 5
   - items:
-    - name: 0
-      quantity: 5
-      spawnPositions: 20
     - name: 1
-      quantity: 2
-      spawnPositions: 4
+      quantity: 3
+      spawnPositions: 9
+    - name: 2
+      quantity: 1
+      spawnPositions: 5

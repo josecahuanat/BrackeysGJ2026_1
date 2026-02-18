@@ -10,7 +10,8 @@ public class MultiConditionPuzzle : MonoBehaviour
     [SerializeField] private List<CondicionBoton>        botones  = new();
     [SerializeField] private List<CondicionSocket>       sockets  = new();
     [SerializeField] private List<CondicionItemRecogido> items    = new();
-
+    [Header("Recompensas al completar")]
+    [SerializeField] private List<PuzzleReward> recompensas = new();
     [Header("¿Requieren cumplirse en orden?")]
     [SerializeField] private bool requiereOrden = false;
 
@@ -21,26 +22,51 @@ public class MultiConditionPuzzle : MonoBehaviour
     public UnityEvent OnTodasCumplidas;
     public UnityEvent OnPuzzleReseteado;
     public UnityEvent<int, int> OnProgresoActualizado; // (cumplidas, total)
-
     // ── Privados ───────────────────────────────────────────
     private List<PuzzleCondition> todasLasCondiciones = new();
     private bool puzzleCompleto = false;
 
     // ══════════════════════════════════════════════════════
+    
+    public bool Inicializado { get; private set; } = false;
+
+// Llamado por PuzzleZoneLinker en vez de Start
+    public void InicializarDesdeLinker(
+    List<CondicionPlaca>        _placas,
+    List<CondicionLever>        _levers,
+    List<CondicionBoton>        _botones,
+    List<CondicionSocket>       _sockets,
+    List<CondicionItemRecogido> _items)
+    {
+    placas   = _placas;
+    levers   = _levers;
+    botones  = _botones;
+    sockets  = _sockets;
+    items    = _items;
+    Inicializado = true;
+    // Ejecuta la misma lógica que Start()
+    InicializarCondiciones();
+    }
+
     void Start()
     {
-        // Recolectar todas las condiciones en una sola lista
-        todasLasCondiciones.AddRange(placas);
-        todasLasCondiciones.AddRange(levers);
-        todasLasCondiciones.AddRange(botones);
-        todasLasCondiciones.AddRange(sockets);
-        todasLasCondiciones.AddRange(items);
+    if (!Inicializado)      // Si nadie llamó InicializarDesdeLinker, funciona normal
+        InicializarCondiciones();
+    }
 
-        // Suscribir cada condición al callback de verificación
-        foreach (var cond in todasLasCondiciones)
-            cond.Inicializar(VerificarPuzzle);
+    void InicializarCondiciones()
+    {
+    todasLasCondiciones.Clear();
+    todasLasCondiciones.AddRange(placas);
+    todasLasCondiciones.AddRange(levers);
+    todasLasCondiciones.AddRange(botones);
+    todasLasCondiciones.AddRange(sockets);
+    todasLasCondiciones.AddRange(items);
 
-        ActualizarProgreso();
+    foreach (var cond in todasLasCondiciones)
+        cond.Inicializar(VerificarPuzzle);
+
+    ActualizarProgreso();
     }
 
     void VerificarPuzzle()
@@ -81,6 +107,7 @@ public class MultiConditionPuzzle : MonoBehaviour
         {
             puzzleCompleto = true;
             Debug.Log($"[MultiConditionPuzzle] ¡Puzzle '{name}' completado!");
+             SpawnRecompensas();
             OnTodasCumplidas?.Invoke();
         }
     }
@@ -91,6 +118,24 @@ public class MultiConditionPuzzle : MonoBehaviour
         foreach (var cond in todasLasCondiciones) if (cond.cumplida) c++;
         return c;
     }
+    void SpawnRecompensas()
+{
+    foreach (var recompensa in recompensas)
+    {
+        if (recompensa.prefab == null) continue;
+
+        Vector3 origen = recompensa.spawnPoint != null
+            ? recompensa.spawnPoint.position + recompensa.offset
+            : transform.position + recompensa.offset;
+
+        for (int i = 0; i < recompensa.cantidad; i++)
+        {
+            // Si hay más de uno, los separa en línea
+            Vector3 pos = origen + Vector3.right * (i * recompensa.separacion);
+            Instantiate(recompensa.prefab, pos, Quaternion.identity);
+        }
+    }
+}
 
     void ActualizarProgreso()
     {
@@ -107,4 +152,21 @@ public class MultiConditionPuzzle : MonoBehaviour
         ActualizarProgreso();
         OnPuzzleReseteado?.Invoke();
     }
+}
+[System.Serializable]
+public class PuzzleReward
+{
+    public GameObject prefab;
+    
+    [Tooltip("Dónde aparece. Si es null, aparece en la posición del puzzle")]
+    public Transform spawnPoint;
+    
+    [Min(1)]
+    public int cantidad = 1;
+    
+    [Tooltip("Offset respecto al spawnPoint")]
+    public Vector3 offset = Vector3.zero;
+    
+    [Tooltip("Separación entre cada objeto si cantidad > 1")]
+    public float separacion = 0.5f;
 }

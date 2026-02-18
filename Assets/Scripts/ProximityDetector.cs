@@ -18,6 +18,11 @@ public class ProximityDetector : MonoBehaviour
         IInteractable interactable = other.GetComponent<IInteractable>();
         if (interactable != null)
             playerInteraction?.OnNearbyEnter(interactable);
+        if (other.CompareTag("Flower"))
+        {
+            Destroy(other.gameObject);
+            return;
+        }
     }
 
     void OnTriggerExit(Collider other)
