@@ -36,7 +36,7 @@ public class PoolManager : MonoBehaviour
         }
         catch(Exception e)
         {
-            Debug.LogWarning(e.Message);
+            // Debug.LogWarning(e.Message);
         }
     }
 }

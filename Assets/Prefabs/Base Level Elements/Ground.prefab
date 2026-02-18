@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 42488967523900386}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 4, z: 0}
+  m_LocalPosition: {x: 3.6, y: 3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -46,57 +46,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NicheBlockGeneration
   genData:
     bigBlockZSize: 4
-    columns: 4
+    columns: 3
     rows: 10
-    nicheWidth: 1.5
-    nicheHeight: 1.5
-    nicheWidthSpacing: 0.4
-    nicheHeightSpacing: 0.4
+    nicheWidth: 2
+    nicheHeight: 2
+    nicheWidthSpacing: 0.25
+    nicheHeightSpacing: 0.25
     nicheZSize: 1
     nichePositions:
-    - {x: -8.55, y: -2.85, z: 0}
-    - {x: -8.55, y: -0.95, z: 0}
-    - {x: -8.55, y: 0.95, z: 0}
-    - {x: -8.55, y: 2.85, z: 0}
-    - {x: -6.65, y: -2.85, z: 0}
-    - {x: -6.65, y: -0.95, z: 0}
-    - {x: -6.65, y: 0.95, z: 0}
-    - {x: -6.65, y: 2.85, z: 0}
-    - {x: -4.75, y: -2.85, z: 0}
-    - {x: -4.75, y: -0.95, z: 0}
-    - {x: -4.75, y: 0.95, z: 0}
-    - {x: -4.75, y: 2.85, z: 0}
-    - {x: -2.85, y: -2.85, z: 0}
-    - {x: -2.85, y: -0.95, z: 0}
-    - {x: -2.85, y: 0.95, z: 0}
-    - {x: -2.85, y: 2.85, z: 0}
-    - {x: -0.95, y: -2.85, z: 0}
-    - {x: -0.95, y: -0.95, z: 0}
-    - {x: -0.95, y: 0.95, z: 0}
-    - {x: -0.95, y: 2.85, z: 0}
-    - {x: 0.95, y: -2.85, z: 0}
-    - {x: 0.95, y: -0.95, z: 0}
-    - {x: 0.95, y: 0.95, z: 0}
-    - {x: 0.95, y: 2.85, z: 0}
-    - {x: 2.85, y: -2.85, z: 0}
-    - {x: 2.85, y: -0.95, z: 0}
-    - {x: 2.85, y: 0.95, z: 0}
-    - {x: 2.85, y: 2.85, z: 0}
-    - {x: 4.75, y: -2.85, z: 0}
-    - {x: 4.75, y: -0.95, z: 0}
-    - {x: 4.75, y: 0.95, z: 0}
-    - {x: 4.75, y: 2.85, z: 0}
-    - {x: 6.65, y: -2.85, z: 0}
-    - {x: 6.65, y: -0.95, z: 0}
-    - {x: 6.65, y: 0.95, z: 0}
-    - {x: 6.65, y: 2.85, z: 0}
-    - {x: 8.55, y: -2.85, z: 0}
-    - {x: 8.55, y: -0.95, z: 0}
-    - {x: 8.55, y: 0.95, z: 0}
-    - {x: 8.55, y: 2.85, z: 0}
-    bigBlockWidth: 19.4
-    bigBlockHeight: 8
-    minNiches: 2
+    - {x: -10.125, y: -2.25, z: 0}
+    - {x: -10.125, y: 0, z: 0}
+    - {x: -10.125, y: 2.25, z: 0}
+    - {x: -7.875, y: -2.25, z: 0}
+    - {x: -7.875, y: 0, z: 0}
+    - {x: -7.875, y: 2.25, z: 0}
+    - {x: -5.625, y: -2.25, z: 0}
+    - {x: -5.625, y: 0, z: 0}
+    - {x: -5.625, y: 2.25, z: 0}
+    - {x: -3.375, y: -2.25, z: 0}
+    - {x: -3.375, y: 0, z: 0}
+    - {x: -3.375, y: 2.25, z: 0}
+    - {x: -1.125, y: -2.25, z: 0}
+    - {x: -1.125, y: 0, z: 0}
+    - {x: -1.125, y: 2.25, z: 0}
+    - {x: 1.125, y: -2.25, z: 0}
+    - {x: 1.125, y: 0, z: 0}
+    - {x: 1.125, y: 2.25, z: 0}
+    - {x: 3.375, y: -2.25, z: 0}
+    - {x: 3.375, y: 0, z: 0}
+    - {x: 3.375, y: 2.25, z: 0}
+    - {x: 5.625, y: -2.25, z: 0}
+    - {x: 5.625, y: 0, z: 0}
+    - {x: 5.625, y: 2.25, z: 0}
+    - {x: 7.875, y: -2.25, z: 0}
+    - {x: 7.875, y: 0, z: 0}
+    - {x: 7.875, y: 2.25, z: 0}
+    - {x: 10.125, y: -2.25, z: 0}
+    - {x: 10.125, y: 0, z: 0}
+    - {x: 10.125, y: 2.25, z: 0}
+    bigBlockWidth: 22.75
+    bigBlockHeight: 7
+    minNiches: 1
     maxNiches: 16
 --- !u!1 &111565672279788028
 GameObject:
@@ -126,8 +116,8 @@ Transform:
   m_GameObject: {fileID: 111565672279788028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.8, y: 4, z: 0}
-  m_LocalScale: {x: 4, y: 8, z: 4}
+  m_LocalPosition: {x: -9.8, y: 3.5, z: 0}
+  m_LocalScale: {x: 4, y: 7, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1997922108099878488}
@@ -235,7 +225,7 @@ Transform:
   m_GameObject: {fileID: 2080076651830474416}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.38268343, z: -0, w: 0.92387956}
-  m_LocalPosition: {x: -38, y: 1.5, z: -28}
+  m_LocalPosition: {x: -42, y: 1.5, z: -32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -308,7 +298,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 00c47d47bdf7f844f9693c5fc072d557, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -380,7 +370,7 @@ Transform:
   m_GameObject: {fileID: 2160830262809164868}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -9.799999, y: 4, z: 9.800001}
+  m_LocalPosition: {x: -9.799999, y: 3.5, z: 13.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -400,57 +390,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NicheBlockGeneration
   genData:
     bigBlockZSize: 4
-    columns: 4
+    columns: 3
     rows: 10
-    nicheWidth: 1.5
-    nicheHeight: 1.5
-    nicheWidthSpacing: 0.4
-    nicheHeightSpacing: 0.4
+    nicheWidth: 2
+    nicheHeight: 2
+    nicheWidthSpacing: 0.25
+    nicheHeightSpacing: 0.25
     nicheZSize: 1
     nichePositions:
-    - {x: -8.55, y: -2.85, z: 0}
-    - {x: -8.55, y: -0.95, z: 0}
-    - {x: -8.55, y: 0.95, z: 0}
-    - {x: -8.55, y: 2.85, z: 0}
-    - {x: -6.65, y: -2.85, z: 0}
-    - {x: -6.65, y: -0.95, z: 0}
-    - {x: -6.65, y: 0.95, z: 0}
-    - {x: -6.65, y: 2.85, z: 0}
-    - {x: -4.75, y: -2.85, z: 0}
-    - {x: -4.75, y: -0.95, z: 0}
-    - {x: -4.75, y: 0.95, z: 0}
-    - {x: -4.75, y: 2.85, z: 0}
-    - {x: -2.85, y: -2.85, z: 0}
-    - {x: -2.85, y: -0.95, z: 0}
-    - {x: -2.85, y: 0.95, z: 0}
-    - {x: -2.85, y: 2.85, z: 0}
-    - {x: -0.95, y: -2.85, z: 0}
-    - {x: -0.95, y: -0.95, z: 0}
-    - {x: -0.95, y: 0.95, z: 0}
-    - {x: -0.95, y: 2.85, z: 0}
-    - {x: 0.95, y: -2.85, z: 0}
-    - {x: 0.95, y: -0.95, z: 0}
-    - {x: 0.95, y: 0.95, z: 0}
-    - {x: 0.95, y: 2.85, z: 0}
-    - {x: 2.85, y: -2.85, z: 0}
-    - {x: 2.85, y: -0.95, z: 0}
-    - {x: 2.85, y: 0.95, z: 0}
-    - {x: 2.85, y: 2.85, z: 0}
-    - {x: 4.75, y: -2.85, z: 0}
-    - {x: 4.75, y: -0.95, z: 0}
-    - {x: 4.75, y: 0.95, z: 0}
-    - {x: 4.75, y: 2.85, z: 0}
-    - {x: 6.65, y: -2.85, z: 0}
-    - {x: 6.65, y: -0.95, z: 0}
-    - {x: 6.65, y: 0.95, z: 0}
-    - {x: 6.65, y: 2.85, z: 0}
-    - {x: 8.55, y: -2.85, z: 0}
-    - {x: 8.55, y: -0.95, z: 0}
-    - {x: 8.55, y: 0.95, z: 0}
-    - {x: 8.55, y: 2.85, z: 0}
-    bigBlockWidth: 19.4
-    bigBlockHeight: 8
-    minNiches: 2
+    - {x: -10.125, y: -2.25, z: 0}
+    - {x: -10.125, y: 0, z: 0}
+    - {x: -10.125, y: 2.25, z: 0}
+    - {x: -7.875, y: -2.25, z: 0}
+    - {x: -7.875, y: 0, z: 0}
+    - {x: -7.875, y: 2.25, z: 0}
+    - {x: -5.625, y: -2.25, z: 0}
+    - {x: -5.625, y: 0, z: 0}
+    - {x: -5.625, y: 2.25, z: 0}
+    - {x: -3.375, y: -2.25, z: 0}
+    - {x: -3.375, y: 0, z: 0}
+    - {x: -3.375, y: 2.25, z: 0}
+    - {x: -1.125, y: -2.25, z: 0}
+    - {x: -1.125, y: 0, z: 0}
+    - {x: -1.125, y: 2.25, z: 0}
+    - {x: 1.125, y: -2.25, z: 0}
+    - {x: 1.125, y: 0, z: 0}
+    - {x: 1.125, y: 2.25, z: 0}
+    - {x: 3.375, y: -2.25, z: 0}
+    - {x: 3.375, y: 0, z: 0}
+    - {x: 3.375, y: 2.25, z: 0}
+    - {x: 5.625, y: -2.25, z: 0}
+    - {x: 5.625, y: 0, z: 0}
+    - {x: 5.625, y: 2.25, z: 0}
+    - {x: 7.875, y: -2.25, z: 0}
+    - {x: 7.875, y: 0, z: 0}
+    - {x: 7.875, y: 2.25, z: 0}
+    - {x: 10.125, y: -2.25, z: 0}
+    - {x: 10.125, y: 0, z: 0}
+    - {x: 10.125, y: 2.25, z: 0}
+    bigBlockWidth: 22.75
+    bigBlockHeight: 7
+    minNiches: 1
     maxNiches: 16
 --- !u!1 &3037208829690480851
 GameObject:
@@ -477,7 +457,7 @@ Transform:
   m_GameObject: {fileID: 3037208829690480851}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.38268343, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: -38, y: 1.5, z: -28}
+  m_LocalPosition: {x: -42, y: 1.5, z: -32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -508,7 +488,7 @@ Transform:
   m_GameObject: {fileID: 3405811147776261123}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.38268343, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: -38, y: 1.5, z: -28}
+  m_LocalPosition: {x: -42, y: 1.5, z: -32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -539,7 +519,7 @@ Transform:
   m_GameObject: {fileID: 3969635899336740114}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -15.8, y: 0, z: -6}
+  m_LocalPosition: {x: -19.8, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -574,7 +554,7 @@ Transform:
   m_GameObject: {fileID: 3996049500723809825}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 6, y: 0, z: -15.799999}
+  m_LocalPosition: {x: 10, y: 0, z: -19.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -609,7 +589,7 @@ Transform:
   m_GameObject: {fileID: 4225543047004470975}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.8, y: 0, z: 6}
+  m_LocalPosition: {x: 19.8, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -644,7 +624,7 @@ Transform:
   m_GameObject: {fileID: 4268176774127983650}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -6, y: 0, z: 15.800001}
+  m_LocalPosition: {x: -10, y: 0, z: 19.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -680,7 +660,7 @@ Transform:
   m_GameObject: {fileID: 4360487571690873519}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -9.799999, y: 4, z: 9.800001}
+  m_LocalPosition: {x: -9.799999, y: 3.5, z: 13.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -700,57 +680,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NicheBlockGeneration
   genData:
     bigBlockZSize: 4
-    columns: 4
+    columns: 3
     rows: 10
-    nicheWidth: 1.5
-    nicheHeight: 1.5
-    nicheWidthSpacing: 0.4
-    nicheHeightSpacing: 0.4
+    nicheWidth: 2
+    nicheHeight: 2
+    nicheWidthSpacing: 0.25
+    nicheHeightSpacing: 0.25
     nicheZSize: 1
     nichePositions:
-    - {x: -8.55, y: -2.85, z: 0}
-    - {x: -8.55, y: -0.95, z: 0}
-    - {x: -8.55, y: 0.95, z: 0}
-    - {x: -8.55, y: 2.85, z: 0}
-    - {x: -6.65, y: -2.85, z: 0}
-    - {x: -6.65, y: -0.95, z: 0}
-    - {x: -6.65, y: 0.95, z: 0}
-    - {x: -6.65, y: 2.85, z: 0}
-    - {x: -4.75, y: -2.85, z: 0}
-    - {x: -4.75, y: -0.95, z: 0}
-    - {x: -4.75, y: 0.95, z: 0}
-    - {x: -4.75, y: 2.85, z: 0}
-    - {x: -2.85, y: -2.85, z: 0}
-    - {x: -2.85, y: -0.95, z: 0}
-    - {x: -2.85, y: 0.95, z: 0}
-    - {x: -2.85, y: 2.85, z: 0}
-    - {x: -0.95, y: -2.85, z: 0}
-    - {x: -0.95, y: -0.95, z: 0}
-    - {x: -0.95, y: 0.95, z: 0}
-    - {x: -0.95, y: 2.85, z: 0}
-    - {x: 0.95, y: -2.85, z: 0}
-    - {x: 0.95, y: -0.95, z: 0}
-    - {x: 0.95, y: 0.95, z: 0}
-    - {x: 0.95, y: 2.85, z: 0}
-    - {x: 2.85, y: -2.85, z: 0}
-    - {x: 2.85, y: -0.95, z: 0}
-    - {x: 2.85, y: 0.95, z: 0}
-    - {x: 2.85, y: 2.85, z: 0}
-    - {x: 4.75, y: -2.85, z: 0}
-    - {x: 4.75, y: -0.95, z: 0}
-    - {x: 4.75, y: 0.95, z: 0}
-    - {x: 4.75, y: 2.85, z: 0}
-    - {x: 6.65, y: -2.85, z: 0}
-    - {x: 6.65, y: -0.95, z: 0}
-    - {x: 6.65, y: 0.95, z: 0}
-    - {x: 6.65, y: 2.85, z: 0}
-    - {x: 8.55, y: -2.85, z: 0}
-    - {x: 8.55, y: -0.95, z: 0}
-    - {x: 8.55, y: 0.95, z: 0}
-    - {x: 8.55, y: 2.85, z: 0}
-    bigBlockWidth: 19.4
-    bigBlockHeight: 8
-    minNiches: 2
+    - {x: -10.125, y: -2.25, z: 0}
+    - {x: -10.125, y: 0, z: 0}
+    - {x: -10.125, y: 2.25, z: 0}
+    - {x: -7.875, y: -2.25, z: 0}
+    - {x: -7.875, y: 0, z: 0}
+    - {x: -7.875, y: 2.25, z: 0}
+    - {x: -5.625, y: -2.25, z: 0}
+    - {x: -5.625, y: 0, z: 0}
+    - {x: -5.625, y: 2.25, z: 0}
+    - {x: -3.375, y: -2.25, z: 0}
+    - {x: -3.375, y: 0, z: 0}
+    - {x: -3.375, y: 2.25, z: 0}
+    - {x: -1.125, y: -2.25, z: 0}
+    - {x: -1.125, y: 0, z: 0}
+    - {x: -1.125, y: 2.25, z: 0}
+    - {x: 1.125, y: -2.25, z: 0}
+    - {x: 1.125, y: 0, z: 0}
+    - {x: 1.125, y: 2.25, z: 0}
+    - {x: 3.375, y: -2.25, z: 0}
+    - {x: 3.375, y: 0, z: 0}
+    - {x: 3.375, y: 2.25, z: 0}
+    - {x: 5.625, y: -2.25, z: 0}
+    - {x: 5.625, y: 0, z: 0}
+    - {x: 5.625, y: 2.25, z: 0}
+    - {x: 7.875, y: -2.25, z: 0}
+    - {x: 7.875, y: 0, z: 0}
+    - {x: 7.875, y: 2.25, z: 0}
+    - {x: 10.125, y: -2.25, z: 0}
+    - {x: 10.125, y: 0, z: 0}
+    - {x: 10.125, y: 2.25, z: 0}
+    bigBlockWidth: 22.75
+    bigBlockHeight: 7
+    minNiches: 1
     maxNiches: 16
 --- !u!1 &4536927940616799838
 GameObject:
@@ -778,7 +748,7 @@ Transform:
   m_GameObject: {fileID: 4536927940616799838}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 4, z: 0}
+  m_LocalPosition: {x: 3.6, y: 3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -798,57 +768,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NicheBlockGeneration
   genData:
     bigBlockZSize: 4
-    columns: 4
+    columns: 3
     rows: 10
-    nicheWidth: 1.5
-    nicheHeight: 1.5
-    nicheWidthSpacing: 0.4
-    nicheHeightSpacing: 0.4
+    nicheWidth: 2
+    nicheHeight: 2
+    nicheWidthSpacing: 0.25
+    nicheHeightSpacing: 0.25
     nicheZSize: 1
     nichePositions:
-    - {x: -8.55, y: -2.85, z: 0}
-    - {x: -8.55, y: -0.95, z: 0}
-    - {x: -8.55, y: 0.95, z: 0}
-    - {x: -8.55, y: 2.85, z: 0}
-    - {x: -6.65, y: -2.85, z: 0}
-    - {x: -6.65, y: -0.95, z: 0}
-    - {x: -6.65, y: 0.95, z: 0}
-    - {x: -6.65, y: 2.85, z: 0}
-    - {x: -4.75, y: -2.85, z: 0}
-    - {x: -4.75, y: -0.95, z: 0}
-    - {x: -4.75, y: 0.95, z: 0}
-    - {x: -4.75, y: 2.85, z: 0}
-    - {x: -2.85, y: -2.85, z: 0}
-    - {x: -2.85, y: -0.95, z: 0}
-    - {x: -2.85, y: 0.95, z: 0}
-    - {x: -2.85, y: 2.85, z: 0}
-    - {x: -0.95, y: -2.85, z: 0}
-    - {x: -0.95, y: -0.95, z: 0}
-    - {x: -0.95, y: 0.95, z: 0}
-    - {x: -0.95, y: 2.85, z: 0}
-    - {x: 0.95, y: -2.85, z: 0}
-    - {x: 0.95, y: -0.95, z: 0}
-    - {x: 0.95, y: 0.95, z: 0}
-    - {x: 0.95, y: 2.85, z: 0}
-    - {x: 2.85, y: -2.85, z: 0}
-    - {x: 2.85, y: -0.95, z: 0}
-    - {x: 2.85, y: 0.95, z: 0}
-    - {x: 2.85, y: 2.85, z: 0}
-    - {x: 4.75, y: -2.85, z: 0}
-    - {x: 4.75, y: -0.95, z: 0}
-    - {x: 4.75, y: 0.95, z: 0}
-    - {x: 4.75, y: 2.85, z: 0}
-    - {x: 6.65, y: -2.85, z: 0}
-    - {x: 6.65, y: -0.95, z: 0}
-    - {x: 6.65, y: 0.95, z: 0}
-    - {x: 6.65, y: 2.85, z: 0}
-    - {x: 8.55, y: -2.85, z: 0}
-    - {x: 8.55, y: -0.95, z: 0}
-    - {x: 8.55, y: 0.95, z: 0}
-    - {x: 8.55, y: 2.85, z: 0}
-    bigBlockWidth: 19.4
-    bigBlockHeight: 8
-    minNiches: 2
+    - {x: -10.125, y: -2.25, z: 0}
+    - {x: -10.125, y: 0, z: 0}
+    - {x: -10.125, y: 2.25, z: 0}
+    - {x: -7.875, y: -2.25, z: 0}
+    - {x: -7.875, y: 0, z: 0}
+    - {x: -7.875, y: 2.25, z: 0}
+    - {x: -5.625, y: -2.25, z: 0}
+    - {x: -5.625, y: 0, z: 0}
+    - {x: -5.625, y: 2.25, z: 0}
+    - {x: -3.375, y: -2.25, z: 0}
+    - {x: -3.375, y: 0, z: 0}
+    - {x: -3.375, y: 2.25, z: 0}
+    - {x: -1.125, y: -2.25, z: 0}
+    - {x: -1.125, y: 0, z: 0}
+    - {x: -1.125, y: 2.25, z: 0}
+    - {x: 1.125, y: -2.25, z: 0}
+    - {x: 1.125, y: 0, z: 0}
+    - {x: 1.125, y: 2.25, z: 0}
+    - {x: 3.375, y: -2.25, z: 0}
+    - {x: 3.375, y: 0, z: 0}
+    - {x: 3.375, y: 2.25, z: 0}
+    - {x: 5.625, y: -2.25, z: 0}
+    - {x: 5.625, y: 0, z: 0}
+    - {x: 5.625, y: 2.25, z: 0}
+    - {x: 7.875, y: -2.25, z: 0}
+    - {x: 7.875, y: 0, z: 0}
+    - {x: 7.875, y: 2.25, z: 0}
+    - {x: 10.125, y: -2.25, z: 0}
+    - {x: 10.125, y: 0, z: 0}
+    - {x: 10.125, y: 2.25, z: 0}
+    bigBlockWidth: 22.75
+    bigBlockHeight: 7
+    minNiches: 1
     maxNiches: 16
 --- !u!1 &4942565111564431819
 GameObject:
@@ -943,8 +903,8 @@ Transform:
   m_GameObject: {fileID: 5054866638713772518}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.8, y: 4, z: 0}
-  m_LocalScale: {x: 4, y: 8, z: 4}
+  m_LocalPosition: {x: -9.8, y: 3.5, z: 0}
+  m_LocalScale: {x: 4, y: 7, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6411564482449294354}
@@ -1053,7 +1013,7 @@ Transform:
   m_GameObject: {fileID: 5993524032696451865}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -9.799999, y: 4, z: 9.800001}
+  m_LocalPosition: {x: -9.799999, y: 3.5, z: 13.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1073,57 +1033,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NicheBlockGeneration
   genData:
     bigBlockZSize: 4
-    columns: 4
+    columns: 3
     rows: 10
-    nicheWidth: 1.5
-    nicheHeight: 1.5
-    nicheWidthSpacing: 0.4
-    nicheHeightSpacing: 0.4
+    nicheWidth: 2
+    nicheHeight: 2
+    nicheWidthSpacing: 0.25
+    nicheHeightSpacing: 0.25
     nicheZSize: 1
     nichePositions:
-    - {x: -8.55, y: -2.85, z: 0}
-    - {x: -8.55, y: -0.95, z: 0}
-    - {x: -8.55, y: 0.95, z: 0}
-    - {x: -8.55, y: 2.85, z: 0}
-    - {x: -6.65, y: -2.85, z: 0}
-    - {x: -6.65, y: -0.95, z: 0}
-    - {x: -6.65, y: 0.95, z: 0}
-    - {x: -6.65, y: 2.85, z: 0}
-    - {x: -4.75, y: -2.85, z: 0}
-    - {x: -4.75, y: -0.95, z: 0}
-    - {x: -4.75, y: 0.95, z: 0}
-    - {x: -4.75, y: 2.85, z: 0}
-    - {x: -2.85, y: -2.85, z: 0}
-    - {x: -2.85, y: -0.95, z: 0}
-    - {x: -2.85, y: 0.95, z: 0}
-    - {x: -2.85, y: 2.85, z: 0}
-    - {x: -0.95, y: -2.85, z: 0}
-    - {x: -0.95, y: -0.95, z: 0}
-    - {x: -0.95, y: 0.95, z: 0}
-    - {x: -0.95, y: 2.85, z: 0}
-    - {x: 0.95, y: -2.85, z: 0}
-    - {x: 0.95, y: -0.95, z: 0}
-    - {x: 0.95, y: 0.95, z: 0}
-    - {x: 0.95, y: 2.85, z: 0}
-    - {x: 2.85, y: -2.85, z: 0}
-    - {x: 2.85, y: -0.95, z: 0}
-    - {x: 2.85, y: 0.95, z: 0}
-    - {x: 2.85, y: 2.85, z: 0}
-    - {x: 4.75, y: -2.85, z: 0}
-    - {x: 4.75, y: -0.95, z: 0}
-    - {x: 4.75, y: 0.95, z: 0}
-    - {x: 4.75, y: 2.85, z: 0}
-    - {x: 6.65, y: -2.85, z: 0}
-    - {x: 6.65, y: -0.95, z: 0}
-    - {x: 6.65, y: 0.95, z: 0}
-    - {x: 6.65, y: 2.85, z: 0}
-    - {x: 8.55, y: -2.85, z: 0}
-    - {x: 8.55, y: -0.95, z: 0}
-    - {x: 8.55, y: 0.95, z: 0}
-    - {x: 8.55, y: 2.85, z: 0}
-    bigBlockWidth: 19.4
-    bigBlockHeight: 8
-    minNiches: 2
+    - {x: -10.125, y: -2.25, z: 0}
+    - {x: -10.125, y: 0, z: 0}
+    - {x: -10.125, y: 2.25, z: 0}
+    - {x: -7.875, y: -2.25, z: 0}
+    - {x: -7.875, y: 0, z: 0}
+    - {x: -7.875, y: 2.25, z: 0}
+    - {x: -5.625, y: -2.25, z: 0}
+    - {x: -5.625, y: 0, z: 0}
+    - {x: -5.625, y: 2.25, z: 0}
+    - {x: -3.375, y: -2.25, z: 0}
+    - {x: -3.375, y: 0, z: 0}
+    - {x: -3.375, y: 2.25, z: 0}
+    - {x: -1.125, y: -2.25, z: 0}
+    - {x: -1.125, y: 0, z: 0}
+    - {x: -1.125, y: 2.25, z: 0}
+    - {x: 1.125, y: -2.25, z: 0}
+    - {x: 1.125, y: 0, z: 0}
+    - {x: 1.125, y: 2.25, z: 0}
+    - {x: 3.375, y: -2.25, z: 0}
+    - {x: 3.375, y: 0, z: 0}
+    - {x: 3.375, y: 2.25, z: 0}
+    - {x: 5.625, y: -2.25, z: 0}
+    - {x: 5.625, y: 0, z: 0}
+    - {x: 5.625, y: 2.25, z: 0}
+    - {x: 7.875, y: -2.25, z: 0}
+    - {x: 7.875, y: 0, z: 0}
+    - {x: 7.875, y: 2.25, z: 0}
+    - {x: 10.125, y: -2.25, z: 0}
+    - {x: 10.125, y: 0, z: 0}
+    - {x: 10.125, y: 2.25, z: 0}
+    bigBlockWidth: 22.75
+    bigBlockHeight: 7
+    minNiches: 1
     maxNiches: 16
 --- !u!1 &6202072701928851622
 GameObject:
@@ -1153,8 +1103,8 @@ Transform:
   m_GameObject: {fileID: 6202072701928851622}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.8, y: 4, z: 0}
-  m_LocalScale: {x: 4, y: 8, z: 4}
+  m_LocalPosition: {x: -9.8, y: 3.5, z: 0}
+  m_LocalScale: {x: 4, y: 7, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7864792464781593452}
@@ -1263,7 +1213,7 @@ Transform:
   m_GameObject: {fileID: 6220311143802622875}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 4, z: 0}
+  m_LocalPosition: {x: 3.6, y: 3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1283,57 +1233,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NicheBlockGeneration
   genData:
     bigBlockZSize: 4
-    columns: 4
+    columns: 3
     rows: 10
-    nicheWidth: 1.5
-    nicheHeight: 1.5
-    nicheWidthSpacing: 0.4
-    nicheHeightSpacing: 0.4
+    nicheWidth: 2
+    nicheHeight: 2
+    nicheWidthSpacing: 0.25
+    nicheHeightSpacing: 0.25
     nicheZSize: 1
     nichePositions:
-    - {x: -8.55, y: -2.85, z: 0}
-    - {x: -8.55, y: -0.95, z: 0}
-    - {x: -8.55, y: 0.95, z: 0}
-    - {x: -8.55, y: 2.85, z: 0}
-    - {x: -6.65, y: -2.85, z: 0}
-    - {x: -6.65, y: -0.95, z: 0}
-    - {x: -6.65, y: 0.95, z: 0}
-    - {x: -6.65, y: 2.85, z: 0}
-    - {x: -4.75, y: -2.85, z: 0}
-    - {x: -4.75, y: -0.95, z: 0}
-    - {x: -4.75, y: 0.95, z: 0}
-    - {x: -4.75, y: 2.85, z: 0}
-    - {x: -2.85, y: -2.85, z: 0}
-    - {x: -2.85, y: -0.95, z: 0}
-    - {x: -2.85, y: 0.95, z: 0}
-    - {x: -2.85, y: 2.85, z: 0}
-    - {x: -0.95, y: -2.85, z: 0}
-    - {x: -0.95, y: -0.95, z: 0}
-    - {x: -0.95, y: 0.95, z: 0}
-    - {x: -0.95, y: 2.85, z: 0}
-    - {x: 0.95, y: -2.85, z: 0}
-    - {x: 0.95, y: -0.95, z: 0}
-    - {x: 0.95, y: 0.95, z: 0}
-    - {x: 0.95, y: 2.85, z: 0}
-    - {x: 2.85, y: -2.85, z: 0}
-    - {x: 2.85, y: -0.95, z: 0}
-    - {x: 2.85, y: 0.95, z: 0}
-    - {x: 2.85, y: 2.85, z: 0}
-    - {x: 4.75, y: -2.85, z: 0}
-    - {x: 4.75, y: -0.95, z: 0}
-    - {x: 4.75, y: 0.95, z: 0}
-    - {x: 4.75, y: 2.85, z: 0}
-    - {x: 6.65, y: -2.85, z: 0}
-    - {x: 6.65, y: -0.95, z: 0}
-    - {x: 6.65, y: 0.95, z: 0}
-    - {x: 6.65, y: 2.85, z: 0}
-    - {x: 8.55, y: -2.85, z: 0}
-    - {x: 8.55, y: -0.95, z: 0}
-    - {x: 8.55, y: 0.95, z: 0}
-    - {x: 8.55, y: 2.85, z: 0}
-    bigBlockWidth: 19.4
-    bigBlockHeight: 8
-    minNiches: 2
+    - {x: -10.125, y: -2.25, z: 0}
+    - {x: -10.125, y: 0, z: 0}
+    - {x: -10.125, y: 2.25, z: 0}
+    - {x: -7.875, y: -2.25, z: 0}
+    - {x: -7.875, y: 0, z: 0}
+    - {x: -7.875, y: 2.25, z: 0}
+    - {x: -5.625, y: -2.25, z: 0}
+    - {x: -5.625, y: 0, z: 0}
+    - {x: -5.625, y: 2.25, z: 0}
+    - {x: -3.375, y: -2.25, z: 0}
+    - {x: -3.375, y: 0, z: 0}
+    - {x: -3.375, y: 2.25, z: 0}
+    - {x: -1.125, y: -2.25, z: 0}
+    - {x: -1.125, y: 0, z: 0}
+    - {x: -1.125, y: 2.25, z: 0}
+    - {x: 1.125, y: -2.25, z: 0}
+    - {x: 1.125, y: 0, z: 0}
+    - {x: 1.125, y: 2.25, z: 0}
+    - {x: 3.375, y: -2.25, z: 0}
+    - {x: 3.375, y: 0, z: 0}
+    - {x: 3.375, y: 2.25, z: 0}
+    - {x: 5.625, y: -2.25, z: 0}
+    - {x: 5.625, y: 0, z: 0}
+    - {x: 5.625, y: 2.25, z: 0}
+    - {x: 7.875, y: -2.25, z: 0}
+    - {x: 7.875, y: 0, z: 0}
+    - {x: 7.875, y: 2.25, z: 0}
+    - {x: 10.125, y: -2.25, z: 0}
+    - {x: 10.125, y: 0, z: 0}
+    - {x: 10.125, y: 2.25, z: 0}
+    bigBlockWidth: 22.75
+    bigBlockHeight: 7
+    minNiches: 1
     maxNiches: 16
 --- !u!1 &7021999225205620825
 GameObject:
@@ -1360,7 +1300,7 @@ Transform:
   m_GameObject: {fileID: 7021999225205620825}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.92387956, z: -0, w: -0.38268343}
-  m_LocalPosition: {x: -38, y: 1.5, z: -28}
+  m_LocalPosition: {x: -42, y: 1.5, z: -32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1429,8 +1369,8 @@ Transform:
   m_GameObject: {fileID: 7972411259678805472}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.8, y: 4, z: 0}
-  m_LocalScale: {x: 4, y: 8, z: 4}
+  m_LocalPosition: {x: -9.8, y: 3.5, z: 0}
+  m_LocalScale: {x: 4, y: 7, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5942064713846496853}
@@ -1539,7 +1479,7 @@ Transform:
   m_GameObject: {fileID: 8545182833781760602}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 4, z: 0}
+  m_LocalPosition: {x: 3.6, y: 3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1559,57 +1499,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NicheBlockGeneration
   genData:
     bigBlockZSize: 4
-    columns: 4
+    columns: 3
     rows: 10
-    nicheWidth: 1.5
-    nicheHeight: 1.5
-    nicheWidthSpacing: 0.4
-    nicheHeightSpacing: 0.4
+    nicheWidth: 2
+    nicheHeight: 2
+    nicheWidthSpacing: 0.25
+    nicheHeightSpacing: 0.25
     nicheZSize: 1
     nichePositions:
-    - {x: -8.55, y: -2.85, z: 0}
-    - {x: -8.55, y: -0.95, z: 0}
-    - {x: -8.55, y: 0.95, z: 0}
-    - {x: -8.55, y: 2.85, z: 0}
-    - {x: -6.65, y: -2.85, z: 0}
-    - {x: -6.65, y: -0.95, z: 0}
-    - {x: -6.65, y: 0.95, z: 0}
-    - {x: -6.65, y: 2.85, z: 0}
-    - {x: -4.75, y: -2.85, z: 0}
-    - {x: -4.75, y: -0.95, z: 0}
-    - {x: -4.75, y: 0.95, z: 0}
-    - {x: -4.75, y: 2.85, z: 0}
-    - {x: -2.85, y: -2.85, z: 0}
-    - {x: -2.85, y: -0.95, z: 0}
-    - {x: -2.85, y: 0.95, z: 0}
-    - {x: -2.85, y: 2.85, z: 0}
-    - {x: -0.95, y: -2.85, z: 0}
-    - {x: -0.95, y: -0.95, z: 0}
-    - {x: -0.95, y: 0.95, z: 0}
-    - {x: -0.95, y: 2.85, z: 0}
-    - {x: 0.95, y: -2.85, z: 0}
-    - {x: 0.95, y: -0.95, z: 0}
-    - {x: 0.95, y: 0.95, z: 0}
-    - {x: 0.95, y: 2.85, z: 0}
-    - {x: 2.85, y: -2.85, z: 0}
-    - {x: 2.85, y: -0.95, z: 0}
-    - {x: 2.85, y: 0.95, z: 0}
-    - {x: 2.85, y: 2.85, z: 0}
-    - {x: 4.75, y: -2.85, z: 0}
-    - {x: 4.75, y: -0.95, z: 0}
-    - {x: 4.75, y: 0.95, z: 0}
-    - {x: 4.75, y: 2.85, z: 0}
-    - {x: 6.65, y: -2.85, z: 0}
-    - {x: 6.65, y: -0.95, z: 0}
-    - {x: 6.65, y: 0.95, z: 0}
-    - {x: 6.65, y: 2.85, z: 0}
-    - {x: 8.55, y: -2.85, z: 0}
-    - {x: 8.55, y: -0.95, z: 0}
-    - {x: 8.55, y: 0.95, z: 0}
-    - {x: 8.55, y: 2.85, z: 0}
-    bigBlockWidth: 19.4
-    bigBlockHeight: 8
-    minNiches: 2
+    - {x: -10.125, y: -2.25, z: 0}
+    - {x: -10.125, y: 0, z: 0}
+    - {x: -10.125, y: 2.25, z: 0}
+    - {x: -7.875, y: -2.25, z: 0}
+    - {x: -7.875, y: 0, z: 0}
+    - {x: -7.875, y: 2.25, z: 0}
+    - {x: -5.625, y: -2.25, z: 0}
+    - {x: -5.625, y: 0, z: 0}
+    - {x: -5.625, y: 2.25, z: 0}
+    - {x: -3.375, y: -2.25, z: 0}
+    - {x: -3.375, y: 0, z: 0}
+    - {x: -3.375, y: 2.25, z: 0}
+    - {x: -1.125, y: -2.25, z: 0}
+    - {x: -1.125, y: 0, z: 0}
+    - {x: -1.125, y: 2.25, z: 0}
+    - {x: 1.125, y: -2.25, z: 0}
+    - {x: 1.125, y: 0, z: 0}
+    - {x: 1.125, y: 2.25, z: 0}
+    - {x: 3.375, y: -2.25, z: 0}
+    - {x: 3.375, y: 0, z: 0}
+    - {x: 3.375, y: 2.25, z: 0}
+    - {x: 5.625, y: -2.25, z: 0}
+    - {x: 5.625, y: 0, z: 0}
+    - {x: 5.625, y: 2.25, z: 0}
+    - {x: 7.875, y: -2.25, z: 0}
+    - {x: 7.875, y: 0, z: 0}
+    - {x: 7.875, y: 2.25, z: 0}
+    - {x: 10.125, y: -2.25, z: 0}
+    - {x: 10.125, y: 0, z: 0}
+    - {x: 10.125, y: 2.25, z: 0}
+    bigBlockWidth: 22.75
+    bigBlockHeight: 7
+    minNiches: 1
     maxNiches: 16
 --- !u!1 &8558473116786216962
 GameObject:
@@ -1637,7 +1567,7 @@ Transform:
   m_GameObject: {fileID: 8558473116786216962}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -9.799999, y: 4, z: 9.800001}
+  m_LocalPosition: {x: -9.799999, y: 3.5, z: 13.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1657,55 +1587,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NicheBlockGeneration
   genData:
     bigBlockZSize: 4
-    columns: 4
+    columns: 3
     rows: 10
-    nicheWidth: 1.5
-    nicheHeight: 1.5
-    nicheWidthSpacing: 0.4
-    nicheHeightSpacing: 0.4
+    nicheWidth: 2
+    nicheHeight: 2
+    nicheWidthSpacing: 0.25
+    nicheHeightSpacing: 0.25
     nicheZSize: 1
     nichePositions:
-    - {x: -8.55, y: -2.85, z: 0}
-    - {x: -8.55, y: -0.95, z: 0}
-    - {x: -8.55, y: 0.95, z: 0}
-    - {x: -8.55, y: 2.85, z: 0}
-    - {x: -6.65, y: -2.85, z: 0}
-    - {x: -6.65, y: -0.95, z: 0}
-    - {x: -6.65, y: 0.95, z: 0}
-    - {x: -6.65, y: 2.85, z: 0}
-    - {x: -4.75, y: -2.85, z: 0}
-    - {x: -4.75, y: -0.95, z: 0}
-    - {x: -4.75, y: 0.95, z: 0}
-    - {x: -4.75, y: 2.85, z: 0}
-    - {x: -2.85, y: -2.85, z: 0}
-    - {x: -2.85, y: -0.95, z: 0}
-    - {x: -2.85, y: 0.95, z: 0}
-    - {x: -2.85, y: 2.85, z: 0}
-    - {x: -0.95, y: -2.85, z: 0}
-    - {x: -0.95, y: -0.95, z: 0}
-    - {x: -0.95, y: 0.95, z: 0}
-    - {x: -0.95, y: 2.85, z: 0}
-    - {x: 0.95, y: -2.85, z: 0}
-    - {x: 0.95, y: -0.95, z: 0}
-    - {x: 0.95, y: 0.95, z: 0}
-    - {x: 0.95, y: 2.85, z: 0}
-    - {x: 2.85, y: -2.85, z: 0}
-    - {x: 2.85, y: -0.95, z: 0}
-    - {x: 2.85, y: 0.95, z: 0}
-    - {x: 2.85, y: 2.85, z: 0}
-    - {x: 4.75, y: -2.85, z: 0}
-    - {x: 4.75, y: -0.95, z: 0}
-    - {x: 4.75, y: 0.95, z: 0}
-    - {x: 4.75, y: 2.85, z: 0}
-    - {x: 6.65, y: -2.85, z: 0}
-    - {x: 6.65, y: -0.95, z: 0}
-    - {x: 6.65, y: 0.95, z: 0}
-    - {x: 6.65, y: 2.85, z: 0}
-    - {x: 8.55, y: -2.85, z: 0}
-    - {x: 8.55, y: -0.95, z: 0}
-    - {x: 8.55, y: 0.95, z: 0}
-    - {x: 8.55, y: 2.85, z: 0}
-    bigBlockWidth: 19.4
-    bigBlockHeight: 8
-    minNiches: 2
+    - {x: -10.125, y: -2.25, z: 0}
+    - {x: -10.125, y: 0, z: 0}
+    - {x: -10.125, y: 2.25, z: 0}
+    - {x: -7.875, y: -2.25, z: 0}
+    - {x: -7.875, y: 0, z: 0}
+    - {x: -7.875, y: 2.25, z: 0}
+    - {x: -5.625, y: -2.25, z: 0}
+    - {x: -5.625, y: 0, z: 0}
+    - {x: -5.625, y: 2.25, z: 0}
+    - {x: -3.375, y: -2.25, z: 0}
+    - {x: -3.375, y: 0, z: 0}
+    - {x: -3.375, y: 2.25, z: 0}
+    - {x: -1.125, y: -2.25, z: 0}
+    - {x: -1.125, y: 0, z: 0}
+    - {x: -1.125, y: 2.25, z: 0}
+    - {x: 1.125, y: -2.25, z: 0}
+    - {x: 1.125, y: 0, z: 0}
+    - {x: 1.125, y: 2.25, z: 0}
+    - {x: 3.375, y: -2.25, z: 0}
+    - {x: 3.375, y: 0, z: 0}
+    - {x: 3.375, y: 2.25, z: 0}
+    - {x: 5.625, y: -2.25, z: 0}
+    - {x: 5.625, y: 0, z: 0}
+    - {x: 5.625, y: 2.25, z: 0}
+    - {x: 7.875, y: -2.25, z: 0}
+    - {x: 7.875, y: 0, z: 0}
+    - {x: 7.875, y: 2.25, z: 0}
+    - {x: 10.125, y: -2.25, z: 0}
+    - {x: 10.125, y: 0, z: 0}
+    - {x: 10.125, y: 2.25, z: 0}
+    bigBlockWidth: 22.75
+    bigBlockHeight: 7
+    minNiches: 1
     maxNiches: 16

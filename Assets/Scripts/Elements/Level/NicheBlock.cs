@@ -28,6 +28,7 @@ public class NicheBlock : MonoBehaviour
         {
             int randomNichePosition = Random.Range(0, nichePositionsList.Count);
             niches[i] = PoolManager.Instance.Spawn(PoolName.Niches, side, nichePositionsList[randomNichePosition], Quaternion.identity);
+            niches[i].transform.localScale = new Vector3(genData.nicheWidth, genData.nicheHeight, genData.nicheZSize);
             nichePositionsList.RemoveAt(randomNichePosition);
         }
     }
