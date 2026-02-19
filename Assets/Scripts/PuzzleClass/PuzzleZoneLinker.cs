@@ -1,7 +1,5 @@
 using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine.Events;
-using System.Linq;
 
 // Configuración de qué IDs de llave corresponden a qué socket/puerta,
 // definida directamente en el prefab desde el Inspector.
@@ -19,23 +17,23 @@ public class PuzzleZoneLinker : MonoBehaviour
     
     [Header("Condiciones a cablear automáticamente")]
     [Tooltip("Deja vacío para auto-descubrir todos los hijos")]
-    [SerializeField] private List<Key> keys;
-    [SerializeField] private List<PressurePlate> pressurePlates;
-    [SerializeField] private List<Lever> levers;
-    [SerializeField] private List<SocketKeyBinding> socketBindings;
+    [SerializeField] List<Key> keys;
+    [SerializeField] List<PressurePlate> pressurePlates;
+    [SerializeField] List<Lever> levers;
+    [SerializeField] List<SocketKeyBinding> socketBindings;
 
     [Header("Opciones")]
-    [SerializeField] private bool autoDiscoverChildren = true;
-    [SerializeField] private bool requiereOrden = false;
+    // [SerializeField] private bool autoDiscoverChildren = true;
+    [SerializeField] bool requiereOrden = false;
 
 
-    void Awake()
-    {
-        if (autoDiscoverChildren)
-            DiscoverChildren();
+    // void Awake()
+    // {
+    //     if (autoDiscoverChildren)
+    //         DiscoverChildren();
 
-        WireConditions();
-    }
+    //     WireConditions();
+    // }
 
     void DiscoverChildren()
     {        
@@ -47,9 +45,7 @@ public class PuzzleZoneLinker : MonoBehaviour
             pressurePlates.AddRange(GetComponentsInChildren<PressurePlate>());
 
         if (levers.Count == 0)
-        {
             levers.AddRange(GetComponentsInChildren<Lever>());
-        }
 
         // Sockets: los descubre y crea bindings vacíos si no están configurados
         if (socketBindings.Count == 0)
@@ -147,7 +143,7 @@ public class PuzzleZoneLinker : MonoBehaviour
         }
     }
 
-    public void Spawn()
+    public void Spawn(List<Transform> itemPositions)
     {
         keys = new List<Key>();
         pressurePlates = new List<PressurePlate>();
@@ -159,13 +155,19 @@ public class PuzzleZoneLinker : MonoBehaviour
         {
             for (int i = 0 ; i < item.quantity ; i++)
             {
-                GameObject puzzleItem = PoolManager.Instance.Spawn(item.GetPoolName(), transform, Vector3.zero, Quaternion.identity);
+                int randomItemPositionIndex = Random.Range(0, itemPositions.Count);
+                Transform randomItemPosition = itemPositions[randomItemPositionIndex];
+                itemPositions.RemoveAt(randomItemPositionIndex);
+
+                GameObject puzzleItem = PoolManager.Instance.Spawn(item.GetPoolName(), randomItemPosition, Vector3.zero, Quaternion.identity);
                 switch(item.name)
                 {
                     case PuzzleItemName.Lever: levers.Add(puzzleItem.GetComponent<Lever>()); break;
                 }
             }
         }
+        
+        WireConditions();
     }
 
     public void Despawn()

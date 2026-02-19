@@ -12,21 +12,20 @@ public class GroundVariation : MonoBehaviour
         public Transform[] parents;
     }
 
-    public PuzzleZoneConfig puzzleZoneConfig;
-
+    [SerializeField] PuzzleZoneLinker activePuzzleLinker;
     [SerializeField] PoolName poolName;
     [SerializeField] StructureGroup[] structureGroups;
 
     List<GameObject> niches, nicheBlocks, tombs, mausoleums;
-    PuzzleZoneLinker activePuzzleLinker;
 
     public void Initialize()
     {
-        niches      = new List<GameObject>();
+        niches = new List<GameObject>();
         nicheBlocks = new List<GameObject>();
-        tombs       = new List<GameObject>();
-        mausoleums  = new List<GameObject>();
+        tombs = new List<GameObject>();
+        mausoleums = new List<GameObject>();
 
+        List<Transform> allItemPositions = new List<Transform>();
         foreach(var structureGroup in structureGroups)
         {
             int randomAmount = Random.Range(structureGroup.minStructures, structureGroup.parents.Length);
@@ -46,41 +45,29 @@ public class GroundVariation : MonoBehaviour
                 {
                     case PoolName.Niches: 
                     niches.Add(structure); 
+                    allItemPositions.AddRange(structure.GetComponent<Niche>().ItemPositions);
                     break;
                     
                     case PoolName.NicheBlocks:
                     structure.GetComponent<NicheBlock>().Initialize(parent.GetComponent<NicheBlockGeneration>().GenData);
                     nicheBlocks.Add(structure); 
+                    allItemPositions.AddRange(structure.GetComponent<NicheBlock>().ItemPositions);
                     break;
                     
                     case PoolName.Tombs: 
                     tombs.Add(structure);
+                    allItemPositions.AddRange(structure.GetComponent<TombProGen>().ItemPositions);
                     break;
                     
                     case PoolName.Mausoleums: 
                     mausoleums.Add(structure);
+                    allItemPositions.AddRange(structure.GetComponent<Mausoleum>().ItemPositions);
                     break;
                 }
             }
-        }        
+        }
         
-    }
-    void SpawnPuzzleZone(PuzzleZoneConfig config)
-    {
-    // Instancia el prefab (usá Instantiate aquí porque es un sistema de puzzle único por chunk,
-    // no necesita pooling a menos que lo implementes)
-    GameObject zoneGO = Instantiate(config.puzzleZonePrefab, transform);
-    zoneGO.transform.localPosition = Vector3.zero;
-
-    activePuzzleLinker = zoneGO.GetComponent<PuzzleZoneLinker>();
-
-    // Reloca elementos del puzzle en las estructuras del chunk
-    if (activePuzzleLinker != null)
-    {
-        List<Transform> tombSlots      = tombs.ConvertAll(g => g.transform);
-        List<Transform> mausoleumSlots = mausoleums.ConvertAll(g => g.transform);
-        activePuzzleLinker.RelocateElements(tombSlots, mausoleumSlots);
-    }
+        activePuzzleLinker.Spawn(allItemPositions);
     }
 
     public void Despawn()

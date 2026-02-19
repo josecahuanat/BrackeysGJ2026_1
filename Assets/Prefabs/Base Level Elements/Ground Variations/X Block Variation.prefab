@@ -117,7 +117,7 @@ MonoBehaviour:
     - {x: 2.465, y: 1.479, z: 0}
     bigBlockWidth: 6.002
     bigBlockHeight: 4.0299997
-    minNiches: 1
+    minNiches: 4
     maxNiches: 16
 --- !u!1 &1378997782854534747
 GameObject:
@@ -296,7 +296,7 @@ MonoBehaviour:
     - {x: 2.465, y: 1.479, z: 0}
     bigBlockWidth: 6.002
     bigBlockHeight: 4.0299997
-    minNiches: 1
+    minNiches: 4
     maxNiches: 16
 --- !u!1 &3123185438304850166
 GameObject:
@@ -471,7 +471,7 @@ MonoBehaviour:
     - {x: 2.465, y: 1.479, z: 0}
     bigBlockWidth: 6.002
     bigBlockHeight: 4.0299997
-    minNiches: 1
+    minNiches: 4
     maxNiches: 16
 --- !u!1 &4800951007047393600
 GameObject:
@@ -514,6 +514,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8853879052406474136}
   - component: {fileID: 1176119784866334438}
+  - component: {fileID: 1547838020006000479}
+  - component: {fileID: 9182026800615316189}
   m_Layer: 0
   m_Name: X Block Variation
   m_TagString: Untagged
@@ -551,7 +553,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dcdff7a698157a4b861542be1481eb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GroundVariation
-  puzzleZoneConfig: {fileID: 0}
+  activePuzzleLinker: {fileID: 1547838020006000479}
+  poolName: 5
   structureGroups:
   - poolName: 3
     minStructures: 0
@@ -574,7 +577,53 @@ MonoBehaviour:
     - {fileID: 3940748506199053275}
     - {fileID: 1617974684407882266}
     - {fileID: 9137988966831945695}
-  poolName: 5
+--- !u!114 &1547838020006000479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5392922361339329388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0773d52f85b75754b9b71ecd338a8e44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PuzzleZoneLinker
+  puzzle: {fileID: 9182026800615316189}
+  keys: []
+  pressurePlates: []
+  levers: []
+  socketBindings: []
+  requiereOrden: 0
+--- !u!114 &9182026800615316189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5392922361339329388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42cf31c16ec9510408c25a6e54721ddd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MultiConditionPuzzle
+  placas: []
+  levers: []
+  botones: []
+  sockets: []
+  items: []
+  recompensas: []
+  requiereOrden: 0
+  textoProgreso: {fileID: 0}
+  OnTodasCumplidas:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPuzzleReseteado:
+    m_PersistentCalls:
+      m_Calls: []
+  OnProgresoActualizado:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5420186512795773211
 GameObject:
   m_ObjectHideFlags: 0
@@ -750,5 +799,5 @@ MonoBehaviour:
     - {x: 2.465, y: 1.479, z: 0}
     bigBlockWidth: 6.002
     bigBlockHeight: 4.0299997
-    minNiches: 1
+    minNiches: 4
     maxNiches: 16

@@ -5,6 +5,7 @@ public class Level : MonoBehaviour
 {
     public static Level Instance { get; private set; }
 
+
     [Header("Generation Settings")]
     [SerializeField] Transform player;
     [SerializeField] Transform groundsParent;
@@ -47,7 +48,6 @@ public class Level : MonoBehaviour
                 GenerateGroundChunk(coord);
             }
         }
-
     }
     
     void Update()

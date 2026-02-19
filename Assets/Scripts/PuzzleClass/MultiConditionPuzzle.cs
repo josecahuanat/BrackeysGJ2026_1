@@ -5,26 +5,26 @@ using TMPro;
 public class MultiConditionPuzzle : MonoBehaviour
 {
     [Header("Condiciones (deben cumplirse TODAS)")]
-    [SerializeField] private List<CondicionPlaca>        placas   = new();
-    [SerializeField] private List<CondicionLever>        levers   = new();
-    [SerializeField] private List<CondicionBoton>        botones  = new();
-    [SerializeField] private List<CondicionSocket>       sockets  = new();
-    [SerializeField] private List<CondicionItemRecogido> items    = new();
+    [SerializeField] List<CondicionPlaca>        placas   = new();
+    [SerializeField] List<CondicionLever>        levers   = new();
+    [SerializeField] List<CondicionBoton>        botones  = new();
+    [SerializeField] List<CondicionSocket>       sockets  = new();
+    [SerializeField] List<CondicionItemRecogido> items    = new();
     [Header("Recompensas al completar")]
-    [SerializeField] private List<PuzzleReward> recompensas = new();
+    [SerializeField] List<PuzzleReward> recompensas = new();
     [Header("¿Requieren cumplirse en orden?")]
-    [SerializeField] private bool requiereOrden = false;
+    [SerializeField] bool requiereOrden = false;
 
     [Header("UI de progreso (opcional)")]
-    [SerializeField] private TextMeshProUGUI textoProgreso;
+    [SerializeField] TextMeshProUGUI textoProgreso;
 
     [Header("Eventos")]
     public UnityEvent OnTodasCumplidas;
     public UnityEvent OnPuzzleReseteado;
     public UnityEvent<int, int> OnProgresoActualizado; // (cumplidas, total)
     // ── Privados ───────────────────────────────────────────
-    private List<PuzzleCondition> todasLasCondiciones = new();
-    private bool puzzleCompleto = false;
+    List<PuzzleCondition> todasLasCondiciones = new();
+    bool puzzleCompleto = false;
 
     // ══════════════════════════════════════════════════════
     
@@ -48,11 +48,11 @@ public class MultiConditionPuzzle : MonoBehaviour
         InicializarCondiciones();
     }
 
-    void Start()
-    {
-        if (!Inicializado)      // Si nadie llamó InicializarDesdeLinker, funciona normal
-            InicializarCondiciones();
-    }
+    // void Start()
+    // {
+    //     if (!Inicializado)      // Si nadie llamó InicializarDesdeLinker, funciona normal
+    //         InicializarCondiciones();
+    // }
 
     void InicializarCondiciones()
     {

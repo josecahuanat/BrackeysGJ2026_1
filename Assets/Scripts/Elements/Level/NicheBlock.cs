@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class NicheBlock : MonoBehaviour
 {
+    [Header("Item Slots")]
+    [SerializeField] List<Transform> itemPositions;
+
+    public Transform[] ItemPositions => itemPositions.ToArray();
+
+    [Header("Generation Settings")]
     [SerializeField] GameObject nichePrefab;
     [SerializeField] Transform bigBlock, side1, side2;
 
@@ -29,6 +35,7 @@ public class NicheBlock : MonoBehaviour
             int randomNichePosition = Random.Range(0, nichePositionsList.Count);
             niches[i] = PoolManager.Instance.Spawn(PoolName.Niches, side, nichePositionsList[randomNichePosition], Quaternion.identity);
             niches[i].transform.localScale = new Vector3(genData.nicheWidth, genData.nicheHeight, genData.nicheZSize);
+            itemPositions.AddRange(niches[i].GetComponent<Niche>().ItemPositions);
             nichePositionsList.RemoveAt(randomNichePosition);
         }
     }

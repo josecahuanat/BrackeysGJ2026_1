@@ -25,8 +25,18 @@ public class PoolManager : MonoBehaviour
             poolDictionary.Add(pool.GetPoolName(), pool);
     }
 
-    public GameObject Spawn(PoolName poolName, Transform parent, Vector3 position, Quaternion rotation) 
-        => poolDictionary[poolName].Get(parent, position, rotation);
+    public GameObject Spawn(PoolName poolName, Transform parent, Vector3 position, Quaternion rotation)
+    {
+        try
+        {
+            return poolDictionary[poolName].Get(parent, position, rotation);
+        }
+        catch(Exception e)
+        {
+            Debug.Log($"{poolName}, {e.Message}");
+            return null;
+        }
+    }
 
     public void Despawn(PoolName poolName, GameObject obj)
     {
