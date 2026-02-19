@@ -39,9 +39,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Amplitud: 8
+    - _Amplitud: 1.5
     - _BumpScale: 1
-    - _FuerzaNormal: 0.67
+    - _FuerzaNormal: 0.5
     - _MulMetal: 1
     - _MulSmooth: 1
     - _Parallax: 1
