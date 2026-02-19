@@ -19,7 +19,6 @@ public class Ground : MonoBehaviour
 
     [SerializeField] StructureGroup[] structureGroups;
     private PuzzleZoneLinker activePuzzleLinker;
-    public PuzzleZoneConfig puzzleZoneConfig;
     public void Initialize()
     {
         niches      = new List<GameObject>();

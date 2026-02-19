@@ -19,8 +19,11 @@ public class PuzzleZoneLinker : MonoBehaviour
     [SerializeField] private List<Key>           keys           = new();
     [SerializeField] private List<PressurePlate> pressurePlates = new();
     [SerializeField] private List<Lever>         levers         = new();
+    [SerializeField] private List<Candle> candles = new();
+    [SerializeField] private List<Door> doors = new();
+    [SerializeField] private List<FlowerAltar> altarFlowers = new();
     [SerializeField] private List<SocketKeyBinding> socketBindings = new();
-
+    
     [Header("Opciones")]
     [SerializeField] private bool autoDiscoverChildren = true;
     [SerializeField] private bool requiereOrden = false;
@@ -53,7 +56,13 @@ public class PuzzleZoneLinker : MonoBehaviour
 
         if (levers.Count == 0)
             levers.AddRange(GetComponentsInChildren<Lever>());
-
+        if (doors.Count == 0)
+            doors.AddRange(GetComponentsInChildren<Door>());
+        if (candles.Count == 0)
+            candles.AddRange(GetComponentsInChildren<Candle>());
+         
+        if (altarFlowers.Count == 0)
+            altarFlowers.AddRange(GetComponentsInChildren<FlowerAltar>());
         // Sockets: los descubre y crea bindings vacíos si no están configurados
         if (socketBindings.Count == 0)
         {
@@ -72,17 +81,18 @@ public class PuzzleZoneLinker : MonoBehaviour
     {
         var _placas   = new List<CondicionPlaca>();
         var _levers   = new List<CondicionLever>();
-        var _botones  = new List<CondicionBoton>();
-        var _sockets  = new List<CondicionSocket>();
+        var _candles   = new List<CondicionVela>();
+        var _doors   = new List<CondicionPuerta>();
+        var _altarFlowers  = new List<CondicionFlorEnAltar>();
         var _items    = new List<CondicionItemRecogido>();
-
+        var _sockets  = new List<CondicionSocket>();
         // Condiciones: Llaves recogidas
         foreach (var key in keys)
         {
             if (key == null) continue;
             _items.Add(new CondicionItemRecogido
             {
-                nombre = $"Recoger: {key.ItemName}",
+                nombre = $"Collect: {key.ItemName}",
                 item   = key
             });
         }
@@ -93,7 +103,7 @@ public class PuzzleZoneLinker : MonoBehaviour
             if (plate == null) continue;
             _placas.Add(new CondicionPlaca
             {
-                nombre = $"Placa: {plate.name}",
+                nombre = $"Plates: {plate.name}",
                 placa  = plate
             });
         }
@@ -109,6 +119,35 @@ public class PuzzleZoneLinker : MonoBehaviour
             });
         }
 
+        foreach (var candle in candles)
+        {
+            if (candle == null) continue;
+            _candles.Add(new CondicionVela
+            {
+                nombre = $"Candle: {candle.name}",
+                vela = candle
+            });
+        }
+
+        foreach (var door in doors)
+        {
+            if (door == null) continue;
+            _doors.Add(new CondicionPuerta
+            {
+                nombre = $"Door: {door.name}",
+                door  = door
+            });
+        }
+        foreach (var altarFlower in altarFlowers)
+        {
+            if (altarFlowers == null) continue;
+            _altarFlowers.Add(new CondicionFlorEnAltar
+            {
+                nombre = $"AltarFlower: {altarFlower.name}",
+                altar = altarFlower
+            });
+        }
+
         // Condiciones: Sockets
         foreach (var binding in socketBindings)
         {
@@ -120,7 +159,7 @@ public class PuzzleZoneLinker : MonoBehaviour
             });
         }
 
-        puzzle.InicializarDesdeLinker(_placas, _levers, _botones, _sockets, _items);
+        puzzle.InicializarDesdeLinker(_placas, _levers, _doors, _candles, _altarFlowers, _items, _sockets);
     }
 
     // Llamado desde Ground.cs para reubicar elementos del puzzle

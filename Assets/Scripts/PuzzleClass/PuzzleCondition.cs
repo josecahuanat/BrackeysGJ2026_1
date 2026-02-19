@@ -57,17 +57,17 @@ public class CondicionLever : PuzzleCondition
 
 // ── Condición: Botón pulsado ──────────────────────────────
 [System.Serializable]
-public class CondicionBoton : PuzzleCondition
+public class CondicionPuerta : PuzzleCondition
 {
-    //public Button boton;
+    public Door door;
 
     public override void Inicializar(System.Action onCumplida)
     {
-       // if (boton == null) { Debug.LogWarning($"[{nombre}] Botón no asignado"); return; }
-        //boton.OnPulsado.AddListener(() =>
-       // {
-        //    if (!cumplida) { cumplida = true; onCumplida?.Invoke(); }
-        //});
+       if (door == null) { Debug.LogWarning($"[{nombre}] Botón no asignado"); return; }
+        door.onInteracted.AddListener((_) =>
+        {
+          if (!cumplida) { cumplida = true; onCumplida?.Invoke(); }
+        });
     }
 
     public override void Resetear() => cumplida = false;
@@ -110,4 +110,93 @@ public class CondicionItemRecogido : PuzzleCondition
     }
 
     public override void Resetear() => cumplida = false;
+}
+[System.Serializable]
+public class CondicionVela : PuzzleCondition
+{
+    public Candle vela;
+
+    public override void Inicializar(System.Action onCumplida)
+    {
+        if (vela == null) { Debug.LogWarning($"[{nombre}] Vela no asignada"); return; }
+        vela.OnEncendida.AddListener(() =>
+        {
+            if (!cumplida) { cumplida = true; onCumplida?.Invoke(); }
+        });
+        vela.OnApagada.AddListener(() => { cumplida = false; });
+    }
+
+    public override void Resetear()
+    {
+        cumplida = false;
+        vela?.Resetear();
+    }
+}
+
+// ── Condición: Flor colocada en altar ─────────────────────
+[System.Serializable]
+public class CondicionFlorEnAltar : PuzzleCondition
+{
+    public FlowerAltar altar;
+
+    public override void Inicializar(System.Action onCumplida)
+    {
+        if (altar == null) { Debug.LogWarning($"[{nombre}] Altar no asignado"); return; }
+        altar.OnFlorColocada.AddListener(() =>
+        {
+            if (!cumplida) { cumplida = true; onCumplida?.Invoke(); }
+        });
+        altar.OnFlorRetirada.AddListener(() => { cumplida = false; });
+    }
+
+    public override void Resetear()
+    {
+        cumplida = false;
+        altar?.Resetear();
+    }
+}
+
+// ── Condición: Pieza de tumba completada ──────────────────
+[System.Serializable]
+public class CondicionPiezaTumba : PuzzleCondition
+{
+    public TombPiece pieza;
+
+    public override void Inicializar(System.Action onCumplida)
+    {
+        if (pieza == null) { Debug.LogWarning($"[{nombre}] Pieza no asignada"); return; }
+        pieza.OnPiezaCompletada.AddListener(() =>
+        {
+            if (!cumplida) { cumplida = true; onCumplida?.Invoke(); }
+        });
+    }
+
+    public override void Resetear()
+    {
+        cumplida = false;
+        pieza?.Resetear();
+    }
+}
+[System.Serializable]
+public class CondicionMultiSocket : PuzzleCondition
+{
+    public MultiItemSocket socket;
+
+    public override void Inicializar(System.Action onCumplida)
+    {
+        if (socket == null) { Debug.LogWarning($"[{nombre}] MultiItemSocket no asignado"); return; }
+
+        socket.OnTodosLlenos.AddListener(() =>
+        {
+            if (!cumplida) { cumplida = true; onCumplida?.Invoke(); }
+        });
+
+        socket.OnSlotVaciado.AddListener(() => { cumplida = false; });
+    }
+
+    public override void Resetear()
+    {
+        cumplida = false;
+        socket?.Resetear();
+    }
 }

@@ -29,7 +29,7 @@ public class ItemSocket : MonoBehaviour, IInteractable, IUsable
     {
         Inventory inv = player.GetComponent<Inventory>();
         if (inv == null) return;
-
+        Debug.Log($"[Socket] Tiene item: {inv.HasItem} | ID inventario: '{inv.CurrentItemID}' | Requerido: '{itemRequerido}' | Iguales: {inv.CurrentItemID == itemRequerido}");
         if (!tieneItem)
         {
             if (inv.HasItem && inv.CurrentItemID == itemRequerido)

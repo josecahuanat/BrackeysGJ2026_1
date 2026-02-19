@@ -123,6 +123,30 @@ public class PlayerInteraction: MonoBehaviour
             interactPromptUI?.SetActive(true);
             if (promptText != null)
                 promptText.text = interactable.InteractPrompt;
+                 bool esItemSinProgreso = false;
+            foreach (var tipo in sinProgresoPuzzle)
+                if (obj.GetComponent(tipo) != null) { esItemSinProgreso = true; break; }
+
+            MultiConditionPuzzle puzzle = obj != null
+            ? obj.GetComponentInParent<MultiConditionPuzzle>()
+            : null;
+
+            esItemSinProgreso = false;
+            foreach (var tipo in sinProgresoPuzzle)
+                if (obj != null && obj.GetComponent(tipo) != null) { esItemSinProgreso = true; break; }
+
+            if (puzzle != null && !esItemSinProgreso)
+            {
+                GameUIManager.Instance?.ShowPuzzleObjectiveUI();
+                GameUIManager.Instance?.UpdatePuzzleProgress(
+                    $"{puzzle.ContarCumplidas()} / {puzzle.TotalCondiciones()}",
+                    puzzle.ObtenerPistaActual()
+                );
+            }
+            else
+            {
+                GameUIManager.Instance?.HidePuzzleObjectiveUI();
+            }
         }
         else
         {
@@ -141,4 +165,8 @@ public class PlayerInteraction: MonoBehaviour
     {
         nearbyInteractables.Remove(interactable);
     }
+    private readonly System.Type[] sinProgresoPuzzle = {
+    typeof(Key),
+    typeof(Candle)
+    };
 }
