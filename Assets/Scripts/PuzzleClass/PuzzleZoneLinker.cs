@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.Events;
 using System.Linq;
+using JetBrains.Annotations;
 
 // Configuración de qué IDs de llave corresponden a qué socket/puerta,
 // definida directamente en el prefab desde el Inspector.
@@ -71,9 +72,10 @@ public class PuzzleZoneLinker : MonoBehaviour
                 });
             }
         }
+        }
     }
 
-    void WireConditions()
+    public void WireConditions()
     {
         var _placas   = new List<CondicionPlaca>();
         var _levers   = new List<CondicionLever>();
