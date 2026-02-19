@@ -38,35 +38,35 @@ public class MultiConditionPuzzle : MonoBehaviour
     List<CondicionSocket>       _sockets,
     List<CondicionItemRecogido> _items)
     {
-    placas   = _placas;
-    levers   = _levers;
-    botones  = _botones;
-    sockets  = _sockets;
-    items    = _items;
-    Inicializado = true;
-    // Ejecuta la misma lógica que Start()
-    InicializarCondiciones();
+        placas   = _placas;
+        levers   = _levers;
+        botones  = _botones;
+        sockets  = _sockets;
+        items    = _items;
+        Inicializado = true;
+        // Ejecuta la misma lógica que Start()
+        InicializarCondiciones();
     }
 
     void Start()
     {
-    if (!Inicializado)      // Si nadie llamó InicializarDesdeLinker, funciona normal
-        InicializarCondiciones();
+        if (!Inicializado)      // Si nadie llamó InicializarDesdeLinker, funciona normal
+            InicializarCondiciones();
     }
 
     void InicializarCondiciones()
     {
-    todasLasCondiciones.Clear();
-    todasLasCondiciones.AddRange(placas);
-    todasLasCondiciones.AddRange(levers);
-    todasLasCondiciones.AddRange(botones);
-    todasLasCondiciones.AddRange(sockets);
-    todasLasCondiciones.AddRange(items);
+        todasLasCondiciones.Clear();
+        todasLasCondiciones.AddRange(placas);
+        todasLasCondiciones.AddRange(levers);
+        todasLasCondiciones.AddRange(botones);
+        todasLasCondiciones.AddRange(sockets);
+        todasLasCondiciones.AddRange(items);
 
-    foreach (var cond in todasLasCondiciones)
-        cond.Inicializar(VerificarPuzzle);
+        foreach (var cond in todasLasCondiciones)
+            cond.Inicializar(VerificarPuzzle);
 
-    ActualizarProgreso();
+        ActualizarProgreso();
     }
 
     void VerificarPuzzle()

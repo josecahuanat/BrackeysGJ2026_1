@@ -532,6 +532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0773d52f85b75754b9b71ecd338a8e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PuzzleZoneLinker
+  puzzle: {fileID: 7939867237009860063}
   keys: []
   pressurePlates: []
   levers: []

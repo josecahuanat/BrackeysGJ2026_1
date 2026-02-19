@@ -1,20 +1,38 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class CemeteryGeneratorPooled : MonoBehaviour
+public class Level : MonoBehaviour
 {
+    public static Level Instance { get; private set; }
+
     [Header("Generation Settings")]
     [SerializeField] Transform player;
     [SerializeField] Transform groundsParent;
-    [SerializeField] float chunkSize = 50f;
+    [SerializeField] float chunkSize;
     [SerializeField] int renderDistance;
+
     [Header("Puzzle Zones")]
-    [SerializeField] private PuzzleZoneConfig[] availablePuzzleConfigs;
-    [SerializeField] [Range(0f,1f)] private float puzzleChunkProbability = 0.3f;
+    [SerializeField] PuzzleData[] puzzles;
+    [SerializeField] PuzzleZoneConfig[] availablePuzzleConfigs;
+    [SerializeField] [Range(0f,1f)] float puzzleChunkProbability = 0.3f;
+
     Dictionary<Vector2Int, Ground> activeGroundChunks = new Dictionary<Vector2Int, Ground>();
     Vector2Int currentChunkCoord;
     int seed;
+    int puzzleIndex, puzzleDifficulty;
     
+    void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
     void Start()
     {
         seed = Random.Range(0, 100000);
@@ -92,6 +110,7 @@ public class CemeteryGeneratorPooled : MonoBehaviour
         // Debug.Log($"{ground}, {activeGroundChunks[coord]}");
         activeGroundChunks[coord].Initialize();
     }
+
     void DespawnChunk(Vector2Int coord)
     {
         activeGroundChunks[coord].Despawn();
@@ -102,5 +121,10 @@ public class CemeteryGeneratorPooled : MonoBehaviour
     {
         foreach (var coord in new List<Vector2Int>(activeGroundChunks.Keys))
             DespawnChunk(coord);
+    }
+
+    public PuzzleDifficulty GetPuzzle()
+    {
+        return puzzles[puzzleIndex].difficulties[puzzleDifficulty];
     }
 }

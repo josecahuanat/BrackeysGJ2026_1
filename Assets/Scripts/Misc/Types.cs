@@ -6,6 +6,9 @@ public enum PoolName
     
     //Ground Variation Names
     GroundVariationXBlock = 5,
+
+    //Interactable Item Names
+    Lever = 6,
 }
 
 [System.Serializable]

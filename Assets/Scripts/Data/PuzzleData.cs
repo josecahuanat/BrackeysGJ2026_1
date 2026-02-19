@@ -20,11 +20,20 @@ public class PuzzleItem
     public PuzzleItemName name;
     public int quantity;
     public int spawnPositions;
+
+    public PoolName GetPoolName()
+    {
+        switch(name)
+        {
+            case PuzzleItemName.Lever: return PoolName.Lever;
+        }
+        return PoolName.None;
+    }
 }
 
 public enum PuzzleItemName
 {
-    Button = 0, Plate = 1,Door=2, ItemSocket=3, Key=4, Tomb=5
+    Button = 0, Plate = 1, Door = 2, ItemSocket = 3, Key = 4, Tomb = 5, Lever = 6,
 }
 
 public enum PuzzleName
