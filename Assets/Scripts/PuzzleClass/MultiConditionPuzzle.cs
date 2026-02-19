@@ -64,8 +64,8 @@ public class MultiConditionPuzzle : MonoBehaviour
 
     void Start()
     {
-    if (!Inicializado)      // Si nadie llamó InicializarDesdeLinker, funciona normal
-        InicializarCondiciones();
+        if (!Inicializado)      // Si nadie llamó InicializarDesdeLinker, funciona normal
+            InicializarCondiciones();
     }
 
     void InicializarCondiciones()
@@ -87,8 +87,8 @@ public class MultiConditionPuzzle : MonoBehaviour
     }
 
 
-    foreach (var cond in todasLasCondiciones)
-        cond.Inicializar(VerificarPuzzle);
+        foreach (var cond in todasLasCondiciones)
+            cond.Inicializar(VerificarPuzzle);
 
     ActualizarProgreso();
         for (int i = 0; i < todasLasCondiciones.Count; i++)

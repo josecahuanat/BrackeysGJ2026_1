@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.Events;
+using System.Linq;
 
 // Configuración de qué IDs de llave corresponden a qué socket/puerta,
 // definida directamente en el prefab desde el Inspector.
@@ -14,6 +15,8 @@ public class SocketKeyBinding
 
 public class PuzzleZoneLinker : MonoBehaviour
 {
+    [SerializeField] MultiConditionPuzzle puzzle;
+    
     [Header("Condiciones a cablear automáticamente")]
     [Tooltip("Deja vacío para auto-descubrir todos los hijos")]
     [SerializeField] private List<Key>           keys           = new();
@@ -28,17 +31,9 @@ public class PuzzleZoneLinker : MonoBehaviour
     [SerializeField] private bool autoDiscoverChildren = true;
     [SerializeField] private bool requiereOrden = false;
 
-    private MultiConditionPuzzle puzzle;
 
     void Awake()
     {
-        puzzle = GetComponent<MultiConditionPuzzle>();
-        if (puzzle == null)
-        {
-            Debug.LogError($"[PuzzleZoneLinker] {name} necesita MultiConditionPuzzle en el mismo GameObject");
-            return;
-        }
-
         if (autoDiscoverChildren)
             DiscoverChildren();
 
@@ -46,7 +41,7 @@ public class PuzzleZoneLinker : MonoBehaviour
     }
 
     void DiscoverChildren()
-    {
+    {        
         // Auto-descubre si las listas están vacías
         if (keys.Count == 0)
             keys.AddRange(GetComponentsInChildren<Key>());
@@ -55,6 +50,7 @@ public class PuzzleZoneLinker : MonoBehaviour
             pressurePlates.AddRange(GetComponentsInChildren<PressurePlate>());
 
         if (levers.Count == 0)
+        {
             levers.AddRange(GetComponentsInChildren<Lever>());
         if (doors.Count == 0)
             doors.AddRange(GetComponentsInChildren<Door>());
@@ -186,6 +182,35 @@ public class PuzzleZoneLinker : MonoBehaviour
             plate.transform.SetParent(availableMauseolums[idx]);
             plate.transform.localPosition = Vector3.zero;
             availableMauseolums.RemoveAt(idx);
+        }
+    }
+
+    public void Spawn()
+    {
+        keys = new List<Key>();
+        pressurePlates = new List<PressurePlate>();
+        levers = new List<Lever>();
+        socketBindings = new List<SocketKeyBinding>();
+
+        PuzzleDifficulty puzzle = Level.Instance.GetPuzzle();
+        foreach(var item in puzzle.items)
+        {
+            for (int i = 0 ; i < item.quantity ; i++)
+            {
+                GameObject puzzleItem = PoolManager.Instance.Spawn(item.GetPoolName(), transform, Vector3.zero, Quaternion.identity);
+                switch(item.name)
+                {
+                    case PuzzleItemName.Lever: levers.Add(puzzleItem.GetComponent<Lever>()); break;
+                }
+            }
+        }
+    }
+
+    public void Despawn()
+    {
+        foreach(var lever in levers)
+        {
+            PoolManager.Instance.Despawn(PoolName.Lever, lever.gameObject);
         }
     }
 }

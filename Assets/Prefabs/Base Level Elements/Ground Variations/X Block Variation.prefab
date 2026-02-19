@@ -1,0 +1,754 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &602943136258924202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1077506052469699867}
+  m_Layer: 0
+  m_Name: Tombs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1077506052469699867
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602943136258924202}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5890173003247154870}
+  - {fileID: 1514579229011145453}
+  - {fileID: 2573985903817092844}
+  - {fileID: 3175271406915485791}
+  - {fileID: 5547086861868913185}
+  - {fileID: 1453819733596321055}
+  m_Father: {fileID: 8853879052406474136}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &670839141986248302
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3940748506199053275}
+  - component: {fileID: 6409725168123297721}
+  m_Layer: 0
+  m_Name: Niche Block (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3940748506199053275
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670839141986248302}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.70710677, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -0, y: 2.015, z: -6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8905023495697136501}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6409725168123297721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670839141986248302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a29588cf212c8944582b4fb08eeb2100, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NicheBlockGeneration
+  genData:
+    bigBlockZSize: 2.3
+    columns: 4
+    rows: 6
+    nicheWidth: 0.9
+    nicheHeight: 0.9
+    nicheWidthSpacing: 0.086
+    nicheHeightSpacing: 0.086
+    nicheZSize: 0.8
+    nichePositions:
+    - {x: -2.465, y: -1.479, z: 0}
+    - {x: -2.465, y: -0.493, z: 0}
+    - {x: -2.465, y: 0.493, z: 0}
+    - {x: -2.465, y: 1.479, z: 0}
+    - {x: -1.479, y: -1.479, z: 0}
+    - {x: -1.479, y: -0.493, z: 0}
+    - {x: -1.479, y: 0.493, z: 0}
+    - {x: -1.479, y: 1.479, z: 0}
+    - {x: -0.493, y: -1.479, z: 0}
+    - {x: -0.493, y: -0.493, z: 0}
+    - {x: -0.493, y: 0.493, z: 0}
+    - {x: -0.493, y: 1.479, z: 0}
+    - {x: 0.493, y: -1.479, z: 0}
+    - {x: 0.493, y: -0.493, z: 0}
+    - {x: 0.493, y: 0.493, z: 0}
+    - {x: 0.493, y: 1.479, z: 0}
+    - {x: 1.479, y: -1.479, z: 0}
+    - {x: 1.479, y: -0.493, z: 0}
+    - {x: 1.479, y: 0.493, z: 0}
+    - {x: 1.479, y: 1.479, z: 0}
+    - {x: 2.465, y: -1.479, z: 0}
+    - {x: 2.465, y: -0.493, z: 0}
+    - {x: 2.465, y: 0.493, z: 0}
+    - {x: 2.465, y: 1.479, z: 0}
+    bigBlockWidth: 6.002
+    bigBlockHeight: 4.0299997
+    minNiches: 1
+    maxNiches: 16
+--- !u!1 &1378997782854534747
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8905023495697136501}
+  m_Layer: 0
+  m_Name: X Block
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8905023495697136501
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378997782854534747}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.38268343, z: -0, w: 0.92387956}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4661291713092135523}
+  - {fileID: 3940748506199053275}
+  - {fileID: 1617974684407882266}
+  - {fileID: 9137988966831945695}
+  m_Father: {fileID: 8853879052406474136}
+  m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
+--- !u!1 &2209856954957055085
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5890173003247154870}
+  m_Layer: 0
+  m_Name: Tomb (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5890173003247154870
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2209856954957055085}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.25, z: 7.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1077506052469699867}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &2271044663085693374
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1453819733596321055}
+  m_Layer: 0
+  m_Name: Tomb (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1453819733596321055
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2271044663085693374}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -1.25, y: 0.25, z: -7.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1077506052469699867}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &2993528301384177583
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1617974684407882266}
+  - component: {fileID: 128027134889828303}
+  m_Layer: 0
+  m_Name: Niche Block (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1617974684407882266
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2993528301384177583}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.70710677}
+  m_LocalPosition: {x: -0, y: 2.015, z: 6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8905023495697136501}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &128027134889828303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2993528301384177583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a29588cf212c8944582b4fb08eeb2100, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NicheBlockGeneration
+  genData:
+    bigBlockZSize: 2.3
+    columns: 4
+    rows: 6
+    nicheWidth: 0.9
+    nicheHeight: 0.9
+    nicheWidthSpacing: 0.086
+    nicheHeightSpacing: 0.086
+    nicheZSize: 0.8
+    nichePositions:
+    - {x: -2.465, y: -1.479, z: 0}
+    - {x: -2.465, y: -0.493, z: 0}
+    - {x: -2.465, y: 0.493, z: 0}
+    - {x: -2.465, y: 1.479, z: 0}
+    - {x: -1.479, y: -1.479, z: 0}
+    - {x: -1.479, y: -0.493, z: 0}
+    - {x: -1.479, y: 0.493, z: 0}
+    - {x: -1.479, y: 1.479, z: 0}
+    - {x: -0.493, y: -1.479, z: 0}
+    - {x: -0.493, y: -0.493, z: 0}
+    - {x: -0.493, y: 0.493, z: 0}
+    - {x: -0.493, y: 1.479, z: 0}
+    - {x: 0.493, y: -1.479, z: 0}
+    - {x: 0.493, y: -0.493, z: 0}
+    - {x: 0.493, y: 0.493, z: 0}
+    - {x: 0.493, y: 1.479, z: 0}
+    - {x: 1.479, y: -1.479, z: 0}
+    - {x: 1.479, y: -0.493, z: 0}
+    - {x: 1.479, y: 0.493, z: 0}
+    - {x: 1.479, y: 1.479, z: 0}
+    - {x: 2.465, y: -1.479, z: 0}
+    - {x: 2.465, y: -0.493, z: 0}
+    - {x: 2.465, y: 0.493, z: 0}
+    - {x: 2.465, y: 1.479, z: 0}
+    bigBlockWidth: 6.002
+    bigBlockHeight: 4.0299997
+    minNiches: 1
+    maxNiches: 16
+--- !u!1 &3123185438304850166
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2875914711921413399}
+  m_Layer: 0
+  m_Name: Mausoleum (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2875914711921413399
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3123185438304850166}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7, y: 1.75, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4818108176109789355}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3899791760012174065
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2573985903817092844}
+  m_Layer: 0
+  m_Name: Tomb (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2573985903817092844
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3899791760012174065}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -1.25, y: 0.25, z: 7.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1077506052469699867}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &4487125458210773617
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7845130349744862119}
+  m_Layer: 0
+  m_Name: Mausoleum (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7845130349744862119
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4487125458210773617}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7, y: 1.75, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4818108176109789355}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4697181614937277034
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9137988966831945695}
+  - component: {fileID: 5625576588185545546}
+  m_Layer: 0
+  m_Name: Niche Block (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9137988966831945695
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4697181614937277034}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: -6, y: 2.015, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8905023495697136501}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5625576588185545546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4697181614937277034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a29588cf212c8944582b4fb08eeb2100, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NicheBlockGeneration
+  genData:
+    bigBlockZSize: 2.3
+    columns: 4
+    rows: 6
+    nicheWidth: 0.9
+    nicheHeight: 0.9
+    nicheWidthSpacing: 0.086
+    nicheHeightSpacing: 0.086
+    nicheZSize: 0.8
+    nichePositions:
+    - {x: -2.465, y: -1.479, z: 0}
+    - {x: -2.465, y: -0.493, z: 0}
+    - {x: -2.465, y: 0.493, z: 0}
+    - {x: -2.465, y: 1.479, z: 0}
+    - {x: -1.479, y: -1.479, z: 0}
+    - {x: -1.479, y: -0.493, z: 0}
+    - {x: -1.479, y: 0.493, z: 0}
+    - {x: -1.479, y: 1.479, z: 0}
+    - {x: -0.493, y: -1.479, z: 0}
+    - {x: -0.493, y: -0.493, z: 0}
+    - {x: -0.493, y: 0.493, z: 0}
+    - {x: -0.493, y: 1.479, z: 0}
+    - {x: 0.493, y: -1.479, z: 0}
+    - {x: 0.493, y: -0.493, z: 0}
+    - {x: 0.493, y: 0.493, z: 0}
+    - {x: 0.493, y: 1.479, z: 0}
+    - {x: 1.479, y: -1.479, z: 0}
+    - {x: 1.479, y: -0.493, z: 0}
+    - {x: 1.479, y: 0.493, z: 0}
+    - {x: 1.479, y: 1.479, z: 0}
+    - {x: 2.465, y: -1.479, z: 0}
+    - {x: 2.465, y: -0.493, z: 0}
+    - {x: 2.465, y: 0.493, z: 0}
+    - {x: 2.465, y: 1.479, z: 0}
+    bigBlockWidth: 6.002
+    bigBlockHeight: 4.0299997
+    minNiches: 1
+    maxNiches: 16
+--- !u!1 &4800951007047393600
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5547086861868913185}
+  m_Layer: 0
+  m_Name: Tomb (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5547086861868913185
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4800951007047393600}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 1.25, y: 0.25, z: -7.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1077506052469699867}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &5392922361339329388
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8853879052406474136}
+  - component: {fileID: 1176119784866334438}
+  m_Layer: 0
+  m_Name: X Block Variation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8853879052406474136
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5392922361339329388}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4818108176109789355}
+  - {fileID: 1077506052469699867}
+  - {fileID: 8905023495697136501}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1176119784866334438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5392922361339329388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dcdff7a698157a4b861542be1481eb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GroundVariation
+  puzzleZoneConfig: {fileID: 0}
+  structureGroups:
+  - poolName: 3
+    minStructures: 0
+    parents:
+    - {fileID: 2875914711921413399}
+    - {fileID: 7845130349744862119}
+  - poolName: 2
+    minStructures: 0
+    parents:
+    - {fileID: 5890173003247154870}
+    - {fileID: 1514579229011145453}
+    - {fileID: 2573985903817092844}
+    - {fileID: 3175271406915485791}
+    - {fileID: 5547086861868913185}
+    - {fileID: 1453819733596321055}
+  - poolName: 1
+    minStructures: 4
+    parents:
+    - {fileID: 4661291713092135523}
+    - {fileID: 3940748506199053275}
+    - {fileID: 1617974684407882266}
+    - {fileID: 9137988966831945695}
+  poolName: 5
+--- !u!1 &5420186512795773211
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1514579229011145453}
+  m_Layer: 0
+  m_Name: Tomb (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1514579229011145453
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5420186512795773211}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 1.25, y: 0.25, z: 7.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1077506052469699867}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &6939965988951852732
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4818108176109789355}
+  m_Layer: 0
+  m_Name: Mausoleums
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4818108176109789355
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6939965988951852732}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2875914711921413399}
+  - {fileID: 7845130349744862119}
+  m_Father: {fileID: 8853879052406474136}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7134881138285687428
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3175271406915485791}
+  m_Layer: 0
+  m_Name: Tomb (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3175271406915485791
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7134881138285687428}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.25, z: -7.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1077506052469699867}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &9173596440217640918
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4661291713092135523}
+  - component: {fileID: 7673387620801098830}
+  m_Layer: 0
+  m_Name: Niche Block (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4661291713092135523
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9173596440217640918}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6, y: 2.015, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8905023495697136501}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7673387620801098830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9173596440217640918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a29588cf212c8944582b4fb08eeb2100, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NicheBlockGeneration
+  genData:
+    bigBlockZSize: 2.3
+    columns: 4
+    rows: 6
+    nicheWidth: 0.9
+    nicheHeight: 0.9
+    nicheWidthSpacing: 0.086
+    nicheHeightSpacing: 0.086
+    nicheZSize: 0.8
+    nichePositions:
+    - {x: -2.465, y: -1.479, z: 0}
+    - {x: -2.465, y: -0.493, z: 0}
+    - {x: -2.465, y: 0.493, z: 0}
+    - {x: -2.465, y: 1.479, z: 0}
+    - {x: -1.479, y: -1.479, z: 0}
+    - {x: -1.479, y: -0.493, z: 0}
+    - {x: -1.479, y: 0.493, z: 0}
+    - {x: -1.479, y: 1.479, z: 0}
+    - {x: -0.493, y: -1.479, z: 0}
+    - {x: -0.493, y: -0.493, z: 0}
+    - {x: -0.493, y: 0.493, z: 0}
+    - {x: -0.493, y: 1.479, z: 0}
+    - {x: 0.493, y: -1.479, z: 0}
+    - {x: 0.493, y: -0.493, z: 0}
+    - {x: 0.493, y: 0.493, z: 0}
+    - {x: 0.493, y: 1.479, z: 0}
+    - {x: 1.479, y: -1.479, z: 0}
+    - {x: 1.479, y: -0.493, z: 0}
+    - {x: 1.479, y: 0.493, z: 0}
+    - {x: 1.479, y: 1.479, z: 0}
+    - {x: 2.465, y: -1.479, z: 0}
+    - {x: 2.465, y: -0.493, z: 0}
+    - {x: 2.465, y: 0.493, z: 0}
+    - {x: 2.465, y: 1.479, z: 0}
+    bigBlockWidth: 6.002
+    bigBlockHeight: 4.0299997
+    minNiches: 1
+    maxNiches: 16
