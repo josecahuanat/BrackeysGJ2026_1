@@ -536,6 +536,9 @@ MonoBehaviour:
   keys: []
   pressurePlates: []
   levers: []
+  candles: []
+  doors: []
+  altarFlowers: []
   socketBindings: []
   autoDiscoverChildren: 1
   requiereOrden: 0
@@ -553,16 +556,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MultiConditionPuzzle
   placas: []
   levers: []
-  botones: []
-  sockets: []
+  puertas: []
   items: []
+  velas: []
+  flores: []
+  piezasTumba: []
+  sockets: []
+  textoPista: {fileID: 0}
   recompensas:
   - prefab: {fileID: 1640934297179283457, guid: 778c437341ee8da4ebcc42539b9bc861, type: 3}
     spawnPoint: {fileID: 7583769619751316576}
     cantidad: 2
     offset: {x: 0, y: 0, z: 0}
     separacion: 1
-  requiereOrden: 0
+  requiereOrden: 1
   textoProgreso: {fileID: 0}
   OnTodasCumplidas:
     m_PersistentCalls:

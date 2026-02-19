@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 public class Key : MonoBehaviour, IInteractable, IPickable
@@ -9,6 +10,7 @@ public class Key : MonoBehaviour, IInteractable, IPickable
     public UnityEvent<GameObject> onInteracted;
     public UnityEvent<GameObject> onPickedUp;
 
+    public bool MostrarProgresoPuzzle => false;
     public string InteractPrompt => $"Presiona E para recoger {keyID}";
     public bool CanInteract => true;
     public string ItemName => keyID;
@@ -34,5 +36,9 @@ public class Key : MonoBehaviour, IInteractable, IPickable
         {
             Debug.LogWarning("No se pudo recoger el item");
         }
+    }
+    public void DestroyKey()
+    {
+        Destroy(gameObject);
     }
 }

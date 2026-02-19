@@ -5,68 +5,99 @@ using TMPro;
 public class MultiConditionPuzzle : MonoBehaviour
 {
     [Header("Condiciones (deben cumplirse TODAS)")]
-    [SerializeField] List<CondicionPlaca>        placas   = new();
-    [SerializeField] List<CondicionLever>        levers   = new();
-    [SerializeField] List<CondicionBoton>        botones  = new();
-    [SerializeField] List<CondicionSocket>       sockets  = new();
-    [SerializeField] List<CondicionItemRecogido> items    = new();
+    [SerializeField] private List<CondicionPlaca>        placas   = new();
+    [SerializeField] private List<CondicionLever>        levers   = new();
+    [SerializeField] private List<CondicionPuerta>        puertas  = new();
+    [SerializeField] private List<CondicionItemRecogido> items    = new();
+    [SerializeField] private List<CondicionVela>         velas        = new();
+    [SerializeField] private List<CondicionFlorEnAltar>  flores       = new();
+    [SerializeField] private List<CondicionPiezaTumba>   piezasTumba  = new();
+    [SerializeField] private List<CondicionSocket>       sockets  = new();
+    //[SerializeField] private List<CondicionMultiSocket>   multySockets  = new();
+    
+    // Añade en el header UI:
+    [SerializeField] private TextMeshProUGUI textoPista;
+
+// Añade las nuevas listas:
+
     [Header("Recompensas al completar")]
-    [SerializeField] List<PuzzleReward> recompensas = new();
+    [SerializeField] private List<PuzzleReward> recompensas = new();
     [Header("¿Requieren cumplirse en orden?")]
-    [SerializeField] bool requiereOrden = false;
+    [SerializeField] private bool requiereOrden = false;
 
     [Header("UI de progreso (opcional)")]
-    [SerializeField] TextMeshProUGUI textoProgreso;
+    [SerializeField] private TextMeshProUGUI textoProgreso;
 
     [Header("Eventos")]
     public UnityEvent OnTodasCumplidas;
     public UnityEvent OnPuzzleReseteado;
     public UnityEvent<int, int> OnProgresoActualizado; // (cumplidas, total)
-    // ── Privados ───────────────────────────────────────────
-    List<PuzzleCondition> todasLasCondiciones = new();
-    bool puzzleCompleto = false;
+    
+    private List<PuzzleCondition> todasLasCondiciones = new();
+    private bool puzzleCompleto = false;
 
     // ══════════════════════════════════════════════════════
     
     public bool Inicializado { get; private set; } = false;
-
+    public int TotalCondiciones() => todasLasCondiciones.Count;
 // Llamado por PuzzleZoneLinker en vez de Start
     public void InicializarDesdeLinker(
     List<CondicionPlaca>        _placas,
     List<CondicionLever>        _levers,
-    List<CondicionBoton>        _botones,
-    List<CondicionSocket>       _sockets,
-    List<CondicionItemRecogido> _items)
+    List<CondicionPuerta>        _puertas,
+    List<CondicionVela>        _velas,
+    List<CondicionFlorEnAltar>        _altarFlowers,
+    List<CondicionItemRecogido> _items,
+    List<CondicionSocket>       _sockets)
     {
-        placas   = _placas;
-        levers   = _levers;
-        botones  = _botones;
-        sockets  = _sockets;
-        items    = _items;
-        Inicializado = true;
-        // Ejecuta la misma lógica que Start()
-        InicializarCondiciones();
+    placas   = _placas;
+    levers   = _levers;
+    puertas  = _puertas;
+    velas = _velas;
+    flores = _altarFlowers;
+    sockets  = _sockets;
+    items    = _items;
+    Inicializado = true;
+    // Ejecuta la misma lógica que Start()
+    InicializarCondiciones();
     }
 
-    // void Start()
-    // {
-    //     if (!Inicializado)      // Si nadie llamó InicializarDesdeLinker, funciona normal
-    //         InicializarCondiciones();
-    // }
+    void Start()
+    {
+        if (!Inicializado)      // Si nadie llamó InicializarDesdeLinker, funciona normal
+            InicializarCondiciones();
+    }
 
     void InicializarCondiciones()
     {
-        todasLasCondiciones.Clear();
-        todasLasCondiciones.AddRange(placas);
-        todasLasCondiciones.AddRange(levers);
-        todasLasCondiciones.AddRange(botones);
-        todasLasCondiciones.AddRange(sockets);
-        todasLasCondiciones.AddRange(items);
+         Debug.Log($"[Puzzle] InicializarCondiciones llamado. Stack: {System.Environment.StackTrace}");
+    todasLasCondiciones.Clear();
+    todasLasCondiciones.Clear();
+    todasLasCondiciones.AddRange(placas);
+    todasLasCondiciones.AddRange(levers);
+    todasLasCondiciones.AddRange(puertas);
+    todasLasCondiciones.AddRange(velas);
+    todasLasCondiciones.AddRange(flores);
+    todasLasCondiciones.AddRange(piezasTumba);
+    int max = Mathf.Max(items.Count, sockets.Count);
+    for (int i = 0; i < max; i++)
+    {
+        if (i < items.Count)   todasLasCondiciones.Add(items[i]);
+        if (i < sockets.Count) todasLasCondiciones.Add(sockets[i]);
+    }
+
 
         foreach (var cond in todasLasCondiciones)
             cond.Inicializar(VerificarPuzzle);
 
-        ActualizarProgreso();
+    ActualizarProgreso();
+        for (int i = 0; i < todasLasCondiciones.Count; i++)
+        Debug.Log($"[{i}] {todasLasCondiciones[i].nombre}");
+            if (todasLasCondiciones.Count > 0) 
+    {
+        Debug.LogWarning("Ya inicializado, ignorando segunda llamada");
+        return;
+    }
     }
 
     void VerificarPuzzle()
@@ -112,46 +143,75 @@ public class MultiConditionPuzzle : MonoBehaviour
         }
     }
 
-    int ContarCumplidas() 
+    public int ContarCumplidas() 
     {
         int c = 0;
         foreach (var cond in todasLasCondiciones) if (cond.cumplida) c++;
         return c;
     }
     void SpawnRecompensas()
-{
-    foreach (var recompensa in recompensas)
     {
-        if (recompensa.prefab == null) continue;
-
-        Vector3 origen = recompensa.spawnPoint != null
-            ? recompensa.spawnPoint.position + recompensa.offset
-            : transform.position + recompensa.offset;
-
-        for (int i = 0; i < recompensa.cantidad; i++)
+        foreach (var recompensa in recompensas)
         {
-            // Si hay más de uno, los separa en línea
-            Vector3 pos = origen + Vector3.right * (i * recompensa.separacion);
-            Instantiate(recompensa.prefab, pos, Quaternion.identity);
+            if (recompensa.prefab == null) continue;
+
+            Vector3 origen = recompensa.spawnPoint != null
+                ? recompensa.spawnPoint.position + recompensa.offset
+                : transform.position + recompensa.offset;
+
+            for (int i = 0; i < recompensa.cantidad; i++)
+            {
+                // Si hay más de uno, los separa en línea
+                Vector3 pos = origen + Vector3.right * (i * recompensa.separacion);
+                Instantiate(recompensa.prefab, pos, Quaternion.identity);
+            }
         }
     }
-}
-
     void ActualizarProgreso()
     {
-        if (textoProgreso == null) return;
         int cumplidas = ContarCumplidas();
         int total     = todasLasCondiciones.Count;
-        textoProgreso.text = $"{cumplidas} / {total}";
+
+        if (textoProgreso != null)
+            textoProgreso.text = $"{cumplidas} / {total}";
+        ActualizarPista();
+         GameUIManager.Instance?.UpdatePuzzleProgress(
+        $"{cumplidas} / {total}",     
+         ObtenerPistaActual()
+          );
+        
     }
 
-    public void Resetear()
+    public string ObtenerPistaActual()
     {
-        foreach (var cond in todasLasCondiciones) cond.Resetear();
-        puzzleCompleto = false;
-        ActualizarProgreso();
-        OnPuzzleReseteado?.Invoke();
+        if (!requiereOrden) return null;
+        foreach (var cond in todasLasCondiciones)
+            if (!cond.cumplida) return $"Siguiente: {cond.nombre}";
+        return "¡Listo!";
     }
+
+    void ActualizarPista()
+    {
+        if (!requiereOrden) return;
+
+        foreach (var cond in todasLasCondiciones)
+        {
+            if (!cond.cumplida)
+            {
+                string hint = $"Siguiente: {cond.nombre}";
+                if (textoPista != null) textoPista.text = hint;
+                return;
+            }
+        }
+        if (textoPista != null) textoPista.text = "¡Listo!";
+    }
+    public void Resetear()
+        {
+            foreach (var cond in todasLasCondiciones) cond.Resetear();
+            puzzleCompleto = false;
+            ActualizarProgreso();
+            OnPuzzleReseteado?.Invoke();
+        }
 }
 [System.Serializable]
 public class PuzzleReward

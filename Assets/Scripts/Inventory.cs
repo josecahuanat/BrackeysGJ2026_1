@@ -39,7 +39,7 @@ public class Inventory : MonoBehaviour
     {
         if (HasItem)
         {
-            Debug.Log("Ya tienes un objeto. Suelta el actual primero (Q).");
+            GameUIManager.Instance?.ShowFeedback("Ya tienes un objeto. Suelta el actual primero (Q).");
             return false;
         }
 
@@ -86,15 +86,19 @@ public class Inventory : MonoBehaviour
     // ══════════ MODIFICAR DropItem() ══════════
     public void DropItem()
     {
-        if (!HasItem || currentItemObject == null)
+        if (!HasItem)
         {
-            if (!HasItem)
-                Debug.Log("No tienes ningún item para soltar");
-            else
-                Debug.LogWarning("Referencia de item perdida (probablemente ya fue usado)");
+            GameUIManager.Instance?.ShowFeedback("No tienes ningún item.");
             return;
         }
-
+        if (currentItemObject == null)
+        {
+            // Referencia perdida — limpia silenciosamente
+            currentItemID        = null;
+            currentItemRigidbody = null;
+            UpdateUI();
+            return;
+        }
         string droppedItem = currentItemID;
 
         if (currentItemObject != null)
@@ -145,6 +149,24 @@ public class Inventory : MonoBehaviour
 
         UpdateUI();
         OnItemDropped?.Invoke(droppedItem);
+    }
+    public void ClearAndReactivate()
+    {
+        if (currentItemObject != null)
+        {
+            currentItemObject.transform.SetParent(null);
+
+            foreach (var col in currentItemObject.GetComponentsInChildren<Collider>())
+                col.enabled = true;
+
+            foreach (var mb in currentItemObject.GetComponentsInChildren<MonoBehaviour>())
+                if (mb is IInteractable || mb is IPickable)
+                    mb.enabled = true;
+
+            if (currentItemRigidbody != null)
+                currentItemRigidbody.isKinematic = false;
+        }
+        ClearInventory();
     }
 
     // ══════════ NUEVO MÉTODO: GetCurrentItem() ══════════
