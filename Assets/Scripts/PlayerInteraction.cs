@@ -45,12 +45,28 @@ public class PlayerInteraction: MonoBehaviour
         CheckForInteractable();
         
         // Interactuar
-        if (Input.GetKeyDown(interactKey) && currentInteractable != null)
+        if (Input.GetKeyDown(interactKey))
         {
-            if (currentInteractable.CanInteract)
+            Debug.Log($"[PlayerInteraction] Tecla {interactKey} presionada");
+            
+            if (currentInteractable == null)
             {
-                Debug.Log($"Interactuando con: {currentInteractableObject.name}");
-                currentInteractable.Interact(gameObject);
+                Debug.LogWarning("[PlayerInteraction] No hay currentInteractable");
+            }
+            else
+            {
+                Debug.Log($"[PlayerInteraction] currentInteractable encontrado: {currentInteractableObject?.name}");
+                Debug.Log($"[PlayerInteraction] CanInteract = {currentInteractable.CanInteract}");
+                
+                if (currentInteractable.CanInteract)
+                {
+                    Debug.Log($"[PlayerInteraction] Interactuando con: {currentInteractableObject.name}");
+                    currentInteractable.Interact(gameObject);
+                }
+                else
+                {
+                    Debug.LogWarning("[PlayerInteraction] No puede interactuar (CanInteract=false)");
+                }
             }
         }
         
@@ -71,6 +87,7 @@ public class PlayerInteraction: MonoBehaviour
             IInteractable byRay = hit.collider.GetComponent<IInteractable>();
             if (byRay != null && byRay.CanInteract)
             {
+                if (showDebugRay) Debug.Log($"[PlayerInteraction] Raycast detectó: {hit.collider.name}");
                 SetCurrent(byRay, hit.collider.gameObject, DetectionSource.Raycast);
                 return;
             }
@@ -120,13 +137,15 @@ public class PlayerInteraction: MonoBehaviour
 
         if (interactable != null)
         {
-            interactPromptUI?.SetActive(true);
+            if (interactPromptUI != null)
+                interactPromptUI.SetActive(true);
             if (promptText != null)
                 promptText.text = interactable.InteractPrompt;
         }
         else
         {
-            interactPromptUI?.SetActive(false);
+            if (interactPromptUI != null)
+                interactPromptUI.SetActive(false);
         }
     }
 

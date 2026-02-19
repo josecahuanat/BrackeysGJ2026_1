@@ -22,7 +22,8 @@ public class Tomb : MonoBehaviour, IInteractable
     
     public bool IsLit => isLit;
 
-    public UnityEvent<GameObject> OnInteracted => throw new NotImplementedException();
+    // IInteractable requiere esto, pero Tomb usa OnTombInteracted en su lugar
+    public UnityEvent<GameObject> OnInteracted { get; } = new UnityEvent<GameObject>();
 
     void Start()
     {
@@ -51,11 +52,18 @@ public class Tomb : MonoBehaviour, IInteractable
     
     public void Interact(GameObject player)
     {
+        Debug.Log($"[Tomb] Interact llamado en {gameObject.name}, isLit={isLit}");
         if (!isLit)
         {
+            Debug.Log($"[Tomb] Encendiendo {gameObject.name}");
             isLit = true;
             UpdateVisual();
             OnTombInteracted?.Invoke();
+            Debug.Log($"[Tomb] {gameObject.name} encendida correctamente");
+        }
+        else
+        {
+            Debug.Log($"[Tomb] {gameObject.name} ya está encendida");
         }
     }
     
