@@ -1197,6 +1197,7 @@ GameObject:
   - component: {fileID: 123756189}
   - component: {fileID: 123756188}
   - component: {fileID: 123756187}
+  - component: {fileID: 123756190}
   m_Layer: 0
   m_Name: Cube (6)
   m_TagString: Untagged
@@ -1297,6 +1298,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 123756185}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &123756190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123756185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  litColor: {r: 1, g: 1, b: 0, a: 1}
+  unlitColor: {r: 0.01, g: 0.01, b: 0.01, a: 1}
+  emissionIntensity: 2
 --- !u!1 &127801353
 GameObject:
   m_ObjectHideFlags: 0
@@ -2673,6 +2689,7 @@ GameObject:
   - component: {fileID: 307635119}
   - component: {fileID: 307635118}
   - component: {fileID: 307635117}
+  - component: {fileID: 307635120}
   m_Layer: 0
   m_Name: Cube (15)
   m_TagString: Untagged
@@ -2773,6 +2790,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 307635115}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &307635120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307635115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  litColor: {r: 1, g: 1, b: 0, a: 1}
+  unlitColor: {r: 0.01, g: 0.01, b: 0.01, a: 1}
+  emissionIntensity: 2
 --- !u!1 &321850050
 GameObject:
   m_ObjectHideFlags: 0
@@ -2999,6 +3031,7 @@ GameObject:
   - component: {fileID: 327139130}
   - component: {fileID: 327139129}
   - component: {fileID: 327139128}
+  - component: {fileID: 327139131}
   m_Layer: 0
   m_Name: Cube (12)
   m_TagString: Untagged
@@ -3099,6 +3132,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 327139126}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &327139131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327139126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  litColor: {r: 1, g: 1, b: 0, a: 1}
+  unlitColor: {r: 0.01, g: 0.01, b: 0.01, a: 1}
+  emissionIntensity: 2
 --- !u!1 &328333582
 GameObject:
   m_ObjectHideFlags: 0
@@ -3111,6 +3159,7 @@ GameObject:
   - component: {fileID: 328333586}
   - component: {fileID: 328333585}
   - component: {fileID: 328333584}
+  - component: {fileID: 328333587}
   m_Layer: 0
   m_Name: Cube (12)
   m_TagString: Untagged
@@ -3211,6 +3260,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 328333582}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &328333587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328333582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  litColor: {r: 1, g: 1, b: 0, a: 1}
+  unlitColor: {r: 0.01, g: 0.01, b: 0.01, a: 1}
+  emissionIntensity: 2
 --- !u!1 &336003857
 GameObject:
   m_ObjectHideFlags: 0
@@ -4891,6 +4955,7 @@ GameObject:
   - component: {fileID: 514685134}
   - component: {fileID: 514685133}
   - component: {fileID: 514685132}
+  - component: {fileID: 514685135}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -4991,6 +5056,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 514685130}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &514685135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514685130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  litColor: {r: 1, g: 1, b: 0, a: 1}
+  unlitColor: {r: 0.01, g: 0.01, b: 0.01, a: 1}
+  emissionIntensity: 2
 --- !u!1 &518096308
 GameObject:
   m_ObjectHideFlags: 0
@@ -5457,6 +5537,7 @@ GameObject:
   - component: {fileID: 544326658}
   - component: {fileID: 544326657}
   - component: {fileID: 544326656}
+  - component: {fileID: 544326659}
   m_Layer: 0
   m_Name: Cube (6)
   m_TagString: Untagged
@@ -5557,6 +5638,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 544326654}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &544326659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544326654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  litColor: {r: 1, g: 1, b: 0, a: 1}
+  unlitColor: {r: 0.01, g: 0.01, b: 0.01, a: 1}
+  emissionIntensity: 2
 --- !u!1 &547219337
 GameObject:
   m_ObjectHideFlags: 0
@@ -7207,6 +7303,7 @@ GameObject:
   - component: {fileID: 745461785}
   - component: {fileID: 745461784}
   - component: {fileID: 745461783}
+  - component: {fileID: 745461786}
   m_Layer: 0
   m_Name: Cube (16)
   m_TagString: Untagged
@@ -7307,6 +7404,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 745461781}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &745461786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 745461781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  litColor: {r: 1, g: 1, b: 0, a: 1}
+  unlitColor: {r: 0.01, g: 0.01, b: 0.01, a: 1}
+  emissionIntensity: 2
 --- !u!1 &753184504
 GameObject:
   m_ObjectHideFlags: 0
@@ -7462,6 +7574,7 @@ GameObject:
   - component: {fileID: 755637127}
   - component: {fileID: 755637126}
   - component: {fileID: 755637125}
+  - component: {fileID: 755637128}
   m_Layer: 0
   m_Name: Cube (10)
   m_TagString: Untagged
@@ -7562,6 +7675,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 755637123}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &755637128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755637123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  litColor: {r: 1, g: 1, b: 0, a: 1}
+  unlitColor: {r: 0.01, g: 0.01, b: 0.01, a: 1}
+  emissionIntensity: 2
 --- !u!1 &764723454
 GameObject:
   m_ObjectHideFlags: 0
@@ -9500,6 +9628,7 @@ GameObject:
   - component: {fileID: 989896911}
   - component: {fileID: 989896910}
   - component: {fileID: 989896909}
+  - component: {fileID: 989896912}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -9600,6 +9729,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 989896907}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &989896912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989896907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  litColor: {r: 1, g: 1, b: 0, a: 1}
+  unlitColor: {r: 0.01, g: 0.01, b: 0.01, a: 1}
+  emissionIntensity: 2
 --- !u!1 &1003996819
 GameObject:
   m_ObjectHideFlags: 0
@@ -11012,6 +11156,7 @@ GameObject:
   - component: {fileID: 1210554301}
   - component: {fileID: 1210554300}
   - component: {fileID: 1210554299}
+  - component: {fileID: 1210554302}
   m_Layer: 0
   m_Name: Cube (21)
   m_TagString: Untagged
@@ -11112,6 +11257,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1210554297}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1210554302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1210554297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  litColor: {r: 1, g: 1, b: 0, a: 1}
+  unlitColor: {r: 0.01, g: 0.01, b: 0.01, a: 1}
+  emissionIntensity: 2
 --- !u!1 &1214937150
 GameObject:
   m_ObjectHideFlags: 0
@@ -11352,6 +11512,7 @@ GameObject:
   - component: {fileID: 1222839713}
   - component: {fileID: 1222839712}
   - component: {fileID: 1222839711}
+  - component: {fileID: 1222839714}
   m_Layer: 0
   m_Name: Cube (11)
   m_TagString: Untagged
@@ -11452,6 +11613,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1222839709}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1222839714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222839709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  litColor: {r: 1, g: 1, b: 0, a: 1}
+  unlitColor: {r: 0.01, g: 0.01, b: 0.01, a: 1}
+  emissionIntensity: 2
 --- !u!1 &1231867329
 GameObject:
   m_ObjectHideFlags: 0
@@ -11881,6 +12057,7 @@ GameObject:
   - component: {fileID: 1305011099}
   - component: {fileID: 1305011098}
   - component: {fileID: 1305011097}
+  - component: {fileID: 1305011100}
   m_Layer: 0
   m_Name: Cube (11)
   m_TagString: Untagged
@@ -11981,6 +12158,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1305011095}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1305011100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305011095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  litColor: {r: 1, g: 1, b: 0, a: 1}
+  unlitColor: {r: 0.01, g: 0.01, b: 0.01, a: 1}
+  emissionIntensity: 2
 --- !u!1 &1312141301
 GameObject:
   m_ObjectHideFlags: 0
@@ -12221,6 +12413,7 @@ GameObject:
   - component: {fileID: 1332640964}
   - component: {fileID: 1332640963}
   - component: {fileID: 1332640962}
+  - component: {fileID: 1332640965}
   m_Layer: 0
   m_Name: Cube (9)
   m_TagString: Untagged
@@ -12321,6 +12514,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1332640960}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1332640965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332640960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  litColor: {r: 1, g: 1, b: 0, a: 1}
+  unlitColor: {r: 0.01, g: 0.01, b: 0.01, a: 1}
+  emissionIntensity: 2
 --- !u!1 &1341261281
 GameObject:
   m_ObjectHideFlags: 0
@@ -12333,6 +12541,7 @@ GameObject:
   - component: {fileID: 1341261285}
   - component: {fileID: 1341261284}
   - component: {fileID: 1341261283}
+  - component: {fileID: 1341261286}
   m_Layer: 0
   m_Name: Cube (7)
   m_TagString: Untagged
@@ -12433,6 +12642,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1341261281}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1341261286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341261281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  litColor: {r: 1, g: 1, b: 0, a: 1}
+  unlitColor: {r: 0.01, g: 0.01, b: 0.01, a: 1}
+  emissionIntensity: 2
 --- !u!1 &1378747943
 GameObject:
   m_ObjectHideFlags: 0
@@ -14051,6 +14275,7 @@ GameObject:
   - component: {fileID: 1514008399}
   - component: {fileID: 1514008398}
   - component: {fileID: 1514008397}
+  - component: {fileID: 1514008400}
   m_Layer: 0
   m_Name: Cube (13)
   m_TagString: Untagged
@@ -14151,6 +14376,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1514008395}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1514008400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514008395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  litColor: {r: 1, g: 1, b: 0, a: 1}
+  unlitColor: {r: 0.01, g: 0.01, b: 0.01, a: 1}
+  emissionIntensity: 2
 --- !u!1 &1521207311
 GameObject:
   m_ObjectHideFlags: 0
@@ -14723,6 +14963,7 @@ GameObject:
   - component: {fileID: 1615026901}
   - component: {fileID: 1615026900}
   - component: {fileID: 1615026899}
+  - component: {fileID: 1615026902}
   m_Layer: 0
   m_Name: Cube (18)
   m_TagString: Untagged
@@ -14823,6 +15064,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1615026897}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1615026902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615026897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  litColor: {r: 1, g: 1, b: 0, a: 1}
+  unlitColor: {r: 0.01, g: 0.01, b: 0.01, a: 1}
+  emissionIntensity: 2
 --- !u!1 &1622850576
 GameObject:
   m_ObjectHideFlags: 0
@@ -15061,6 +15317,7 @@ GameObject:
   - component: {fileID: 1667329584}
   - component: {fileID: 1667329583}
   - component: {fileID: 1667329582}
+  - component: {fileID: 1667329585}
   m_Layer: 0
   m_Name: Cube (15)
   m_TagString: Untagged
@@ -15161,6 +15418,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1667329580}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1667329585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667329580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  litColor: {r: 1, g: 1, b: 0, a: 1}
+  unlitColor: {r: 0.01, g: 0.01, b: 0.01, a: 1}
+  emissionIntensity: 2
 --- !u!1 &1677815294
 GameObject:
   m_ObjectHideFlags: 0
@@ -16303,6 +16575,7 @@ GameObject:
   - component: {fileID: 1778302083}
   - component: {fileID: 1778302082}
   - component: {fileID: 1778302081}
+  - component: {fileID: 1778302084}
   m_Layer: 0
   m_Name: Cube (14)
   m_TagString: Untagged
@@ -16403,6 +16676,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1778302079}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1778302084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778302079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  litColor: {r: 1, g: 1, b: 0, a: 1}
+  unlitColor: {r: 0.01, g: 0.01, b: 0.01, a: 1}
+  emissionIntensity: 2
 --- !u!1 &1784260892
 GameObject:
   m_ObjectHideFlags: 0
@@ -19478,6 +19766,7 @@ GameObject:
   - component: {fileID: 2111143493}
   - component: {fileID: 2111143492}
   - component: {fileID: 2111143491}
+  - component: {fileID: 2111143494}
   m_Layer: 0
   m_Name: Cube (20)
   m_TagString: Untagged
@@ -19578,6 +19867,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2111143489}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2111143494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111143489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f260bf4ce27a24fb0cf901b5dd6976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tomb
+  litColor: {r: 1, g: 1, b: 0, a: 1}
+  unlitColor: {r: 0.01, g: 0.01, b: 0.01, a: 1}
+  emissionIntensity: 2
 --- !u!1 &2120315083
 GameObject:
   m_ObjectHideFlags: 0
