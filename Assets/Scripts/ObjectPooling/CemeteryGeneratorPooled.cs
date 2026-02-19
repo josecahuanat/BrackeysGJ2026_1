@@ -89,6 +89,7 @@ public class CemeteryGeneratorPooled : MonoBehaviour
         
         //ground.transform.localScale = new Vector3(chunkSize / 10, 1, chunkSize / 10);
         activeGroundChunks[coord] = ground.GetComponent<Ground>();
+        // Debug.Log($"{ground}, {activeGroundChunks[coord]}");
         activeGroundChunks[coord].Initialize();
     }
     void DespawnChunk(Vector2Int coord)

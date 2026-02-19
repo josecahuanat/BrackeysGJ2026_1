@@ -36,8 +36,6 @@ public class FirstPersonController : MonoBehaviour
     
     void HandleMovement()
     {
-        bool isGrounded = controller.isGrounded;
-        
         float moveX = Input.GetAxis("Horizontal");
         float moveZ = Input.GetAxis("Vertical");
         
