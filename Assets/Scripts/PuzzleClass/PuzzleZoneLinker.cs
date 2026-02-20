@@ -32,6 +32,7 @@ public class PuzzleZoneLinker : MonoBehaviour
     // [SerializeField] private bool autoDiscoverChildren = true;
     [SerializeField] bool requiereOrden = false;
     [SerializeField] bool doSelfInitialize = false;
+    PuzzleDifficulty puzzleData;
 
 
     void Awake()
@@ -195,8 +196,9 @@ public class PuzzleZoneLinker : MonoBehaviour
         levers = new List<Lever>();
         socketBindings = new List<SocketKeyBinding>();
 
-        PuzzleDifficulty puzzle = Level.Instance.GetPuzzle();
-        foreach(var item in puzzle.items)
+        puzzleData = Level.Instance.GetPuzzle();
+
+        foreach(var item in puzzleData.items)
         {
             for (int i = 0 ; i < item.quantity ; i++)
             {

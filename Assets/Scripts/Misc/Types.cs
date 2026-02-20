@@ -27,6 +27,13 @@ public class NicheBlockGenerationData
 
     [Header("Initialization Data")]
     public Vector3[] nichePositions;
+    public float nichePositionHighestY;
     public float bigBlockWidth, bigBlockHeight;
     public int minNiches, maxNiches;
+}
+
+[System.Serializable]
+public class GenerationData
+{
+    public int minItemPositions, maxItemPositions;
 }

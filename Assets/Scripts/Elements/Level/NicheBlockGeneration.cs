@@ -56,6 +56,10 @@ public class NicheBlockGeneration : MonoBehaviour
                 if (yPos > highestY)
                     highestY = yPos;
 
+
+                if (yPos > genData.nichePositionHighestY)
+                    genData.nichePositionHighestY = yPos;
+
                 genData.nichePositions[index] = new Vector3(xPos, yPos, 0f);
                 index++;
             }

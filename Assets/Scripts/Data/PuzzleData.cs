@@ -19,7 +19,6 @@ public class PuzzleItem
 {
     public PuzzleItemName name;
     public int quantity;
-    public int spawnPositions;
 
     public PoolName GetPoolName()
     {

@@ -115,6 +115,7 @@ MonoBehaviour:
     - {x: 2.465, y: -0.493, z: 0}
     - {x: 2.465, y: 0.493, z: 0}
     - {x: 2.465, y: 1.479, z: 0}
+    nichePositionHighestY: 1.479
     bigBlockWidth: 6.002
     bigBlockHeight: 4.0299997
     minNiches: 4
@@ -294,6 +295,7 @@ MonoBehaviour:
     - {x: 2.465, y: -0.493, z: 0}
     - {x: 2.465, y: 0.493, z: 0}
     - {x: 2.465, y: 1.479, z: 0}
+    nichePositionHighestY: 1.479
     bigBlockWidth: 6.002
     bigBlockHeight: 4.0299997
     minNiches: 4
@@ -469,6 +471,7 @@ MonoBehaviour:
     - {x: 2.465, y: -0.493, z: 0}
     - {x: 2.465, y: 0.493, z: 0}
     - {x: 2.465, y: 1.479, z: 0}
+    nichePositionHighestY: 1.479
     bigBlockWidth: 6.002
     bigBlockHeight: 4.0299997
     minNiches: 4
@@ -593,8 +596,12 @@ MonoBehaviour:
   keys: []
   pressurePlates: []
   levers: []
+  candles: []
+  doors: []
+  altarFlowers: []
   socketBindings: []
   requiereOrden: 0
+  doSelfInitialize: 0
 --- !u!114 &9182026800615316189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -609,11 +616,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MultiConditionPuzzle
   placas: []
   levers: []
-  botones: []
-  sockets: []
+  puertas: []
   items: []
+  velas: []
+  flores: []
+  piezasTumba: []
+  sockets: []
+  textoPista: {fileID: 0}
   recompensas: []
-  requiereOrden: 0
+  requiereOrden: 1
   textoProgreso: {fileID: 0}
   OnTodasCumplidas:
     m_PersistentCalls:
@@ -797,6 +808,7 @@ MonoBehaviour:
     - {x: 2.465, y: -0.493, z: 0}
     - {x: 2.465, y: 0.493, z: 0}
     - {x: 2.465, y: 1.479, z: 0}
+    nichePositionHighestY: 1.479
     bigBlockWidth: 6.002
     bigBlockHeight: 4.0299997
     minNiches: 4
