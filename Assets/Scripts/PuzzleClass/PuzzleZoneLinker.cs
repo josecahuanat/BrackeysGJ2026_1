@@ -31,15 +31,17 @@ public class PuzzleZoneLinker : MonoBehaviour
     [Header("Opciones")]
     // [SerializeField] private bool autoDiscoverChildren = true;
     [SerializeField] bool requiereOrden = false;
+    [SerializeField] bool doSelfInitialize = false;
 
 
-    // void Awake()
-    // {
-    //     if (autoDiscoverChildren)
-    //         DiscoverChildren();
-
-    //     WireConditions();
-    // }
+    void Awake()
+    {
+        if (doSelfInitialize)
+        {
+            DiscoverChildren();
+            WireConditions();
+        }
+    }
 
     void DiscoverChildren()
     {        

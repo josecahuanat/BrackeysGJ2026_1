@@ -70,34 +70,34 @@ public class MultiConditionPuzzle : MonoBehaviour
 
     void InicializarCondiciones()
     {
-         Debug.Log($"[Puzzle] InicializarCondiciones llamado. Stack: {System.Environment.StackTrace}");
-    todasLasCondiciones.Clear();
-    todasLasCondiciones.Clear();
-    todasLasCondiciones.AddRange(placas);
-    todasLasCondiciones.AddRange(levers);
-    todasLasCondiciones.AddRange(puertas);
-    todasLasCondiciones.AddRange(velas);
-    todasLasCondiciones.AddRange(flores);
-    todasLasCondiciones.AddRange(piezasTumba);
-    int max = Mathf.Max(items.Count, sockets.Count);
-    for (int i = 0; i < max; i++)
-    {
-        if (i < items.Count)   todasLasCondiciones.Add(items[i]);
-        if (i < sockets.Count) todasLasCondiciones.Add(sockets[i]);
-    }
+        // Debug.Log($"[Puzzle] InicializarCondiciones llamado. Stack: {System.Environment.StackTrace}");
+        todasLasCondiciones.Clear();
+        todasLasCondiciones.Clear();
+        todasLasCondiciones.AddRange(placas);
+        todasLasCondiciones.AddRange(levers);
+        todasLasCondiciones.AddRange(puertas);
+        todasLasCondiciones.AddRange(velas);
+        todasLasCondiciones.AddRange(flores);
+        todasLasCondiciones.AddRange(piezasTumba);
+        int max = Mathf.Max(items.Count, sockets.Count);
+        for (int i = 0; i < max; i++)
+        {
+            if (i < items.Count)   todasLasCondiciones.Add(items[i]);
+            if (i < sockets.Count) todasLasCondiciones.Add(sockets[i]);
+        }
 
 
-        foreach (var cond in todasLasCondiciones)
-            cond.Inicializar(VerificarPuzzle);
+            foreach (var cond in todasLasCondiciones)
+                cond.Inicializar(VerificarPuzzle);
 
-    ActualizarProgreso();
-        for (int i = 0; i < todasLasCondiciones.Count; i++)
-        Debug.Log($"[{i}] {todasLasCondiciones[i].nombre}");
-            if (todasLasCondiciones.Count > 0) 
-    {
-        Debug.LogWarning("Ya inicializado, ignorando segunda llamada");
-        return;
-    }
+        ActualizarProgreso();
+            for (int i = 0; i < todasLasCondiciones.Count; i++)
+            // Debug.Log($"[{i}] {todasLasCondiciones[i].nombre}");
+                if (todasLasCondiciones.Count > 0) 
+        {
+            // Debug.LogWarning("Ya inicializado, ignorando segunda llamada");
+            return;
+        }
     }
 
     void VerificarPuzzle()

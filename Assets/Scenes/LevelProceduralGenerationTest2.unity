@@ -1521,6 +1521,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3516885448995393691, guid: 2e77f308ae59d9b458b00148bdb583d3, type: 3}
+      propertyPath: doSelfInitialize
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5938498856389165003, guid: 2e77f308ae59d9b458b00148bdb583d3, type: 3}
       propertyPath: m_Name
       value: PuzzleZone_Pilar3
@@ -1578,6 +1582,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3516885448995393691, guid: 8e9fcf711f860eb4e9c1c4104402f062, type: 3}
+      propertyPath: doSelfInitialize
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5938498856389165003, guid: 8e9fcf711f860eb4e9c1c4104402f062, type: 3}
       propertyPath: m_Name
       value: PuzzleZone_Pilar
@@ -2775,6 +2783,10 @@ PrefabInstance:
       propertyPath: puzzle
       value: 
       objectReference: {fileID: 1118488131}
+    - target: {fileID: 2927000563022408491, guid: 0904526aafd7c1f43be2f762cee644da, type: 3}
+      propertyPath: doSelfInitialize
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5602319089980452222, guid: 0904526aafd7c1f43be2f762cee644da, type: 3}
       propertyPath: m_LocalPosition.x
       value: 14.81575
@@ -2843,6 +2855,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3516885448995393691, guid: 880c40b1b0ba71841954bcbf13da42aa, type: 3}
+      propertyPath: doSelfInitialize
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5938498856389165003, guid: 880c40b1b0ba71841954bcbf13da42aa, type: 3}
       propertyPath: m_Name
       value: PuzzleZone_Pilar2
@@ -3364,6 +3380,10 @@ PrefabInstance:
       propertyPath: puzzle
       value: 
       objectReference: {fileID: 1254445622}
+    - target: {fileID: 444756473714908751, guid: 65a56030724d7564789de651eaa12786, type: 3}
+      propertyPath: doSelfInitialize
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1403570070698755423, guid: 65a56030724d7564789de651eaa12786, type: 3}
       propertyPath: m_Name
       value: PuzzleZone_TombCandle
@@ -4026,6 +4046,10 @@ PrefabInstance:
       propertyPath: puzzle
       value: 
       objectReference: {fileID: 1535117566}
+    - target: {fileID: 6854966374789338756, guid: 12c34b02b8b43844cabbc112077b3e75, type: 3}
+      propertyPath: doSelfInitialize
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4077,6 +4101,10 @@ PrefabInstance:
       propertyPath: puzzle
       value: 
       objectReference: {fileID: 2077640475}
+    - target: {fileID: 596536487381925170, guid: 27c82cc9441b602479f2d05eaebc131e, type: 3}
+      propertyPath: doSelfInitialize
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1506076057997308771, guid: 27c82cc9441b602479f2d05eaebc131e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.99
@@ -4219,8 +4247,8 @@ MonoBehaviour:
   doors: []
   altarFlowers: []
   socketBindings: []
-  autoDiscoverChildren: 1
   requiereOrden: 0
+  doSelfInitialize: 1
 --- !u!54 &7032257605277052896
 Rigidbody:
   m_ObjectHideFlags: 0
