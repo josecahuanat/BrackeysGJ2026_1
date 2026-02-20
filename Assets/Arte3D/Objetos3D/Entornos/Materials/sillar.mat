@@ -107,6 +107,7 @@ Material:
     - _Amplitud: 3
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
+    - _Boolean: 0
     - _BumpScale: 0.40000004
     - _CastShadows: 1
     - _ClearCoatMask: 0
@@ -118,7 +119,7 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
-    - _FuerzaNormal: 0.3
+    - _FuerzaNormal: 0.7
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -126,6 +127,7 @@ Material:
     - _Mode: 0
     - _MulMetal: 1
     - _MulSmooth: 0.5
+    - _Mundo: 0
     - _OcclusionStrength: 1
     - _Parallax: 1
     - _Pasos: 2

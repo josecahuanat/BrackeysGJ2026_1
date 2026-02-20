@@ -3,12 +3,22 @@ guid: aea9972af20d765488fb6f150948b543
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metalPintado
+    second: {fileID: 2100000, guid: df7d139b4ac05f44d971ce96fefcdeef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: transparente
+    second: {fileID: 2100000, guid: 303074f9214163844bce399ae4d36e33, type: 2}
   materials:
-    materialImportMode: 2
+    materialImportMode: 1
     materialName: 1
     materialSearch: 0
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
