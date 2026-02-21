@@ -1,8 +1,5 @@
 using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine.Events;
-using System.Linq;
-using JetBrains.Annotations;
 
 // Configuración de qué IDs de llave corresponden a qué socket/puerta,
 // definida directamente en el prefab desde el Inspector.
@@ -10,8 +7,8 @@ using JetBrains.Annotations;
 public class SocketKeyBinding
 {
     public ItemSocket socket;
-    public string     requiredKeyID; // debe coincidir con Key.keyID de la llave spawneada
-    public string     conditionName = "Llave en socket";
+    public string requiredKeyID; // debe coincidir con Key.keyID de la llave spawneada
+    public string conditionName = "Llave en socket";
 }
 
 public class PuzzleZoneLinker : MonoBehaviour
@@ -20,17 +17,15 @@ public class PuzzleZoneLinker : MonoBehaviour
     
     [Header("Condiciones a cablear automáticamente")]
     [Tooltip("Deja vacío para auto-descubrir todos los hijos")]
-    [SerializeField] private List<Key>           keys           = new();
-    [SerializeField] private List<PressurePlate> pressurePlates = new();
-    [SerializeField] private List<Lever>         levers         = new();
-    [SerializeField] private List<Candle> candles = new();
-    [SerializeField] private List<Door> doors = new();
-    [SerializeField] private List<FlowerAltar> altarFlowers = new();
-    [SerializeField] private List<SocketKeyBinding> socketBindings = new();
+    [SerializeField] List<Key> keys = new List<Key>();
+    [SerializeField] List<PressurePlate> pressurePlates = new List<PressurePlate>();
+    [SerializeField] List<Lever> levers = new List<Lever>();
+    [SerializeField] List<Candle> candles = new List<Candle>();
+    [SerializeField] List<Door> doors = new List<Door>();
+    [SerializeField] List<FlowerAltar> altarFlowers = new List<FlowerAltar>();
+    [SerializeField] List<SocketKeyBinding> socketBindings = new List<SocketKeyBinding>();
     
     [Header("Opciones")]
-    // [SerializeField] private bool autoDiscoverChildren = true;
-    [SerializeField] bool requiereOrden = false;
     [SerializeField] bool doSelfInitialize = false;
     PuzzleDifficulty puzzleData;
 
@@ -76,7 +71,6 @@ public class PuzzleZoneLinker : MonoBehaviour
         }
     }
     
-
     public void WireConditions()
     {
         var _placas   = new List<CondicionPlaca>();

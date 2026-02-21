@@ -40,6 +40,8 @@ public class FirstPersonController : MonoBehaviour
         float moveZ = Input.GetAxis("Vertical");
         
         Vector3 move = transform.right * moveX + transform.forward * moveZ;
+        if (!controller.isGrounded)
+            move += Vector3.down;
         float currentSpeed = Input.GetKey(KeyCode.LeftShift)? sprintSpeed : walkSpeed;
         controller.Move(move * currentSpeed * Time.deltaTime);
     }

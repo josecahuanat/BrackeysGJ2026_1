@@ -149,6 +149,7 @@ public class MultiConditionPuzzle : MonoBehaviour
         foreach (var cond in todasLasCondiciones) if (cond.cumplida) c++;
         return c;
     }
+    
     void SpawnRecompensas()
     {
         foreach (var recompensa in recompensas)

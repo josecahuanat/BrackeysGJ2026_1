@@ -15,7 +15,6 @@ public class Level : MonoBehaviour
     [Header("Puzzle Zones")]
     [SerializeField] PuzzleData[] puzzles;
     [SerializeField] PuzzleZoneConfig[] availablePuzzleConfigs;
-    [SerializeField] [Range(0f,1f)] float puzzleChunkProbability = 0.3f;
 
     Dictionary<Vector2Int, Ground> activeGroundChunks = new Dictionary<Vector2Int, Ground>();
     Vector2Int currentChunkCoord;
