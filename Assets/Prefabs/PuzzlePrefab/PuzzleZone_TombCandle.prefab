@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 783481758586138613}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0.318, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -43,7 +43,7 @@ Light:
   m_Enabled: 0
   serializedVersion: 12
   m_Type: 2
-  m_Color: {r: 1, g: 0.9324088, b: 0.4575472, a: 1}
+  m_Color: {r: 1, g: 0.9539152, b: 0.2971698, a: 1}
   m_Intensity: 1
   m_Range: 5
   m_SpotAngle: 30
@@ -154,7 +154,7 @@ Transform:
   m_GameObject: {fileID: 1403570070698755423}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.26, y: 0.77291, z: -28.32}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -177,6 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0773d52f85b75754b9b71ecd338a8e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PuzzleZoneLinker
+  puzzle: {fileID: 2373901961633173917}
   keys: []
   pressurePlates: []
   levers: []
@@ -184,8 +185,8 @@ MonoBehaviour:
   doors: []
   altarFlowers: []
   socketBindings: []
-  autoDiscoverChildren: 1
   requiereOrden: 0
+  doSelfInitialize: 1
 --- !u!114 &2373901961633173917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,7 +264,7 @@ Transform:
   m_GameObject: {fileID: 2121616050230001880}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0.318, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -279,7 +280,7 @@ Light:
   m_Enabled: 0
   serializedVersion: 12
   m_Type: 2
-  m_Color: {r: 1, g: 0.94099194, b: 0.41037738, a: 1}
+  m_Color: {r: 1, g: 0.9539152, b: 0.2971698, a: 1}
   m_Intensity: 1
   m_Range: 5
   m_SpotAngle: 30
@@ -407,7 +408,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2238140757525658967}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -6566961802650561107, guid: d06edb0553486714a9fc26579505c952, type: 3}
 --- !u!23 &476104568231429588
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -477,9 +478,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 2
+  m_Height: 1.16
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.42, z: 0}
 --- !u!54 &150693141266609582
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -557,7 +558,7 @@ Transform:
   m_GameObject: {fileID: 4261901360382647511}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0.318, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -573,7 +574,7 @@ Light:
   m_Enabled: 0
   serializedVersion: 12
   m_Type: 2
-  m_Color: {r: 1, g: 0.97391295, b: 0.4481132, a: 1}
+  m_Color: {r: 1, g: 0.9539152, b: 0.2971698, a: 1}
   m_Intensity: 1
   m_Range: 5
   m_SpotAngle: 30
@@ -684,7 +685,7 @@ Transform:
   m_GameObject: {fileID: 4430135873585559262}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0.318, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -700,7 +701,7 @@ Light:
   m_Enabled: 0
   serializedVersion: 12
   m_Type: 2
-  m_Color: {r: 0.991316, g: 1, b: 0.495283, a: 1}
+  m_Color: {r: 1, g: 0.9539152, b: 0.2971698, a: 1}
   m_Intensity: 1
   m_Range: 5
   m_SpotAngle: 30
@@ -828,7 +829,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4799042715783252667}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -6566961802650561107, guid: d06edb0553486714a9fc26579505c952, type: 3}
 --- !u!23 &6859766344555193085
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -898,9 +899,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 2
+  m_Height: 1.16
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.42, z: 0}
 --- !u!54 &3827147766264311113
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1164,7 +1165,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6073175795399694997}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -6566961802650561107, guid: d06edb0553486714a9fc26579505c952, type: 3}
 --- !u!23 &346949988816745777
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1234,9 +1235,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 2
+  m_Height: 1.16
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.42, z: 0}
 --- !u!54 &8653412343365794915
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1277,7 +1278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Candle
   llama: {fileID: 4261901360382647511}
-  luzVela: {fileID: 5322851231856210397}
+  luzVela: {fileID: 3405150167135034642}
   onInteracted:
     m_PersistentCalls:
       m_Calls: []
@@ -1331,7 +1332,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8877730558495781895}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -6566961802650561107, guid: d06edb0553486714a9fc26579505c952, type: 3}
 --- !u!23 &8131286005995617405
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1401,9 +1402,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 2
+  m_Height: 1.16
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.42, z: 0}
 --- !u!54 &552405709061084236
 Rigidbody:
   m_ObjectHideFlags: 0
