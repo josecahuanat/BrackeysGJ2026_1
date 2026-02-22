@@ -120,7 +120,7 @@ public class PlayerInteraction: MonoBehaviour
 
         if (interactable != null)
         {
-            interactPromptUI?.SetActive(true);
+            // interactPromptUI?.SetActive(true);
             if (promptText != null)
                 promptText.text = interactable.InteractPrompt;
                  bool esItemSinProgreso = false;

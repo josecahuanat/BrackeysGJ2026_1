@@ -24,33 +24,9 @@ MonoBehaviour:
     difficulty: 1
   - items:
     - name: 6
-      quantity: 3
+      quantity: 4
     difficulty: 2
   - items:
     - name: 6
-      quantity: 3
+      quantity: 5
     difficulty: 3
-  - items:
-    - name: 6
-      quantity: 3
-    difficulty: 4
-  - items:
-    - name: 6
-      quantity: 3
-    difficulty: 5
-  - items:
-    - name: 6
-      quantity: 3
-    difficulty: 6
-  - items:
-    - name: 6
-      quantity: 3
-    difficulty: 7
-  - items:
-    - name: 6
-      quantity: 3
-    difficulty: 8
-  - items:
-    - name: 6
-      quantity: 3
-    difficulty: 9

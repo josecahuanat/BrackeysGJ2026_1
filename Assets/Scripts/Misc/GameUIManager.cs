@@ -88,7 +88,7 @@ public class GameUIManager : MonoBehaviour
         if (progressText) progressText.text = progreso;
         if (hintText)
         {
-            hintText.gameObject.SetActive(!string.IsNullOrEmpty(pista));
+            //hintText.gameObject.SetActive(!string.IsNullOrEmpty(pista));
             hintText.text = pista ?? "";
         }
     }

@@ -51,7 +51,11 @@ public class CondicionLever : PuzzleCondition
         lever.OnDesactivado.AddListener(() => { cumplida = false; });
     }
 
-    public override void Resetear() => cumplida = false;
+    public override void Resetear()
+    {
+        // lever.Interact(null);
+        cumplida = false;
+    }
 }
 
 
