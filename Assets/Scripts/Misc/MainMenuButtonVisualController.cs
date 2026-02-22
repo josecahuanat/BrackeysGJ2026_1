@@ -86,9 +86,13 @@ public class MainMenuButtonVisualController : MonoBehaviour
 
         buttons[currentIndex]?.onClick.Invoke();
     }
-    public void SetMainMenu()
+    public void SetReturnMenu()
     {
         optionsPanel.SetActive(false);
+    }
+    public void SetMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
     private int FindIndexBySelectedObject(GameObject selectedObject)
     {

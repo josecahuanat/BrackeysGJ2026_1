@@ -4838,7 +4838,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 297439424}
         m_TargetAssemblyTypeName: MainMenuButtonVisualController, Assembly-CSharp
-        m_MethodName: SetMainMenu
+        m_MethodName: SetReturnMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -373,6 +373,7 @@ GameObject:
   - component: {fileID: 91181913}
   - component: {fileID: 91181912}
   - component: {fileID: 91181911}
+  - component: {fileID: 91181914}
   m_Layer: 5
   m_Name: LangOption
   m_TagString: Untagged
@@ -443,7 +444,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 91181912}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 91181914}
+        m_TargetAssemblyTypeName: MainMenuButtonVisualController, Assembly-CSharp
+        m_MethodName: SetMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &91181912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -482,6 +495,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 91181909}
   m_CullTransparentMesh: 1
+--- !u!114 &91181914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91181909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09505b4acd0e8004bbd1cc6775cb97a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MainMenuButtonVisualController
+  buttons: []
+  sceneNames: []
+  hiddenAlpha: 0
+  visibleAlpha: 1
+  transitionDuration: 0.18
+  optionsPanel: {fileID: 0}
+  optionsButtonIndex: 1
+  navigateSfx: {fileID: 0}
+  sfxVolume: 1
 --- !u!1 &127781994
 GameObject:
   m_ObjectHideFlags: 0
@@ -1839,7 +1873,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Dani Loayza
+  m_text: Daniel Loayza
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1f19801bd1179e94e9f0b17b7723cbc8, type: 2}
   m_sharedMaterial: {fileID: 734372765175538260, guid: 1f19801bd1179e94e9f0b17b7723cbc8, type: 2}
