@@ -1,16 +1,23 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
+using UnityEngine.Rendering;
 public class MainMenuButtonVisualController : MonoBehaviour
 {
     [Header("Buttons in order (Play first)")]
     [SerializeField] private Button[] buttons;
 
+    [Header("Scene Names (same order as Buttons)")]
+    [SerializeField] private string[] sceneNames;
+
     [Header("Alpha")]
     [SerializeField, Range(0f, 1f)] private float hiddenAlpha = 0f;
     [SerializeField, Range(0f, 1f)] private float visibleAlpha = 1f;
     [SerializeField, Min(0.01f)] private float transitionDuration = 0.18f;
+    [Header("Options Panel (índice del botón Options)")]
+    [SerializeField] private GameObject optionsPanel;
+    [SerializeField] private int optionsButtonIndex = 1;
 
     [Header("Audio")]
     [SerializeField] private AudioClip navigateSfx;
@@ -48,9 +55,41 @@ public class MainMenuButtonVisualController : MonoBehaviour
         if (selectedIndex >= 0 && selectedIndex != currentIndex)
             SetCurrentIndex(selectedIndex, false);
 
+        // ── Confirmar con Enter / Submit ──────────────────────────────────────
+        if (Input.GetButtonDown("Submit"))
+            ConfirmCurrentButton();
+        // ─────────────────────────────────────────────────────────────────────
+
         AnimateVisuals();
     }
 
+    private void ConfirmCurrentButton()
+    {
+        if (currentIndex < 0 || currentIndex >= buttons.Length)
+            return;
+
+        // Botón Options
+        if (currentIndex == optionsButtonIndex && optionsPanel != null)
+        {
+            optionsPanel.SetActive(!optionsPanel.activeSelf);
+            return;
+        }
+        if (sceneNames != null && currentIndex < sceneNames.Length)
+        {
+            string scene = sceneNames[currentIndex];
+            if (!string.IsNullOrEmpty(scene))
+            {
+                SceneManager.LoadScene(scene);
+                return;
+            }
+        }
+
+        buttons[currentIndex]?.onClick.Invoke();
+    }
+    public void SetMainMenu()
+    {
+        optionsPanel.SetActive(false);
+    }
     private int FindIndexBySelectedObject(GameObject selectedObject)
     {
         for (int i = 0; i < buttons.Length; i++)
