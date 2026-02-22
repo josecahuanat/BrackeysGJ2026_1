@@ -733,6 +733,9 @@ MonoBehaviour:
   - {fileID: 781300117}
   hiddenAlpha: 0
   visibleAlpha: 1
+  transitionDuration: 0.18
+  navigateSfx: {fileID: 8300000, guid: fb09e097309a36e4aa3fe3177bf8fd2d, type: 3}
+  sfxVolume: 1
 --- !u!1 &562096395
 GameObject:
   m_ObjectHideFlags: 0

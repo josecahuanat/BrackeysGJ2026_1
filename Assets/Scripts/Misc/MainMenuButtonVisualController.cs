@@ -14,9 +14,7 @@ public class MainMenuButtonVisualController : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField] private AudioClip navigateSfx;
-    [SerializeField] private AudioClip backgroundMusic;
     [SerializeField, Range(0f, 1f)] private float sfxVolume = 1f;
-    [SerializeField, Range(0f, 1f)] private float musicVolume = 0.6f;
 
     private int currentIndex = -1;
     private Graphic[] containerGraphics;
@@ -24,11 +22,10 @@ public class MainMenuButtonVisualController : MonoBehaviour
     private float[] currentAlphas;
     private float[] targetAlphas;
     private AudioSource sfxSource;
-    private AudioSource musicSource;
 
     private void Start()
     {
-        SetupAudio();
+        SetupSfxAudio();
 
         if (buttons == null || buttons.Length == 0)
             return;
@@ -85,23 +82,13 @@ public class MainMenuButtonVisualController : MonoBehaviour
             PlayNavigateSfx();
     }
 
-    private void SetupAudio()
+    private void SetupSfxAudio()
     {
         sfxSource = gameObject.AddComponent<AudioSource>();
         sfxSource.playOnAwake = false;
         sfxSource.loop = false;
         sfxSource.spatialBlend = 0f;
         sfxSource.volume = sfxVolume;
-
-        musicSource = gameObject.AddComponent<AudioSource>();
-        musicSource.playOnAwake = false;
-        musicSource.loop = true;
-        musicSource.spatialBlend = 0f;
-        musicSource.volume = musicVolume;
-        musicSource.clip = backgroundMusic;
-
-        if (backgroundMusic != null)
-            musicSource.Play();
     }
 
     private void PlayNavigateSfx()
@@ -238,5 +225,28 @@ public class MainMenuButtonVisualController : MonoBehaviour
             return;
 
         EventSystem.current.SetSelectedGameObject(button.gameObject);
+    }
+
+    public void FocusButton(int index, bool playNavigateSfx = false)
+    {
+        if (buttons == null || buttons.Length == 0)
+            return;
+
+        if (index < 0 || index >= buttons.Length)
+            return;
+
+        currentIndex = index;
+        ApplyAlphaTargets(true);
+        SelectButtonObject(index);
+
+        if (playNavigateSfx)
+            PlayNavigateSfx();
+    }
+
+    public void SetSfxVolume(float volume)
+    {
+        sfxVolume = Mathf.Clamp01(volume);
+        if (sfxSource != null)
+            sfxSource.volume = sfxVolume;
     }
 }
