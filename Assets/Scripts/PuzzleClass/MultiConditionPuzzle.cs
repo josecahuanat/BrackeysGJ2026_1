@@ -42,24 +42,24 @@ public class MultiConditionPuzzle : MonoBehaviour
     public int TotalCondiciones() => todasLasCondiciones.Count;
 // Llamado por PuzzleZoneLinker en vez de Start
     public void InicializarDesdeLinker(
-    List<CondicionPlaca>        _placas,
-    List<CondicionLever>        _levers,
-    List<CondicionPuerta>        _puertas,
-    List<CondicionVela>        _velas,
-    List<CondicionFlorEnAltar>        _altarFlowers,
-    List<CondicionItemRecogido> _items,
-    List<CondicionSocket>       _sockets)
+        List<CondicionPlaca>        _placas,
+        List<CondicionLever>        _levers,
+        List<CondicionPuerta>        _puertas,
+        List<CondicionVela>        _velas,
+        List<CondicionFlorEnAltar>        _altarFlowers,
+        List<CondicionItemRecogido> _items,
+        List<CondicionSocket>       _sockets)
     {
-    placas   = _placas;
-    levers   = _levers;
-    puertas  = _puertas;
-    velas = _velas;
-    flores = _altarFlowers;
-    sockets  = _sockets;
-    items    = _items;
-    Inicializado = true;
-    // Ejecuta la misma lógica que Start()
-    InicializarCondiciones();
+        placas   = _placas;
+        levers   = _levers;
+        puertas  = _puertas;
+        velas = _velas;
+        flores = _altarFlowers;
+        sockets  = _sockets;
+        items    = _items;
+        Inicializado = true;
+        // Ejecuta la misma lógica que Start()
+        InicializarCondiciones();
     }
 
     void Start()
@@ -87,8 +87,8 @@ public class MultiConditionPuzzle : MonoBehaviour
         }
 
 
-            foreach (var cond in todasLasCondiciones)
-                cond.Inicializar(VerificarPuzzle);
+        foreach (var cond in todasLasCondiciones)
+            cond.Inicializar(VerificarPuzzle);
 
         ActualizarProgreso();
             for (int i = 0; i < todasLasCondiciones.Count; i++)
@@ -208,7 +208,8 @@ public class MultiConditionPuzzle : MonoBehaviour
     }
     public void Resetear()
         {
-            foreach (var cond in todasLasCondiciones) cond.Resetear();
+            foreach (var cond in todasLasCondiciones) 
+                cond.Resetear();
             puzzleCompleto = false;
             ActualizarProgreso();
             OnPuzzleReseteado?.Invoke();

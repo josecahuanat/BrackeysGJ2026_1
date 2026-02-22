@@ -1833,7 +1833,7 @@ MonoBehaviour:
   m_fontSize: 20
   m_fontSizeBase: 20
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -2298,7 +2298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2809,7 +2809,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1217436725
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3357,7 +3357,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1895811008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3735,6 +3735,71 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b0b31f1f7be4aa542942543dd5ff9c0c, type: 3}
   m_PrefabInstance: {fileID: 1919069853}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1937118933
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2104676504097690289, guid: 5d4bf58b4c0a2844bae3fc9c88bb6846, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3515420948599812644, guid: 5d4bf58b4c0a2844bae3fc9c88bb6846, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5831574053558896891, guid: 5d4bf58b4c0a2844bae3fc9c88bb6846, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5831574053558896891, guid: 5d4bf58b4c0a2844bae3fc9c88bb6846, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5831574053558896891, guid: 5d4bf58b4c0a2844bae3fc9c88bb6846, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5831574053558896891, guid: 5d4bf58b4c0a2844bae3fc9c88bb6846, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5831574053558896891, guid: 5d4bf58b4c0a2844bae3fc9c88bb6846, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5831574053558896891, guid: 5d4bf58b4c0a2844bae3fc9c88bb6846, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5831574053558896891, guid: 5d4bf58b4c0a2844bae3fc9c88bb6846, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5831574053558896891, guid: 5d4bf58b4c0a2844bae3fc9c88bb6846, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5831574053558896891, guid: 5d4bf58b4c0a2844bae3fc9c88bb6846, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5831574053558896891, guid: 5d4bf58b4c0a2844bae3fc9c88bb6846, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6208391224697507200, guid: 5d4bf58b4c0a2844bae3fc9c88bb6846, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5d4bf58b4c0a2844bae3fc9c88bb6846, type: 3}
 --- !u!1 &1993625568
 GameObject:
   m_ObjectHideFlags: 0
@@ -3871,7 +3936,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2072189115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5143,6 +5208,7 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1937118933}
   - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 938464738}

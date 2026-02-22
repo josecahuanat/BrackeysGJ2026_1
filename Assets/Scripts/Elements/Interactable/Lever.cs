@@ -35,7 +35,8 @@ public class Lever : MonoBehaviour, IInteractable
         if (isOn) OnActivado?.Invoke();
         else      OnDesactivado?.Invoke();
 
-        onInteracted?.Invoke(player);
+        if (player != null)
+            onInteracted?.Invoke(player);
     }
     // ───────────────────────────────────────────────────────
 

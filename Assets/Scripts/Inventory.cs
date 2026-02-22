@@ -202,7 +202,7 @@ public class Inventory : MonoBehaviour
         if (itemNameText != null)
         {
             itemNameText.text = HasItem ? currentItemID : "Vacío";
-            itemNameText.gameObject.SetActive(true);
+            // itemNameText.gameObject.SetActive(true);
         }
     }
 }
