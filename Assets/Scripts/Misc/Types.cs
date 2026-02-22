@@ -11,6 +11,11 @@ public enum PoolName
     Lever = 6,
 }
 
+public enum LampPostColor
+{
+    Yellow = 0, Blue = 1, Red = 2
+}
+
 [System.Serializable]
 public class NicheBlockGenerationData
 {

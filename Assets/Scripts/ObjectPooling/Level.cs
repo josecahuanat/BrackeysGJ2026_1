@@ -1,10 +1,10 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 
 public class Level : MonoBehaviour
 {
     public static Level Instance { get; private set; }
-
 
     [Header("Generation Settings")]
     [SerializeField] Transform player;
@@ -16,10 +16,13 @@ public class Level : MonoBehaviour
     [SerializeField] PuzzleData[] puzzles;
     [SerializeField] PuzzleZoneConfig[] availablePuzzleConfigs;
 
-    Dictionary<Vector2Int, Ground> activeGroundChunks = new Dictionary<Vector2Int, Ground>();
+    Dictionary<Vector2Int, Ground> activeGroundChunks;
+    List<Ground> activeGroundsList;
     Vector2Int currentChunkCoord;
     int seed;
-    int puzzleIndex, puzzleDifficulty;
+    int puzzleIndex, closestGroundIndex;
+
+    int CurrentPuzzleDiff => activeGroundsList.Count == 0? 0 : activeGroundsList[closestGroundIndex].PuzzleDifficulty;
     
     void Awake()
     {
@@ -35,6 +38,8 @@ public class Level : MonoBehaviour
 
     void Start()
     {
+        activeGroundChunks = new Dictionary<Vector2Int, Ground>();
+        activeGroundsList = new List<Ground>();
         seed = Random.Range(0, 100000);
         Random.InitState(seed);
         
@@ -47,6 +52,8 @@ public class Level : MonoBehaviour
                 GenerateGroundChunk(coord);
             }
         }
+
+        UpdateLampPosts();
     }
     
     void Update()
@@ -57,6 +64,9 @@ public class Level : MonoBehaviour
         {
             currentChunkCoord = newChunkCoord;
             UpdateChunks();
+
+            closestGroundIndex = activeGroundsList.IndexOf(activeGroundChunks[currentChunkCoord]);
+            UpdateLampPosts();
         }
     }
     
@@ -108,11 +118,13 @@ public class Level : MonoBehaviour
         activeGroundChunks[coord] = ground.GetComponent<Ground>();
         // Debug.Log($"{ground}, {activeGroundChunks[coord]}");
         activeGroundChunks[coord].Initialize();
+        activeGroundsList.Add(activeGroundChunks[coord]);
     }
 
     void DespawnChunk(Vector2Int coord)
     {
         activeGroundChunks[coord].Despawn();
+        activeGroundsList.Remove(activeGroundChunks[coord]);
         activeGroundChunks.Remove(coord);
     }
 
@@ -122,8 +134,48 @@ public class Level : MonoBehaviour
             DespawnChunk(coord);
     }
 
+    void UpdateLampPosts()
+    {
+        // Debug.Log("UpdateLampPosts");
+        foreach(var ground in activeGroundsList)
+        {
+            // Debug.Log($"{CurrentPuzzleDiff}, {ground.PuzzleDifficulty}");
+            if (ground.PuzzleDifficulty > CurrentPuzzleDiff)
+                ground.PZL.SetLampPostColor(LampPostColor.Red);
+            else if (ground.PuzzleDifficulty < CurrentPuzzleDiff)
+                ground.PZL.SetLampPostColor(LampPostColor.Blue);
+            else
+                ground.PZL.SetLampPostColor(LampPostColor.Yellow);
+        }
+    }
+
     public PuzzleDifficulty GetPuzzle()
     {
-        return puzzles[puzzleIndex].difficulties[puzzleDifficulty];
+        int minPuzzleDifficulty = CurrentPuzzleDiff == 0? 0 : CurrentPuzzleDiff - 1;
+        int maxPuzzleDifficulty = puzzles[puzzleIndex].difficulties.Length > CurrentPuzzleDiff + 1? CurrentPuzzleDiff + 1 : CurrentPuzzleDiff;
+        // Debug.Log($"{minPuzzleDifficulty}, {maxPuzzleDifficulty}");
+
+        bool foundMinDiff = false, foundMaxDiff = false;
+        foreach(var ground in activeGroundsList)
+        {
+            if (ground.PuzzleDifficulty == minPuzzleDifficulty)
+                foundMinDiff = true;
+
+            if (ground.PuzzleDifficulty == maxPuzzleDifficulty)
+                foundMaxDiff = true;
+
+            if (foundMinDiff && foundMaxDiff)
+                break;
+        }
+
+        if (!foundMinDiff)
+            return puzzles[puzzleIndex].difficulties[minPuzzleDifficulty];
+        else if (!foundMaxDiff)
+            return puzzles[puzzleIndex].difficulties[maxPuzzleDifficulty];
+        else
+        {
+            int randomPuzzleDiff = Random.Range(minPuzzleDifficulty, maxPuzzleDifficulty + 1);
+            return puzzles[puzzleIndex].difficulties[randomPuzzleDiff];
+        }
     }
 }

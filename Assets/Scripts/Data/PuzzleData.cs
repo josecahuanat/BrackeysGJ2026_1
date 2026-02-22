@@ -12,6 +12,7 @@ public class PuzzleData : ScriptableObject
 public class PuzzleDifficulty
 {
     public PuzzleItem[] items;
+    public int difficulty;
 }
 
 [System.Serializable]

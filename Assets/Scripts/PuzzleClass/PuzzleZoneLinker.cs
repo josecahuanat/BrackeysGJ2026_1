@@ -14,6 +14,7 @@ public class SocketKeyBinding
 public class PuzzleZoneLinker : MonoBehaviour
 {
     [SerializeField] MultiConditionPuzzle puzzle;
+    [SerializeField] GameObject lampPostBlue, lampPostYellow, lampPostRed;
     
     [Header("Condiciones a cablear automáticamente")]
     [Tooltip("Deja vacío para auto-descubrir todos los hijos")]
@@ -28,6 +29,8 @@ public class PuzzleZoneLinker : MonoBehaviour
     [Header("Opciones")]
     [SerializeField] bool doSelfInitialize = false;
     PuzzleDifficulty puzzleData;
+
+    public PuzzleDifficulty PuzzleData => puzzleData;
 
 
     void Awake()
@@ -191,6 +194,7 @@ public class PuzzleZoneLinker : MonoBehaviour
         socketBindings = new List<SocketKeyBinding>();
 
         puzzleData = Level.Instance.GetPuzzle();
+        // Debug.Log(puzzleData.difficulty);
 
         foreach(var item in puzzleData.items)
         {
@@ -216,6 +220,30 @@ public class PuzzleZoneLinker : MonoBehaviour
         foreach(var lever in levers)
         {
             PoolManager.Instance.Despawn(PoolName.Lever, lever.gameObject);
+        }
+    }
+
+    public void SetLampPostColor(LampPostColor newColor)
+    {
+        switch(newColor)
+        {
+            case LampPostColor.Yellow:
+            lampPostYellow.SetActive(true);
+            lampPostBlue.SetActive(false);
+            lampPostRed.SetActive(false);
+            break;
+            
+            case LampPostColor.Blue:
+            lampPostYellow.SetActive(false);
+            lampPostBlue.SetActive(true);
+            lampPostRed.SetActive(false);
+            break;
+            
+            case LampPostColor.Red:
+            lampPostYellow.SetActive(false);
+            lampPostBlue.SetActive(false);
+            lampPostRed.SetActive(true);
+            break;
         }
     }
 }

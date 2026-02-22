@@ -17,8 +17,40 @@ MonoBehaviour:
   - items:
     - name: 6
       quantity: 2
-      spawnPositions: 6
+    difficulty: 0
   - items:
     - name: 6
       quantity: 3
-      spawnPositions: 6
+    difficulty: 1
+  - items:
+    - name: 6
+      quantity: 3
+    difficulty: 2
+  - items:
+    - name: 6
+      quantity: 3
+    difficulty: 3
+  - items:
+    - name: 6
+      quantity: 3
+    difficulty: 4
+  - items:
+    - name: 6
+      quantity: 3
+    difficulty: 5
+  - items:
+    - name: 6
+      quantity: 3
+    difficulty: 6
+  - items:
+    - name: 6
+      quantity: 3
+    difficulty: 7
+  - items:
+    - name: 6
+      quantity: 3
+    difficulty: 8
+  - items:
+    - name: 6
+      quantity: 3
+    difficulty: 9
