@@ -138,8 +138,9 @@ public class MultiConditionPuzzle : MonoBehaviour
         {
             puzzleCompleto = true;
             Debug.Log($"[MultiConditionPuzzle] ¡Puzzle '{name}' completado!");
-             SpawnRecompensas();
+            SpawnRecompensas();
             OnTodasCumplidas?.Invoke();
+            GameUIManager.Instance.EndGame();
         }
     }
 
@@ -177,7 +178,7 @@ public class MultiConditionPuzzle : MonoBehaviour
             textoProgreso.text = $"{cumplidas} / {total}";
         ActualizarPista();
          GameUIManager.Instance?.UpdatePuzzleProgress(
-        $"{cumplidas} / {total}",     
+        $"{cumplidas} / {total}",
          ObtenerPistaActual()
           );
         

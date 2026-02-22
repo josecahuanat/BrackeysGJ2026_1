@@ -1,6 +1,8 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameUIManager : MonoBehaviour
 {
@@ -14,13 +16,20 @@ public class GameUIManager : MonoBehaviour
     [SerializeField] private GameObject progressUI;
     [SerializeField] private TextMeshProUGUI progressText;
     [SerializeField] private TextMeshProUGUI hintText;
+
     [Header("Puzzle Progress - Fade")]
     [SerializeField] private float tiempoVisibleAntesDeFade = 3f;
     [SerializeField] private float duracionFade = 1f;
 
+    [Header("Scene Fade")]
+    [SerializeField] private Image SceneFadeImage;
+    [SerializeField] private float fadeDuration = 1f;
+
+
     private CanvasGroup progressCanvasGroup;
     private Coroutine fadeCoroutine;
     private Coroutine feedbackCoroutine;
+    private Coroutine currentFade;
 
     void Awake()
     {
@@ -31,6 +40,8 @@ public class GameUIManager : MonoBehaviour
     void Start()
     {
         HidePuzzleObjectiveUI();
+        SceneFadeImage.color = Color.black;
+        FadeOut();
     }
 
     // Mensaje temporal en el prompt (reemplaza los Debug.Log del inventario)
@@ -91,5 +102,55 @@ public class GameUIManager : MonoBehaviour
             //hintText.gameObject.SetActive(!string.IsNullOrEmpty(pista));
             hintText.text = pista ?? "";
         }
+    }
+
+    bool gameEnded = false;
+    public void EndGame()
+    {
+        gameEnded = true;
+        FadeIn();
+    }
+
+    public void FadeIn()
+    {
+        StartFade(0f, 1f);
+    }
+
+    public void FadeOut()
+    {
+        StartFade(1f, 0f);
+    }
+
+    private void StartFade(float from, float to, float duration = -1f)
+    {
+        if (currentFade != null) StopCoroutine(currentFade);
+        currentFade = StartCoroutine(FadeRoutine(from, to, duration < 0 ? fadeDuration : duration));
+    }
+
+    IEnumerator FadeRoutine(float from, float to, float duration)
+    {
+        float elapsed = 0f;
+        SetAlpha(from);
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float alpha = Mathf.Lerp(from, to, elapsed / duration);
+            SetAlpha(alpha);
+            yield return null;
+        }
+
+        SetAlpha(to);
+    }
+
+    private void SetAlpha(float alpha)
+    {
+        if (SceneFadeImage == null) return;
+        Color c = SceneFadeImage.color;
+        c.a = alpha;
+        SceneFadeImage.color = c;
+
+        if (gameEnded)
+            SceneManager.LoadScene("Credits");
     }
 }

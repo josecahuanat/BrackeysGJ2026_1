@@ -7,6 +7,7 @@ public class Level : MonoBehaviour
     public static Level Instance { get; private set; }
 
     [Header("Generation Settings")]
+    [SerializeField] AdaptiveAudioManager audioManager;
     [SerializeField] Transform player;
     [SerializeField] Transform groundsParent;
     [SerializeField] float chunkSize;
@@ -58,6 +59,9 @@ public class Level : MonoBehaviour
     
     void Update()
     {
+        if (player == null)
+            return;
+
         Vector2Int newChunkCoord = GetChunkCoord(player.position);
         
         if (newChunkCoord != currentChunkCoord)
@@ -136,6 +140,7 @@ public class Level : MonoBehaviour
 
     void UpdateLampPosts()
     {
+        audioManager.SwitchToLayer(CurrentPuzzleDiff + 1);
         // Debug.Log("UpdateLampPosts");
         foreach(var ground in activeGroundsList)
         {
@@ -145,7 +150,9 @@ public class Level : MonoBehaviour
             else if (ground.PuzzleDifficulty < CurrentPuzzleDiff)
                 ground.PZL.SetLampPostColor(LampPostColor.Blue);
             else
+            {
                 ground.PZL.SetLampPostColor(LampPostColor.Yellow);
+            }
         }
     }
 

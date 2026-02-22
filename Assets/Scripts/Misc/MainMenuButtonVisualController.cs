@@ -56,7 +56,7 @@ public class MainMenuButtonVisualController : MonoBehaviour
             SetCurrentIndex(selectedIndex, false);
 
         // ── Confirmar con Enter / Submit ──────────────────────────────────────
-        if (Input.GetButtonDown("Submit"))
+        if (Input.GetButtonDown("Submit") || Input.GetKeyDown(KeyCode.Mouse0))
             ConfirmCurrentButton();
         // ─────────────────────────────────────────────────────────────────────
 
