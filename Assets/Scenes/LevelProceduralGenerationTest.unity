@@ -787,7 +787,8 @@ MonoBehaviour:
   showDebugs: 0
   poolName: 2
   prefabs:
-  - {fileID: 2133253432380220716, guid: d74bbd7eda2172b4f914dae70720a9ea, type: 3}
+  - {fileID: 2133253432380220716, guid: 5dc69f8671034cc499df6e1e4e15a53f, type: 3}
+  - {fileID: 2133253432380220716, guid: b3c3142dfdd12a94b91b3a41b673d5c7, type: 3}
   initialSize: 24
 --- !u!1001 &814057035
 PrefabInstance:
