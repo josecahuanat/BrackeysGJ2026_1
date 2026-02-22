@@ -12,14 +12,24 @@ public class MainMenuButtonVisualController : MonoBehaviour
     [SerializeField, Range(0f, 1f)] private float visibleAlpha = 1f;
     [SerializeField, Min(0.01f)] private float transitionDuration = 0.18f;
 
+    [Header("Audio")]
+    [SerializeField] private AudioClip navigateSfx;
+    [SerializeField] private AudioClip backgroundMusic;
+    [SerializeField, Range(0f, 1f)] private float sfxVolume = 1f;
+    [SerializeField, Range(0f, 1f)] private float musicVolume = 0.6f;
+
     private int currentIndex = -1;
     private Graphic[] containerGraphics;
     private Graphic[] selectGraphics;
     private float[] currentAlphas;
     private float[] targetAlphas;
+    private AudioSource sfxSource;
+    private AudioSource musicSource;
 
     private void Start()
     {
+        SetupAudio();
+
         if (buttons == null || buttons.Length == 0)
             return;
 
@@ -70,6 +80,36 @@ public class MainMenuButtonVisualController : MonoBehaviour
 
         currentIndex = index;
         ApplyAlphaTargets(force);
+
+        if (!force)
+            PlayNavigateSfx();
+    }
+
+    private void SetupAudio()
+    {
+        sfxSource = gameObject.AddComponent<AudioSource>();
+        sfxSource.playOnAwake = false;
+        sfxSource.loop = false;
+        sfxSource.spatialBlend = 0f;
+        sfxSource.volume = sfxVolume;
+
+        musicSource = gameObject.AddComponent<AudioSource>();
+        musicSource.playOnAwake = false;
+        musicSource.loop = true;
+        musicSource.spatialBlend = 0f;
+        musicSource.volume = musicVolume;
+        musicSource.clip = backgroundMusic;
+
+        if (backgroundMusic != null)
+            musicSource.Play();
+    }
+
+    private void PlayNavigateSfx()
+    {
+        if (sfxSource == null || navigateSfx == null)
+            return;
+
+        sfxSource.PlayOneShot(navigateSfx, sfxVolume);
     }
 
     private void CacheButtonVisuals()
