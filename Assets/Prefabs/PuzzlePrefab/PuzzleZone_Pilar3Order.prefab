@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 3516885448995393691}
   - component: {fileID: 7939867237009860063}
   m_Layer: 3
-  m_Name: PuzzleZone_Pilar3
+  m_Name: PuzzleZone_Pilar3Order
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -771,7 +771,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 240741811471954830, guid: 854e39a88475d5148ad33ddc08f83a7d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.2
+      value: 0.18
       objectReference: {fileID: 0}
     - target: {fileID: 240741811471954830, guid: 854e39a88475d5148ad33ddc08f83a7d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -926,7 +926,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 240741811471954830, guid: 854e39a88475d5148ad33ddc08f83a7d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.2
+      value: 0.18
       objectReference: {fileID: 0}
     - target: {fileID: 240741811471954830, guid: 854e39a88475d5148ad33ddc08f83a7d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1081,7 +1081,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 240741811471954830, guid: 854e39a88475d5148ad33ddc08f83a7d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.2
+      value: 0.18
       objectReference: {fileID: 0}
     - target: {fileID: 240741811471954830, guid: 854e39a88475d5148ad33ddc08f83a7d, type: 3}
       propertyPath: m_LocalPosition.z
