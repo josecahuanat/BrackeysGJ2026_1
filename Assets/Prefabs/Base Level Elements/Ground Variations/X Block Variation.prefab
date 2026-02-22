@@ -82,44 +82,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NicheBlockGeneration
   genData:
-    bigBlockZSize: 2.3
     columns: 4
     rows: 6
-    nicheWidth: 0.9
-    nicheHeight: 0.9
-    nicheWidthSpacing: 0.086
-    nicheHeightSpacing: 0.086
-    nicheZSize: 0.8
+    nicheWidth: 1
+    nicheHeight: 1
+    nicheWidthSpacing: 0
+    nicheHeightSpacing: 0
+    nicheZSize: 0
     nichePositions:
-    - {x: -2.465, y: -1.479, z: 0}
-    - {x: -2.465, y: -0.493, z: 0}
-    - {x: -2.465, y: 0.493, z: 0}
-    - {x: -2.465, y: 1.479, z: 0}
-    - {x: -1.479, y: -1.479, z: 0}
-    - {x: -1.479, y: -0.493, z: 0}
-    - {x: -1.479, y: 0.493, z: 0}
-    - {x: -1.479, y: 1.479, z: 0}
-    - {x: -0.493, y: -1.479, z: 0}
-    - {x: -0.493, y: -0.493, z: 0}
-    - {x: -0.493, y: 0.493, z: 0}
-    - {x: -0.493, y: 1.479, z: 0}
-    - {x: 0.493, y: -1.479, z: 0}
-    - {x: 0.493, y: -0.493, z: 0}
-    - {x: 0.493, y: 0.493, z: 0}
-    - {x: 0.493, y: 1.479, z: 0}
-    - {x: 1.479, y: -1.479, z: 0}
-    - {x: 1.479, y: -0.493, z: 0}
-    - {x: 1.479, y: 0.493, z: 0}
-    - {x: 1.479, y: 1.479, z: 0}
-    - {x: 2.465, y: -1.479, z: 0}
-    - {x: 2.465, y: -0.493, z: 0}
-    - {x: 2.465, y: 0.493, z: 0}
-    - {x: 2.465, y: 1.479, z: 0}
-    nichePositionHighestY: 1.479
-    bigBlockWidth: 6.002
-    bigBlockHeight: 4.0299997
+    - {x: -2.5, y: -1.5, z: 0}
+    - {x: -2.5, y: -0.5, z: 0}
+    - {x: -2.5, y: 0.5, z: 0}
+    - {x: -2.5, y: 1.5, z: 0}
+    - {x: -1.5, y: -1.5, z: 0}
+    - {x: -1.5, y: -0.5, z: 0}
+    - {x: -1.5, y: 0.5, z: 0}
+    - {x: -1.5, y: 1.5, z: 0}
+    - {x: -0.5, y: -1.5, z: 0}
+    - {x: -0.5, y: -0.5, z: 0}
+    - {x: -0.5, y: 0.5, z: 0}
+    - {x: -0.5, y: 1.5, z: 0}
+    - {x: 0.5, y: -1.5, z: 0}
+    - {x: 0.5, y: -0.5, z: 0}
+    - {x: 0.5, y: 0.5, z: 0}
+    - {x: 0.5, y: 1.5, z: 0}
+    - {x: 1.5, y: -1.5, z: 0}
+    - {x: 1.5, y: -0.5, z: 0}
+    - {x: 1.5, y: 0.5, z: 0}
+    - {x: 1.5, y: 1.5, z: 0}
+    - {x: 2.5, y: -1.5, z: 0}
+    - {x: 2.5, y: -0.5, z: 0}
+    - {x: 2.5, y: 0.5, z: 0}
+    - {x: 2.5, y: 1.5, z: 0}
+    nichePositionHighestY: 3.45
     minNiches: 4
-    maxNiches: 16
+    maxNiches: 18
 --- !u!1 &1378997782854534747
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,44 +259,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NicheBlockGeneration
   genData:
-    bigBlockZSize: 2.3
     columns: 4
     rows: 6
-    nicheWidth: 0.9
-    nicheHeight: 0.9
-    nicheWidthSpacing: 0.086
-    nicheHeightSpacing: 0.086
-    nicheZSize: 0.8
+    nicheWidth: 1
+    nicheHeight: 1
+    nicheWidthSpacing: 0
+    nicheHeightSpacing: 0
+    nicheZSize: 0
     nichePositions:
-    - {x: -2.465, y: -1.479, z: 0}
-    - {x: -2.465, y: -0.493, z: 0}
-    - {x: -2.465, y: 0.493, z: 0}
-    - {x: -2.465, y: 1.479, z: 0}
-    - {x: -1.479, y: -1.479, z: 0}
-    - {x: -1.479, y: -0.493, z: 0}
-    - {x: -1.479, y: 0.493, z: 0}
-    - {x: -1.479, y: 1.479, z: 0}
-    - {x: -0.493, y: -1.479, z: 0}
-    - {x: -0.493, y: -0.493, z: 0}
-    - {x: -0.493, y: 0.493, z: 0}
-    - {x: -0.493, y: 1.479, z: 0}
-    - {x: 0.493, y: -1.479, z: 0}
-    - {x: 0.493, y: -0.493, z: 0}
-    - {x: 0.493, y: 0.493, z: 0}
-    - {x: 0.493, y: 1.479, z: 0}
-    - {x: 1.479, y: -1.479, z: 0}
-    - {x: 1.479, y: -0.493, z: 0}
-    - {x: 1.479, y: 0.493, z: 0}
-    - {x: 1.479, y: 1.479, z: 0}
-    - {x: 2.465, y: -1.479, z: 0}
-    - {x: 2.465, y: -0.493, z: 0}
-    - {x: 2.465, y: 0.493, z: 0}
-    - {x: 2.465, y: 1.479, z: 0}
-    nichePositionHighestY: 1.479
-    bigBlockWidth: 6.002
-    bigBlockHeight: 4.0299997
+    - {x: -2.5, y: -1.5, z: 0}
+    - {x: -2.5, y: -0.5, z: 0}
+    - {x: -2.5, y: 0.5, z: 0}
+    - {x: -2.5, y: 1.5, z: 0}
+    - {x: -1.5, y: -1.5, z: 0}
+    - {x: -1.5, y: -0.5, z: 0}
+    - {x: -1.5, y: 0.5, z: 0}
+    - {x: -1.5, y: 1.5, z: 0}
+    - {x: -0.5, y: -1.5, z: 0}
+    - {x: -0.5, y: -0.5, z: 0}
+    - {x: -0.5, y: 0.5, z: 0}
+    - {x: -0.5, y: 1.5, z: 0}
+    - {x: 0.5, y: -1.5, z: 0}
+    - {x: 0.5, y: -0.5, z: 0}
+    - {x: 0.5, y: 0.5, z: 0}
+    - {x: 0.5, y: 1.5, z: 0}
+    - {x: 1.5, y: -1.5, z: 0}
+    - {x: 1.5, y: -0.5, z: 0}
+    - {x: 1.5, y: 0.5, z: 0}
+    - {x: 1.5, y: 1.5, z: 0}
+    - {x: 2.5, y: -1.5, z: 0}
+    - {x: 2.5, y: -0.5, z: 0}
+    - {x: 2.5, y: 0.5, z: 0}
+    - {x: 2.5, y: 1.5, z: 0}
+    nichePositionHighestY: 3.45
     minNiches: 4
-    maxNiches: 16
+    maxNiches: 18
 --- !u!1 &3123185438304850166
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,13 +318,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3123185438304850166}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -7, y: 1.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4818108176109789355}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &3899791760012174065
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,13 +380,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4487125458210773617}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 7, y: 1.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4818108176109789355}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &4697181614937277034
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,44 +432,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NicheBlockGeneration
   genData:
-    bigBlockZSize: 2.3
     columns: 4
     rows: 6
-    nicheWidth: 0.9
-    nicheHeight: 0.9
-    nicheWidthSpacing: 0.086
-    nicheHeightSpacing: 0.086
-    nicheZSize: 0.8
+    nicheWidth: 1
+    nicheHeight: 1
+    nicheWidthSpacing: 0
+    nicheHeightSpacing: 0
+    nicheZSize: 0
     nichePositions:
-    - {x: -2.465, y: -1.479, z: 0}
-    - {x: -2.465, y: -0.493, z: 0}
-    - {x: -2.465, y: 0.493, z: 0}
-    - {x: -2.465, y: 1.479, z: 0}
-    - {x: -1.479, y: -1.479, z: 0}
-    - {x: -1.479, y: -0.493, z: 0}
-    - {x: -1.479, y: 0.493, z: 0}
-    - {x: -1.479, y: 1.479, z: 0}
-    - {x: -0.493, y: -1.479, z: 0}
-    - {x: -0.493, y: -0.493, z: 0}
-    - {x: -0.493, y: 0.493, z: 0}
-    - {x: -0.493, y: 1.479, z: 0}
-    - {x: 0.493, y: -1.479, z: 0}
-    - {x: 0.493, y: -0.493, z: 0}
-    - {x: 0.493, y: 0.493, z: 0}
-    - {x: 0.493, y: 1.479, z: 0}
-    - {x: 1.479, y: -1.479, z: 0}
-    - {x: 1.479, y: -0.493, z: 0}
-    - {x: 1.479, y: 0.493, z: 0}
-    - {x: 1.479, y: 1.479, z: 0}
-    - {x: 2.465, y: -1.479, z: 0}
-    - {x: 2.465, y: -0.493, z: 0}
-    - {x: 2.465, y: 0.493, z: 0}
-    - {x: 2.465, y: 1.479, z: 0}
-    nichePositionHighestY: 1.479
-    bigBlockWidth: 6.002
-    bigBlockHeight: 4.0299997
+    - {x: -2.5, y: -1.5, z: 0}
+    - {x: -2.5, y: -0.5, z: 0}
+    - {x: -2.5, y: 0.5, z: 0}
+    - {x: -2.5, y: 1.5, z: 0}
+    - {x: -1.5, y: -1.5, z: 0}
+    - {x: -1.5, y: -0.5, z: 0}
+    - {x: -1.5, y: 0.5, z: 0}
+    - {x: -1.5, y: 1.5, z: 0}
+    - {x: -0.5, y: -1.5, z: 0}
+    - {x: -0.5, y: -0.5, z: 0}
+    - {x: -0.5, y: 0.5, z: 0}
+    - {x: -0.5, y: 1.5, z: 0}
+    - {x: 0.5, y: -1.5, z: 0}
+    - {x: 0.5, y: -0.5, z: 0}
+    - {x: 0.5, y: 0.5, z: 0}
+    - {x: 0.5, y: 1.5, z: 0}
+    - {x: 1.5, y: -1.5, z: 0}
+    - {x: 1.5, y: -0.5, z: 0}
+    - {x: 1.5, y: 0.5, z: 0}
+    - {x: 1.5, y: 1.5, z: 0}
+    - {x: 2.5, y: -1.5, z: 0}
+    - {x: 2.5, y: -0.5, z: 0}
+    - {x: 2.5, y: 0.5, z: 0}
+    - {x: 2.5, y: 1.5, z: 0}
+    nichePositionHighestY: 3.45
     minNiches: 4
-    maxNiches: 16
+    maxNiches: 18
 --- !u!1 &4800951007047393600
 GameObject:
   m_ObjectHideFlags: 0
@@ -600,7 +591,6 @@ MonoBehaviour:
   doors: []
   altarFlowers: []
   socketBindings: []
-  requiereOrden: 0
   doSelfInitialize: 0
 --- !u!114 &9182026800615316189
 MonoBehaviour:
@@ -775,41 +765,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NicheBlockGeneration
   genData:
-    bigBlockZSize: 2.3
     columns: 4
     rows: 6
-    nicheWidth: 0.9
-    nicheHeight: 0.9
-    nicheWidthSpacing: 0.086
-    nicheHeightSpacing: 0.086
-    nicheZSize: 0.8
+    nicheWidth: 1
+    nicheHeight: 1
+    nicheWidthSpacing: 0
+    nicheHeightSpacing: 0
+    nicheZSize: 0
     nichePositions:
-    - {x: -2.465, y: -1.479, z: 0}
-    - {x: -2.465, y: -0.493, z: 0}
-    - {x: -2.465, y: 0.493, z: 0}
-    - {x: -2.465, y: 1.479, z: 0}
-    - {x: -1.479, y: -1.479, z: 0}
-    - {x: -1.479, y: -0.493, z: 0}
-    - {x: -1.479, y: 0.493, z: 0}
-    - {x: -1.479, y: 1.479, z: 0}
-    - {x: -0.493, y: -1.479, z: 0}
-    - {x: -0.493, y: -0.493, z: 0}
-    - {x: -0.493, y: 0.493, z: 0}
-    - {x: -0.493, y: 1.479, z: 0}
-    - {x: 0.493, y: -1.479, z: 0}
-    - {x: 0.493, y: -0.493, z: 0}
-    - {x: 0.493, y: 0.493, z: 0}
-    - {x: 0.493, y: 1.479, z: 0}
-    - {x: 1.479, y: -1.479, z: 0}
-    - {x: 1.479, y: -0.493, z: 0}
-    - {x: 1.479, y: 0.493, z: 0}
-    - {x: 1.479, y: 1.479, z: 0}
-    - {x: 2.465, y: -1.479, z: 0}
-    - {x: 2.465, y: -0.493, z: 0}
-    - {x: 2.465, y: 0.493, z: 0}
-    - {x: 2.465, y: 1.479, z: 0}
-    nichePositionHighestY: 1.479
-    bigBlockWidth: 6.002
-    bigBlockHeight: 4.0299997
+    - {x: -2.5, y: -1.5, z: 0}
+    - {x: -2.5, y: -0.5, z: 0}
+    - {x: -2.5, y: 0.5, z: 0}
+    - {x: -2.5, y: 1.5, z: 0}
+    - {x: -1.5, y: -1.5, z: 0}
+    - {x: -1.5, y: -0.5, z: 0}
+    - {x: -1.5, y: 0.5, z: 0}
+    - {x: -1.5, y: 1.5, z: 0}
+    - {x: -0.5, y: -1.5, z: 0}
+    - {x: -0.5, y: -0.5, z: 0}
+    - {x: -0.5, y: 0.5, z: 0}
+    - {x: -0.5, y: 1.5, z: 0}
+    - {x: 0.5, y: -1.5, z: 0}
+    - {x: 0.5, y: -0.5, z: 0}
+    - {x: 0.5, y: 0.5, z: 0}
+    - {x: 0.5, y: 1.5, z: 0}
+    - {x: 1.5, y: -1.5, z: 0}
+    - {x: 1.5, y: -0.5, z: 0}
+    - {x: 1.5, y: 0.5, z: 0}
+    - {x: 1.5, y: 1.5, z: 0}
+    - {x: 2.5, y: -1.5, z: 0}
+    - {x: 2.5, y: -0.5, z: 0}
+    - {x: 2.5, y: 0.5, z: 0}
+    - {x: 2.5, y: 1.5, z: 0}
+    nichePositionHighestY: 3.45
     minNiches: 4
-    maxNiches: 16
+    maxNiches: 18

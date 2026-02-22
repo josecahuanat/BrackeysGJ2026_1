@@ -21,9 +21,7 @@ public class NicheBlockGeneration : MonoBehaviour
 
         int index = 0;
         float startXPos = evenRows? genData.nicheWidth / 2f : 0f;
-        float startXSpacing = evenRows? genData.nicheWidthSpacing / 2f : 0f;
         float startYPos = evenColumns? genData.nicheHeight / 2f : 0f;
-        float startYSpacing = evenColumns? genData.nicheHeightSpacing / 2f : 0f;
         for (int i=-startRows ; i<=startRows ; i++)
         {
             if (i==0 && evenRows)
@@ -33,7 +31,7 @@ public class NicheBlockGeneration : MonoBehaviour
             if (evenRows)
                 customI--;
 
-            float xPos = startXPos + startXSpacing + (genData.nicheWidth * customI) + (genData.nicheWidthSpacing * customI);
+            float xPos = startXPos + (genData.nicheWidth * customI) + customI;
             if (i < 0)
                 xPos = -xPos;
 
@@ -46,7 +44,7 @@ public class NicheBlockGeneration : MonoBehaviour
                 if (evenColumns)
                     customJ--;
 
-                float yPos = startYPos + startYSpacing + (genData.nicheHeight * customJ) + (genData.nicheHeightSpacing * customJ);
+                float yPos = startYPos + (genData.nicheHeight * customJ) + customJ;
                 if (j < 0)
                     yPos = -yPos;
 
@@ -64,9 +62,6 @@ public class NicheBlockGeneration : MonoBehaviour
                 index++;
             }
         }
-
-        genData.bigBlockWidth = (highestX + (genData.nicheWidth / 2f) + genData.nicheWidthSpacing) * 2f;
-        genData.bigBlockHeight = (highestY + (genData.nicheHeight / 2f) + genData.nicheHeightSpacing) * 2f;
 
 #if UNITY_EDITOR
         UnityEditor.EditorUtility.SetDirty(this);

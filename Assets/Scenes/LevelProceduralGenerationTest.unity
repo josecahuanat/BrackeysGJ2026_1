@@ -15,9 +15,9 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
   m_Fog: 1
-  m_FogColor: {r: 0.25, g: 0.25, b: 0.25, a: 1}
-  m_FogMode: 3
-  m_FogDensity: 0.167
+  m_FogColor: {r: 0, g: 0, b: 0, a: 1}
+  m_FogMode: 2
+  m_FogDensity: 0.2
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 2dce9cd2564fcb44baf498da04d3219f, type: 2}
   m_HaloStrength: 0.211
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -347,7 +347,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ObjectPool
   showDebugs: 0
   poolName: 1
-  prefab: {fileID: 183854828643498293, guid: 026b069d3793b5548861294a69a4b6f7, type: 3}
+  prefabs:
+  - {fileID: 183854828643498293, guid: 026b069d3793b5548861294a69a4b6f7, type: 3}
   initialSize: 8
 --- !u!1 &385636998
 GameObject:
@@ -395,7 +396,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ObjectPool
   showDebugs: 0
   poolName: 0
-  prefab: {fileID: 3222781588743984708, guid: d3565ba92ca346646ac589bc13fde862, type: 3}
+  prefabs:
+  - {fileID: 3222781588743984708, guid: d3565ba92ca346646ac589bc13fde862, type: 3}
   initialSize: 48
 --- !u!4 &406510115 stripped
 Transform:
@@ -448,7 +450,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ObjectPool
   showDebugs: 0
   poolName: 3
-  prefab: {fileID: 4318971406546548452, guid: 74011e1c71afc3844a9d89ce0171b924, type: 3}
+  prefabs:
+  - {fileID: 4318971406546548452, guid: a163495676fa82f489118a854b224174, type: 3}
+  - {fileID: 4318971406546548452, guid: 84877c39f849b3347957b6693f63d2a9, type: 3}
   initialSize: 4
 --- !u!1 &466125374
 GameObject:
@@ -782,7 +786,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ObjectPool
   showDebugs: 0
   poolName: 2
-  prefab: {fileID: 2133253432380220716, guid: d74bbd7eda2172b4f914dae70720a9ea, type: 3}
+  prefabs:
+  - {fileID: 2133253432380220716, guid: d74bbd7eda2172b4f914dae70720a9ea, type: 3}
   initialSize: 24
 --- !u!1001 &814057035
 PrefabInstance:
@@ -838,7 +843,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7748261139661614330, guid: 5230c68ac3970e646b0eac8bcd96ba6c, type: 3}
       propertyPath: m_ClearFlags
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7748261139661614330, guid: 5230c68ac3970e646b0eac8bcd96ba6c, type: 3}
       propertyPath: m_BackGroundColor.a
@@ -846,15 +851,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7748261139661614330, guid: 5230c68ac3970e646b0eac8bcd96ba6c, type: 3}
       propertyPath: m_BackGroundColor.b
-      value: 0.2509804
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7748261139661614330, guid: 5230c68ac3970e646b0eac8bcd96ba6c, type: 3}
       propertyPath: m_BackGroundColor.g
-      value: 0.2509804
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7748261139661614330, guid: 5230c68ac3970e646b0eac8bcd96ba6c, type: 3}
       propertyPath: m_BackGroundColor.r
-      value: 0.2509804
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8027453681738092881, guid: 5230c68ac3970e646b0eac8bcd96ba6c, type: 3}
       propertyPath: itemNameText
@@ -1004,7 +1009,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ObjectPool
   showDebugs: 0
   poolName: 5
-  prefab: {fileID: 5392922361339329388, guid: c5c2a4f1868a5f944b3d57464f29f1f3, type: 3}
+  prefabs:
+  - {fileID: 5392922361339329388, guid: c5c2a4f1868a5f944b3d57464f29f1f3, type: 3}
   initialSize: 6
 --- !u!1 &1122178818
 GameObject:
@@ -1262,7 +1268,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ObjectPool
   showDebugs: 0
   poolName: 6
-  prefab: {fileID: 7010920272247690809, guid: 90c9f0094aa4b4e4ea85f4123fb68a12, type: 3}
+  prefabs:
+  - {fileID: 7010920272247690809, guid: 90c9f0094aa4b4e4ea85f4123fb68a12, type: 3}
   initialSize: 24
 --- !u!1 &1571342788
 GameObject:
@@ -1661,7 +1668,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ObjectPool
   showDebugs: 0
   poolName: 4
-  prefab: {fileID: 4942565111564431819, guid: 518c013dc02685d449add73991f40b29, type: 3}
+  prefabs:
+  - {fileID: 4942565111564431819, guid: 518c013dc02685d449add73991f40b29, type: 3}
   initialSize: 4
 --- !u!1 &2028962058
 GameObject:

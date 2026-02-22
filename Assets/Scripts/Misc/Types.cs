@@ -15,25 +15,15 @@ public enum PoolName
 public class NicheBlockGenerationData
 {
     [Header("Block Info")]
-    public float bigBlockZSize;
-    public int columns, rows;
+    public int columns;
+    public int rows;
 
     [Header("Niche Info")]
     public float nicheWidth;
     public float nicheHeight;
-    public float nicheWidthSpacing;
-    public float nicheHeightSpacing;
-    public float nicheZSize;
 
     [Header("Initialization Data")]
     public Vector3[] nichePositions;
     public float nichePositionHighestY;
-    public float bigBlockWidth, bigBlockHeight;
     public int minNiches, maxNiches;
-}
-
-[System.Serializable]
-public class GenerationData
-{
-    public int minItemPositions, maxItemPositions;
 }

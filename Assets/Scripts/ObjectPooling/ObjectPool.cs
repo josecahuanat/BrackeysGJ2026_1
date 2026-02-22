@@ -8,7 +8,7 @@ public class ObjectPool : MonoBehaviour
 
     [Header("Pool Settings")]
     [SerializeField] PoolName poolName;
-    [SerializeField] GameObject prefab;
+    [SerializeField] GameObject[] prefabs;
     [SerializeField] int initialSize;
     
     Queue<GameObject> availableObjects = new Queue<GameObject>();
@@ -25,7 +25,8 @@ public class ObjectPool : MonoBehaviour
         if (showDebugs)
             Debug.Log("CreateNewObject");
 
-        GameObject obj = Instantiate(prefab, transform);
+        int randomPrefab = Random.Range(0, prefabs.Length);
+        GameObject obj = Instantiate(prefabs[randomPrefab], transform);
         obj.SetActive(false);
         allObjects.Add(obj);
         availableObjects.Enqueue(obj);
